@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>💊 La PrEP : se protéger du VIH – AIDES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ac:#8B5CF6;--ac1:#8B5CF618;--ac3:#8B5CF640;
+    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+    --bd:#E8E8E5;--bd2:#F2F2EF;
+    --sh:0 1px 4px rgba(0,0,0,.04);
+    --r:14px;--rs:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+
+  /* Header */
+  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+  .back:hover{opacity:1}.back::after{display:none!important}
+  .hdr-icon{font-size:34px;margin-bottom:8px}
+  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+
+  /* Content */
+  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+
+  /* Text */
+  p{margin-bottom:8px}p:last-child{margin-bottom:0}
+  strong{font-weight:700;color:var(--tx2)}
+
+  /* Links */
+  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+  a:hover{border-bottom-color:var(--ac)}
+  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
+  a[href^="mailto:"]{border-bottom-style:dashed}
+
+  /* Images */
+  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+
+  /* Lists */
+  ul{list-style:none;margin:8px 0;padding:0}
+  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+  li:last-child{border-bottom:none}
+  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+
+  /* ═══ THE CARD ═══ (one per logical section) */
+  .card{
+    background:var(--card);border-radius:var(--r);
+    box-shadow:var(--sh);border:1px solid var(--bd);
+    padding:0;margin-bottom:14px;overflow:hidden;
+  }
+
+  /* Card title (first row of a table, section name) */
+  .card-title{
+    font-family:'Outfit',sans-serif;
+    font-size:15px;font-weight:700;color:var(--ac);
+    padding:14px 18px 10px;
+    border-bottom:2px solid var(--ac);
+    line-height:1.4;
+  }
+  .card-title p{margin-bottom:3px;color:var(--ac)}
+  .card-title a{color:var(--ac)}
+
+  /* Card item (a row of content) */
+  .card-item{
+    padding:12px 18px;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-item:last-child{border-bottom:none}
+
+  /* Card multi-cell row */
+  .card-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-row:last-child{border-bottom:none}
+  .card-cell{
+    padding:12px 16px;
+    border-right:1px solid var(--bd2);
+    font-size:14px;
+  }
+  .card-cell:last-child{border-right:none}
+  .card-cell p{margin-bottom:4px}
+  @media(max-width:540px){
+    .card-row{grid-template-columns:1fr}
+    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
+    .card-cell:last-child{border-bottom:none}
+  }
+
+  /* ═══ RESOURCE CARD (with category tag) ═══ */
+  .card.resource{
+    border-left:4px solid var(--ac);
+    padding:16px 18px;
+  }
+  .tag{
+    display:inline-block;font-family:'Outfit',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--ac);background:var(--ac1);
+    padding:3px 10px;border-radius:6px;margin-bottom:12px;
+  }
+  .res-entry{
+    padding:10px 0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .res-entry:last-child{border-bottom:none}
+  .res-entry:first-child{padding-top:0}
+  .res-desc{margin-bottom:6px}
+  .res-desc p{margin-bottom:4px}
+  .res-contact{
+    background:#F6F6F3;border-radius:var(--rs);
+    padding:8px 12px;font-size:14px;
+  }
+  .res-contact p{margin-bottom:2px}
+
+  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
+  .emergency{
+    background:#FFF5F5;border:2.5px solid #E2001A;
+    border-radius:var(--rs);
+    padding:16px 18px;margin:12px 18px;
+    box-shadow:0 2px 8px rgba(226,0,26,.06);
+  }
+  .emergency p{margin-bottom:6px}
+  .emergency strong{color:#B80015}
+
+  /* Footer */
+  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+  .foot a::after{display:none!important}
+  .foot a:hover{color:var(--ac)}
+  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+  .foot-h::after{display:none!important}
+
+  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <a class="back" href="index.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Retour
+  </a>
+  <div class="hdr-icon">💊</div>
+  <h1>04. La PrEP : se protéger du VIH</h1>
+</header>
+<div class="cnt">
+<div class="card"><p><img src="img/img-04-f1de47f3.png" alt="" class="doc-img" loading="lazy"></p></div>
+
+<div class="card">
+<div class="card-item">Tu ne te sens pas assez protégé-e ? Le préservatif (interne ou externe) est un bon moyen de se protéger du VIH/sida. Mais parfois :<br>• Tu n’en as pas à disposition ;<br>• Tu n’oses pas le proposer ;<br>• Tu n’aimes pas en mettre ;<br>• Ton/ta partenaire refuse d’en porter ;<br>• Il craque ou glisse avant la fin du rapport ;<br>• Tu cherches un truc en plus du préservatif pour te protéger.<br>Il existe un moyen de prévention très efficace contre le VIH : la Prep.</div>
+</div>
+
+<div class="card">
+<div class="card-title"><p>La Prep, c’est quoi ?</p></div>
+<div class="card-item"><p>C’est une stratégie innovante de prévention du VIH, c’est l’acronyme anglais de « prophylaxie pré-exposition ». Elle s’adresse aux personnes qui n’ont pas le VIH.</p>
+<p>C’est un médicament à prendre par voie orale pour éviter de contracter le VIH. Il permet de te protéger dans toutes les situations de prise de risques. En France la Prep est gratuite si tu as la sécurité sociale ou l’AME.</p>
+<p>Tout savoir sur la Prep : <a href="http://aides.org/prep" target="_blank" rel="noopener">aides.org/prep</a></p>
+<p>Guide « La Prep : mode d’emploi » (Mai 2021)</p>
+<p><a href="https://www.calameo.com/aides/read/0062255000aa42fef48d6" target="_blank" rel="noopener">« La Prep : mode d’emploi »</a> (en français)<a href="https://www.calameo.com/aides/read/00622550071d8ec5dd41d" target="_blank" rel="noopener">« Prep : Instructions for use »</a> (en anglais)<a href="https://www.calameo.com/aides/read/006225500d21f1a62c340" target="_blank" rel="noopener">« Prep : Instrucciones de uso »</a> (en espagnol)<a href="https://www.calameo.com/aides/read/00622550008ef008b19fa" target="_blank" rel="noopener">« Prep : Guia de utilizacão »</a> (en portugais)</p>
+<p>Pour plus d’informations, tu peux aussi rencontrer les militants-es de AIDES dans les permanences (ou téléphoner) : <a href="page-02.html">Permanence de AIDES en Île-de-France</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Où trouver la Prep ?</p></div>
+<div class="card-item"><p>Les consultations Prep : La Prep est disponible dans les hôpitaux (SMIT - Service maladies infectieuses et tropicales), les CeGIDD, les Centres municipaux de santé (CMS), certains Centres de santé. Vous pouvez trouver les différents lieux habilités à prescrire et proposer un suivi de la PrEP ➜ <a href="https://www.google.com/maps/d/embed?mid=1LUAlZHFQTR0SwI9J3e0FDCtdXY4&amp;ll=18.510260370548618%2C-47.027529099999924&amp;z=2" target="_blank" rel="noopener">carte interactive des centres de consultations Prep en France</a> (source : Sida Info Service)</p>
+<p>Depuis le 1er juin 2021, la Prep contre le VIH est disponible complètement en ville, c&#x27;est-à-dire chez votre généraliste (médecin traitant, médecin de famille).</p></div>
+<div class="card-item"><p>Je suis médecin généraliste et je souhaite me former à la prescription et au suivi de la Prep :  <a href="https://www.formaprep.org/" target="_blank" rel="noopener">www.formaprep.org</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p>Plus d’infos sur la Prep</p></div>
+<div class="card-item"><p>Prep&#x27;Dial</p>
+<p>Groupe Facebook francophone d’information, de témoignages et de discussions pour les usagers-es de la Prep, les personnes intéressées par cette nouvelle stratégie de prévention ainsi que celles qui en défendent l’accès. L’animation du groupe repose sur les contributions des membres qui sont libres de lancer des débats, répondre à des postes ou soumettre des articles.</p>
+<p>Cette page est à l’initiative des militants-es de AIDES qui l’administrent et en modèrent le contenu. Nous ne sommes ni médecins, ni pharmaciens-nes, ni représentants-es de l&#x27;industrie pharmaceutique.➜ <a href="https://www.facebook.com/groups/PrepDial" target="_blank" rel="noopener">facebook.com/groups/prepdial</a></p>
+<p>_________________________________« AT PrEP » - Actions-TraitementsApplication mobile qui te permet de bien suivre ta prise de PrEP qu&#x27;elle soit en continue ou à la demande et quel que soit ton genre.</p>
+<ul><li>À télécharger ici : <a href="https://apps.apple.com/fr/app/at-prep/id1665141713" target="_blank" rel="noopener">pour iPhone</a> / <a href="https://play.google.com/store/apps/details?id=com.ymlf.atprep&amp;pcampaignid=web_share" target="_blank" rel="noopener">pour Android</a>_________________________________</li></ul>
+<p>Réglette d&#x27;interaction médicamenteuse - Actions-Traitements</p>
+<p>Outil pratique, conçu pour vérifier les interactions entre ton traitement VIH ou VHC ou Prep et les autres médicaments, les différentes drogues récréatives, ainsi que certaines plantes utilisées en phytothérapie que tu  serais amené-e à prendre : ➜ <a href="https://www.actions-traitements.org/reglette/" target="_blank" rel="noopener">Réglette d&#x27;interaction médicamenteuse</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p>Le Prep en d’autres langues (clique sur la langue de ton choix)</p></div>
+<div class="card-item"><p>Anglais / EnglishArabe/عربEspagnol / EspañolLingalaPortugais / Português</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Anglais / English</p></div>
+<div class="card-item"><p>PrEP to protect against HIV</p>
+<p>A condom (internal or external) is a good way to protect yourself from HIV / AIDS. But sometimes :</p>
+<p>You don&#x27;t like to wear it</p>
+<p>You don&#x27;t have any</p>
+<p>You don&#x27;t dare suggesting it</p>
+<p>Your partner refuses to wear it</p>
+<p>It breaks or slips off before the end of the encounter...</p>
+<p>Fortunately, there is a new and highly effective means of prevention against HIV : PrEP.</p>
+<p>What is PrEP? It’s an innovative HIV prevention strategy, which stands for pre-exposure prophylaxis.</p>
+<p>It is for people who do not have HIV.</p>
+<p>This medicine is to be taken orally to prevent contracting HIV. It is a prevention tool that helps protect you in all situations, regardless of the preferences and attitudes of your partners.</p>
+<p>In France, PrEP is free if you have social security or AME. Otherwise it can be provided free of charge in the CeGIDD, screening center.</p>
+<p>PrEP instructions for use in English: <a href="https://drive.google.com/file/d/1EkLsckRLg4SYW2B6Z4k2Ot9KzKMRzTVU/view?usp=sharing" target="_blank" rel="noopener">PrEP Guide 2021 Anglais</a></p>
+<p>le dépliant d’information <a href="https://drive.google.com/file/d/17CYP0RaXfUSkk7KkhfWCyZKaM6sxmYGy/view?usp=sharing" target="_blank" rel="noopener">PrEP dépliant en Anglais</a></p>
+<p>relu par Thomas Van ophaeren</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Arabe / عرب</p></div>
+<div class="card-item"><p>PrEP للحماية من فيروس نقص المناعة البشرية</p>
+<p>الواقي (الداخلي أو الخارجي) هو وسيلة جيدة لحماية نفسك من فيروس نقص المناعة البشرية / الإيدز. لكن أحيانا :</p>
+<p>أنت لا تحب لبسه</p>
+<p>ليس لديك أي منها</p>
+<p>لا تجرؤ على اقتراحه</p>
+<p>شريكك يرفض ارتدائه</p>
+<p>يتشقق أو ينزلق قبل انتهاء التقرير ...</p>
+<p>لحسن الحظ ، هناك وسيلة جديدة وفعالة للغاية للوقاية من فيروس نقص المناعة البشرية: PrEP.</p>
+<p>ما هو PrEP؟</p>
+<p>هذه استراتيجية مبتكرة للوقاية من فيروس نقص المناعة البشرية ، والتي تعني الوقاية السابقة للتعرض.</p>
+<p>إنه للأشخاص الذين ليس لديهم فيروس نقص المناعة البشرية.</p>
+<p>هذا دواء يجب تناوله عن طريق الفم لمنع الإصابة بفيروس نقص المناعة البشرية. إنها أداة وقائية تساعد على حمايتك في جميع المواقف ، بغض النظر عن تفضيلات ومواقف شركائك.</p>
+<p>في فرنسا ، يكون PrEP مجانيًا إذا كان لديك ضمان اجتماعي أو AME. وإلا يمكن توفيره مجانًا في مركز الفحص Cegidd.</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Espagnol / Español</p></div>
+<div class="card-item"><p>PrEP para protegerse del VIH</p>
+<p>El condón (interno o externo) es un buen método para protegerse del VIH / SIDA. Pero a veces :</p>
+<p>no te gusta ponértelo</p>
+<p>no tienes a mano</p>
+<p>no te atreves a proponérselo a tu pareja</p>
+<p>tu pareja se niega a ponérselo</p>
+<p>se rompe o se resbala antes de terminar la relación...</p>
+<p>Por suerte, existe un método nuevo y muy eficaz para prevenir el VIH: la PrEP.</p>
+<p>¿Qué es la PrEP?</p>
+<p>La PrEP, acrónimo del inglés pre-exposure prophylaxis (profilaxis preexposición), es un método innovador para prevenir el VIH. Por lo tanto está destinado a personas que no tienen VIH.</p>
+<p>Se trata de un medicamento que se toma por vía oral y evita el contagio del VIH: una herramienta de prevención que te permite estar protegido/a en toda circunstancia independientemente de las preferencias y actitudes de tus parejas.</p>
+<p>En Francia, la PrEP es gratuita para las personas con seguridad social o la AME (aide médical d’état, ayuda médica del estado). Si no es tu caso, puedes conseguirla de forma también gratuita en un Cegidd (centro público de detección de enfermedades de transmisión sexual).</p>
+<p>Información sobre la PrEP en español (las instrucciones de uso estarán pronto disponibles en español) :</p>
+<p><a href="https://drive.google.com/file/d/1ldroPFFoOcOunLuIc9NWorVZxqcWV2oa/view?usp=sharing" target="_blank" rel="noopener">PrEP Guide 2021 Espagnol</a>  + tríptico informativo <a href="https://drive.google.com/file/d/11AT8-mfI_g8WH_Rn8ZtCa4Oh7UlubH14/view?usp=sharing" target="_blank" rel="noopener">PrEP dépliant en Espagnol</a></p>
+<p>(Relu par Pablo MORENO)</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Lingala</p></div>
+<div class="card-item"><p>PREP pona komi batela na bokono ya VIH/SIDA</p>
+<p>Kapoti(Condom)ya kati to pe ya libanda ezali eloko ya malamu pona komi batela na bokono ya VIH/SIDA,kasi mbala misusu :</p>
+<p>Olingaka kolata yango te.</p>
+<p>Ozali nango pene pene te(na maboko te).</p>
+<p>Ozali ko banga ko pesa molongani nayo yango(Kapoti).</p>
+<p>Molongani na yo aboyi kolata yango(Kapoti).</p>
+<p>Kapoti epasuki to eselumuki tango bozali ko sangisa nzoto(ko tia).</p>
+<p>Sango ya esengo lelo tozali na nkisi ya makasi pona komibatela na bokono ya VIH/SIDA,</p>
+<p>kombo nango : PREP</p>
+<p>PREP eza nini ?</p>
+<p>Prep (eza nkisi ya sika) pona komi batela na bokono ya VIH,eza kombo ewuti na anglais,kuna ba bengi yango :pre-exposure prophylaxis,(prophylaxie pré-exposition na lifalansé).</p>
+<p>Nkisi oyo esengeli(eza) kaka pona batu oyo bazali na bokono  ya VIH te.</p>
+<p>Ezali Nkisi ya komela pona ko zua bokono ya VIH te,eko batela yo na kokoso(likama)nyonso soki omibateli te pe soki oza na ba molongani kidi kidi(mingi,ya ndenge na ndenge).</p>
+<p>Na France Nkisi ya PREP eza ofele soki oza na sécurité sociale to AME. (Soki pe oza na nionso wana te,kende na Cegidd oko zua yango ofele)</p>
+<p>Pona koyeba nyonso(litatoli), na tina ya(na likambo etali) PREP,okoki ko kende na Association AIDES  to pe kobenga biso na( téléphone????) <a href="page-02.html">Permanence AIDeS Ile de France</a></p>
+<p>pona ko yeba wapi epayi okoki ko zua Nkisi ya PREP na :internet beta PREP info : où trouver la Prep to pe na Asso AIDES</p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p>PORTUGAIS - Português</p></div>
+<div class="card-item"><p>PrEP para proteger contra o HIV</p>
+<p>Um preservativo (interno ou externo) é uma boa maneira de se proteger do HIV / AIDS. Mas às vezes :</p>
+<p>Voce nao gosta de usar isso</p>
+<p>Você não tem nenhum</p>
+<p>Você não ousa sugerir isso</p>
+<p>Seu parceiro se recusa a usá-lo</p>
+<p>Ele racha ou escorrega antes do final do relatório ...</p>
+<p>Felizmente, existe um meio novo e muito eficaz de prevenção contra o HIV: a PrEP.</p>
+<p>O que é PrEP?</p>
+<p>Esta é uma estratégia inovadora de prevenção do HIV, que significa profilaxia pré-exposição.</p>
+<p>É para pessoas que não têm HIV.</p>
+<p>Este é um medicamento para ser tomado por via oral, para prevenir o contágio do HIV. É uma ferramenta de prevenção que ajuda a protegê-lo em todas as situações, independentemente das preferências e atitudes de seus parceiros.</p>
+<p>Na França, a PrEP é gratuita se você tiver seguro social ou AME. Caso contrário, pode ser fornecido gratuitamente no centro de triagem Cegidd.</p>
+<p>Informações de PrEP em português (instruções de uso disponíveis em breve) : <a href="https://drive.google.com/file/d/1Xru37ala6kiHOH988fp5eqboJfBexD9N/view?usp=sharing" target="_blank" rel="noopener">PrEP Guide 2021</a></p>
+<p>le dépliant d’information : <a href="https://drive.google.com/file/d/109BP7p98VsHTyNkgMykRX76TkoCIDSZC/view?usp=sharing" target="_blank" rel="noopener">PrEP dépliant en Portugais</a></p></div>
+</div>
+</div>
+<nav class="foot">
+  <div class="foot-t">Autres ressources</div>
+  <a href="page-01.html">01. Numéros utiles</a><a href="page-02.html">02. Où me faire dépister gratuitement</a><a href="page-03.html">03. Autotest VIH/sida à la maison</a><a href="page-05.html">05. TPE : traitement d'urgence</a><a href="page-06.html">06. Je vis avec le VIH</a><a href="page-07.html">07. Santé sexuelle et mentale</a><a href="page-08.html">08. Je consomme des drogues</a><a href="page-09.html">09. Protection maladie et droits</a><a href="page-10.html">10. Autres besoins spécifiques</a>
+  <br>
+  <a class="foot-h" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Accueil
+  </a>
+</nav>
+</body>
+</html>

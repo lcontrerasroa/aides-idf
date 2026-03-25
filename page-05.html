@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>⚡ TPE : traitement d'urgence – AIDES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ac:#E67E22;--ac1:#E67E2218;--ac3:#E67E2240;
+    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+    --bd:#E8E8E5;--bd2:#F2F2EF;
+    --sh:0 1px 4px rgba(0,0,0,.04);
+    --r:14px;--rs:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+
+  /* Header */
+  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+  .back:hover{opacity:1}.back::after{display:none!important}
+  .hdr-icon{font-size:34px;margin-bottom:8px}
+  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+
+  /* Content */
+  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+
+  /* Text */
+  p{margin-bottom:8px}p:last-child{margin-bottom:0}
+  strong{font-weight:700;color:var(--tx2)}
+
+  /* Links */
+  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+  a:hover{border-bottom-color:var(--ac)}
+  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
+  a[href^="mailto:"]{border-bottom-style:dashed}
+
+  /* Images */
+  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+
+  /* Lists */
+  ul{list-style:none;margin:8px 0;padding:0}
+  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+  li:last-child{border-bottom:none}
+  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+
+  /* ═══ THE CARD ═══ (one per logical section) */
+  .card{
+    background:var(--card);border-radius:var(--r);
+    box-shadow:var(--sh);border:1px solid var(--bd);
+    padding:0;margin-bottom:14px;overflow:hidden;
+  }
+
+  /* Card title (first row of a table, section name) */
+  .card-title{
+    font-family:'Outfit',sans-serif;
+    font-size:15px;font-weight:700;color:var(--ac);
+    padding:14px 18px 10px;
+    border-bottom:2px solid var(--ac);
+    line-height:1.4;
+  }
+  .card-title p{margin-bottom:3px;color:var(--ac)}
+  .card-title a{color:var(--ac)}
+
+  /* Card item (a row of content) */
+  .card-item{
+    padding:12px 18px;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-item:last-child{border-bottom:none}
+
+  /* Card multi-cell row */
+  .card-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-row:last-child{border-bottom:none}
+  .card-cell{
+    padding:12px 16px;
+    border-right:1px solid var(--bd2);
+    font-size:14px;
+  }
+  .card-cell:last-child{border-right:none}
+  .card-cell p{margin-bottom:4px}
+  @media(max-width:540px){
+    .card-row{grid-template-columns:1fr}
+    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
+    .card-cell:last-child{border-bottom:none}
+  }
+
+  /* ═══ RESOURCE CARD (with category tag) ═══ */
+  .card.resource{
+    border-left:4px solid var(--ac);
+    padding:16px 18px;
+  }
+  .tag{
+    display:inline-block;font-family:'Outfit',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--ac);background:var(--ac1);
+    padding:3px 10px;border-radius:6px;margin-bottom:12px;
+  }
+  .res-entry{
+    padding:10px 0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .res-entry:last-child{border-bottom:none}
+  .res-entry:first-child{padding-top:0}
+  .res-desc{margin-bottom:6px}
+  .res-desc p{margin-bottom:4px}
+  .res-contact{
+    background:#F6F6F3;border-radius:var(--rs);
+    padding:8px 12px;font-size:14px;
+  }
+  .res-contact p{margin-bottom:2px}
+
+  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
+  .emergency{
+    background:#FFF5F5;border:2.5px solid #E2001A;
+    border-radius:var(--rs);
+    padding:16px 18px;margin:12px 18px;
+    box-shadow:0 2px 8px rgba(226,0,26,.06);
+  }
+  .emergency p{margin-bottom:6px}
+  .emergency strong{color:#B80015}
+
+  /* Footer */
+  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+  .foot a::after{display:none!important}
+  .foot a:hover{color:var(--ac)}
+  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+  .foot-h::after{display:none!important}
+
+  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <a class="back" href="index.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Retour
+  </a>
+  <div class="hdr-icon">⚡</div>
+  <h1>05. TPE : traitement d'urgence</h1>
+</header>
+<div class="cnt">
+<div class="card">
+<div class="card-item">Le Traitement d’urgence, également appelé Traitement Post-Exposition (TPE), permet d&#x27;empêcher une contamination lorsqu’on a été exposé au VIH / SIDA.<br>Il se compose de plusieurs médicaments actifs contre le VIH et il doit être pris pendant 28 jours.<br>Pour que son efficacité soit la meilleure possible, il faut le débuter immédiatement, de préférence moins de 4 heures après le risque, et jusqu’à 48 heures après la prise de risque.<br>Tu as oublié le préservatif ou bien il a craqué ? Tu t’es piqué avec une seringue usagée ou as reçu du sang dans votes s yeux ou dans ta bouche ?<br>Ne perds pas de temps. Rends-toi  immédiatement au service des Urgences d’un hôpital pour faire évaluer le risque et bénéficier, selon l’avis du médecin, d’un Traitement Post-Exposition.</div>
+<div class="card-item"><p>Contacte Sida Info Service pour connaître l’adresse du service des urgences ou celle du service VIH le plus près de l&#x27;endroit où tu te trouves : 0 800 840 800 ou sur le <a href="https://www.sida-info-service.org/chattez-avec-sida-info-service" target="_blank" rel="noopener">Live chat</a>  (7jrs/7 sur une grande amplitude horaire).➜ <a href="https://www.google.com/maps/d/embed?mid=1D0S-XLnk4OZpXbLCKHknPF4JVwE&amp;ll=48.83852389795768%2C2.3758642598328317&amp;z=13" target="_blank" rel="noopener">carte des lieux de prescription de TPE en France métropolitaine</a> (source : Sida Info Service)</p></div>
+<div class="card-item"><p>Pour plus d’informations, tu peux aussi rencontrer les militants-es de AIDES dans les permanences (ou téléphoner). Nous pourrons répondre à tes questions sur le TPE mais aussi sur les différents moyens de préventions, dont la Prep, et l’accès aux dépistages.➜ <a href="page-02.html">Permanences de AIDES en Île-de-France</a>Documentation :</p>
+<p>Dépliant « <a href="https://www.calameo.com/aides/read/006225500b2c451fe5a56" target="_blank" rel="noopener">VIH/sida. Et si j’ai pris un risque ?</a> », de AIDES (Décembre 2020)</p>
+<p>Brochure « <a href="https://2024.actions-traitements.org/wp-content/uploads/2017/04/Bien-prendre-son-TPE-2017.pdf" target="_blank" rel="noopener">Bien prendre son traitement Post-Exposition (TPE)</a> », de Actions-Traitements (2017)</p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p>Si à l’arrivée au service des urgences, tu n&#x27;es pas à l’aise pour parler en français, montre le message suivant encadré en rouge ci-dessous à la personne de l&#x27;hôpital :</p></div>
+<div class="emergency"><p>ASSOCIATION AIDES - <a href="page-02.html">Permanences de AIDES en Île-de-France</a></p>
+<p><img src="img/img-05-1bb7bf6c.png" alt="" class="doc-img" loading="lazy">URGENCE MÉDICALE - TRAITEMENT D&#x27;URGENCE CONTRE LE VIH</p>
+<p>À l’attention du personnel médical des Urgences :</p>
+<p>Je parle et comprends mal le Français, je suis envoyé par l&#x27;association AIDES, car dans les dernières 48h, j’ai pris un risque de transmission du VIH/sida  avec une personne dont je ne connais pas le statut sérologique.</p>
+<p>Pour prévenir le risque de transmission, je souhaite voir un-e médecin afin de bénéficier d’un traitement AES/TPE (Traitement post-exposition) - ARV. Merci de bien vouloir me prendre en charge.</p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p>↓ Le TPE en d’autres langues (clique sur la langue de ton choix)</p></div>
+<div class="card-item"><p>Anglais / EnglishArabe/عربEspagnol/ EspañolLingalaPortugais/ PortuguêsSwahili</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Anglais / English</p></div>
+<div class="card-item"><p>POST-EXPOSURE TREATMENT / EMERGENCY TREATMENT / BLOOD EXPOSURE ACCIDENT</p>
+<p>Emergency Treatment, also called Post-Exposure Treatment (TPE), helps preventing contamination (transmission) when one has been exposed to HIV / AIDS.</p>
+<p>It is made up of several drugs that are active against HIV and should be taken for 28 days.</p>
+<p>For it to be as effective as possible, it should be started immediately, preferably less than 4 hours after the risk of exposure, and up to 48 hours afterward.</p>
+<p>Did you forget the condom or did it break? Did you prick yourself with a used syringe or get</p>
+<p>blood in your eyes or mouth?</p>
+<p>Do not waste time. Go immediately to a hospital emergency department to have the risk assessed and to receive, according to the doctor&#x27;s opinion, Post-Exposure Treatment.</p>
+<p>For more information, you can also meet us at the AIDeS hotlines (or call us) : <a href="page-02.html">Permanence de AIDES en Île-de-France</a></p>
+<p>Information document on TPE : <a href="https://www.cabiria.asso.fr/IMG/pdf/TPE_ENG.pdf" target="_blank" rel="noopener">TPE en Anglais par CABIRIA</a></p>
+<p>If you are not comfortable speaking in French, show the following message to the person in the hospital :</p>
+<p>Relu par Thomas</p></div>
+<div class="emergency"><p>ASSOCIATION AIDES - <a href="page-02.html">Permanences de AIDES en Île-de-France</a></p>
+<p>URGENCE MÉDICALE - TRAITEMENT D&#x27;URGENCE CONTRE LE VIH</p>
+<p><img src="img/img-05-1bb7bf6c.png" alt="" class="doc-img" loading="lazy"></p>
+<p>À l’attention du personnel médical des Urgences :</p>
+<p>Je parle et comprends mal le Francais, je suis envoyé par l&#x27;association AIDES car dans les dernières 48h, j’ai pris un risque de transmission du VIH / SIDA avec une personne dont je ne connais pas le statut sérologique.</p>
+<p>Pour prévenir le risque de transmission, je souhaite voir un médecin pour bénéficier d’un traitement AES / TPE (Traitement post exposition) - ARV. Merci de bien vouloir me prendre en charge.</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Arabe / عرب</p></div>
+<div class="card-item"><p>العلاج بعد التعرض  / معالجه طارئه وسريعه  / حادث التعرض للدم</p>
+<p>يساعد العلاج في حالات الطوارئ ، المعروف أيضًا باسم علاج ما بعد التعرض (TPE) ، على منع التلوث عند تعرض الشخص لفيروس نقص المناعة البشرية / الإيدز. يتكون من عدة أدوية فعالة ضد فيروس نقص المناعة البشرية ويجب تناولها لمدة 28 يومًا.</p>
+<p> لكي تكون فعاليتها فعالة قدر الإمكان ، يجب أن تبدأ على الفور ، ويفضل أن يكون ذلك بعد أقل من 4 ساعات من الخطر ، وما يصل إلى 48 ساعة بعد المخاطرة.</p>
+<p>هل نسيت الواقي الذكري أم تصدع؟ هل وخزت نفسك بحقنة مستعملة أو دخلت الدم في عينيك أو فمك؟</p>
+<p>لاتهدر الوقت. اذهب فورًا إلى قسم الطوارئ في المستشفى لتقييم المخاطر وتلقي العلاج بعد التعرض وفقًا لرأي الطبيب.</p>
+<p>لمزيد من المعلومات ، يمكنك أيضًا مقابلتنا على الخطوط الساخنة AIDeS (أو الاتصال بنا):  <a href="page-02.html">Permanence de AIDES en Île-de-France</a></p>
+<p>: إذا لم تكن مرتاحًا للتحدث باللغة الفرنسية ، فقم بإظهار الرسالة التالية إلى الشخص في المستشفى</p></div>
+<div class="emergency"><p>ASSOCIATION AIDES - <a href="page-02.html">Permanences de AIDES en Île-de-France</a></p>
+<p>URGENCE MÉDICALE - TRAITEMENT D&#x27;URGENCE CONTRE LE VIH</p>
+<p><img src="img/img-05-1bb7bf6c.png" alt="" class="doc-img" loading="lazy"></p>
+<p>À l’attention du personnel médical des Urgences :</p>
+<p>Je parle et comprends mal le Francais, je suis envoyé par l&#x27;association AIDES car dans les dernières 48h, j’ai pris un risque de transmission du VIH / SIDA avec une personne dont je ne connais pas le statut sérologique.</p>
+<p>Pour prévenir le risque de transmission, je souhaite voir un médecin pour bénéficier d’un traitement AES / TPE (Traitement post exposition) - ARV. Merci de bien vouloir me prendre en charge.</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Espagnol / Español</p></div>
+<div class="card-item"><p>PROFILAXIS POST-EXPOSICIÓN / TRATAMIENTO DE URGENCIA / ACCIDENTE DE EXPOSICIÓN A SANGRE</p>
+<p>El tratamiento de urgencia, también llamado profilaxis post-exposición (en francés TPE, traitement post-exposition), permite evitar el contagio del VIH/SIDA en casos de exposición, de posible contacto con el virus. Se compone de varios medicamentos activos contra el VIH y debe tomarse durante 28 días.</p>
+<p> Para una máxima eficacia, el tratamiento debe iniciarse lo antes posible, preferiblemente en las 4 horas después de la exposición al virus, y hasta 48 horas después.</p>
+<p>¿Se te ha olvidado el condón o se te ha roto? ¿Te has pinchado con una jeringuilla usada o te ha entrado sangre en los ojos o en la boca?</p>
+<p>¡No pierdas tiempo! Vete rápido a las urgencias de un hospital para que evalúen el riesgo y, según considere el médico, te administren el tratamiento de urgencia.</p>
+<p>Para más información, puedes venir a vernos o llamarnos durante nuestras guardias: <a href="page-02.html">Guardias de AID</a><a href="page-02.html">E</a><a href="page-02.html">S</a></p>
+<p>Documento de información sobre el TPE: : <a href="https://www.cabiria.asso.fr/IMG/pdf/cabiria_brochure_TPE_espagnol.pdf" target="_blank" rel="noopener">Documento TPE français - español par CABIRIA</a></p>
+<p>Si no te sientes cómodo hablando en francés, enséñale este mensaje a la persona que te reciba en el hospital:</p>
+<p>(Relu par Pablo MORENO)</p></div>
+<div class="emergency"><p>ASSOCIATION AIDES - <a href="page-02.html">Permanences de AIDES en Île-de-France</a></p>
+<p>URGENCE MÉDICALE - TRAITEMENT D&#x27;URGENCE CONTRE LE VIH</p>
+<p><img src="img/img-05-1bb7bf6c.png" alt="" class="doc-img" loading="lazy"></p>
+<p>À l’attention du personnel médical des Urgences :</p>
+<p>Je parle et comprends mal le Francais, je suis envoyé par l&#x27;association AIDES car dans les dernières 48h, j’ai pris un risque de transmission du VIH / SIDA avec une personne dont je ne connais pas le statut sérologique.</p>
+<p>Pour prévenir le risque de transmission, je souhaite voir un médecin pour bénéficier d’un traitement AES / TPE (Traitement post exposition) - ARV. Merci de bien vouloir me prendre en charge.</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Lingala</p></div>
+<div class="card-item"><p>(TRAITEMENT POST EXPOSITION (TPE) / TRAITEMENT D’URGENCE / ACCIDENT D&#x27;EXPOSITION AU SANG (AES)</p>
+<p>(Nkisi ya komela soki ozui likama ya(na) makila ??????)</p>
+<p>Nkisi ya komela na lobango soki ozui likama ya makila na lifalansa  ba bengi yango traitement post exposition(TPE) to pe traitement d’urgence.Ezali nkisi pona kozua bokono ya VIH/SIDA te soki okutani na likama ya(na) makila.</p>
+<p>Ezali ba nkisi ebele(to pe misatu 3)oyo eko batela yo na bokono ya VIH/SIDA,okomela yango mikolo tuku mibale(28) .</p>
+<p>Pona Nkisi esimba malamu mingi(malamu malamu),esengeli ko mela yango  na lombangu  na ngonga mine(4) tango ozui likama to pe tii na ngonga ya tuku minei na mwambe(48).</p>
+<p>Leka ba ngonga wana nkisi ekosimba lisusu te,pe eko batela yo lisusu te na bokono ya VIH/SIDA.</p>
+<p>Obosani kolata kapoti to pe yango epasuki ?omi tshubi na ntonga ya mutu ya (diamba),to pe makila ya mutu mususu ekoti(ezui) yo na misu to pe na munoko ?</p>
+<p>Ko lekisa ngonga te,kende na lombangu na lopitalo na esika babengi na lifalansa “Urgence”  pona monganga atala soki penza esengeli ozua nkisi pona ebatela yo na bokono ya VIH /SIDA .</p>
+<p>Oyebi koloba to pe kotanga lifalansa te,lakisa mokanda oyo na etanda ya motane na moto oyo ako yamba yo na lopitalo.</p>
+<p>Traduction faite par Esther,relecture et correction si besoin ,voir avec Paki</p></div>
+<div class="emergency"><p>ASSOCIATION AIDES - <a href="page-02.html">Permanences de AIDES en Île-de-France</a></p>
+<p>URGENCE MÉDICALE - TRAITEMENT D&#x27;URGENCE CONTRE LE VIH</p>
+<p><img src="img/img-05-1bb7bf6c.png" alt="" class="doc-img" loading="lazy"></p>
+<p>À l’attention du personnel médical des Urgences :</p>
+<p>Je parle et comprends mal le Francais, je suis envoyé par l&#x27;association AIDES car dans les dernières 48h, j’ai pris un risque de transmission du VIH / SIDA avec une personne dont je ne connais pas le statut sérologique.</p>
+<p>Pour prévenir le risque de transmission, je souhaite voir un médecin pour bénéficier d’un traitement AES / TPE (Traitement post exposition) - ARV. Merci de bien vouloir me prendre en charge.</p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p>Portugais / Português</p></div>
+<div class="card-item"><p>TRATAMENTO PÓS-EXPOSIÇÃO / TRATAMENTO DE EMERGENCIA / ACIDENTE DE EXPOSIÇÃO AO SANGUE</p>
+<p>O Tratamento de Emergência, também denominado Tratamento Pós-Exposição (TPE), ajuda a prevenir a contaminação quando alguém foi exposto ao HIV / AIDS. É composto por vários medicamentos que atuam contra o HIV e deve ser tomado por 28 dias.</p>
+<p>Para que sua eficácia seja o mais eficaz possível, deve ser iniciado imediatamente, de preferência menos de 4 horas após o risco, e até 48 horas após assumir o risco.</p>
+<p>Você esqueceu o preservativo ou ele rachou? Você se picou com uma seringa usada ou sujou os olhos ou a boca com sangue?</p>
+<p>Não perca tempo. Dirija-se imediatamente ao pronto-socorro de um hospital para avaliação do risco e receba, de acordo com a opinião do médico, Tratamento Pós-Exposição.</p>
+<p>Para mais informações, você também pode nos encontrar nas linhas diretas da AIDeS (ou ligue para nós): <a href="page-02.html">Permanence de AIDES en Île-de-France</a></p>
+<p>Documento de informação sobre o TPE: : <a href="https://www.cabiria.asso.fr/IMG/pdf/TPE_PORT.pdf" target="_blank" rel="noopener">TPE en Portugais  par CABIRIA</a></p>
+<p>Se você não se sentir confortável em falar francês, mostre a seguinte mensagem para a pessoa no hospital :</p></div>
+<div class="emergency"><p>ASSOCIATION AIDES - <a href="page-02.html">Permanences de AIDES en Île-de-France</a></p>
+<p>URGENCE MÉDICALE - TRAITEMENT D&#x27;URGENCE CONTRE LE VIH</p>
+<p><img src="img/img-05-1bb7bf6c.png" alt="" class="doc-img" loading="lazy"></p>
+<p>À l’attention du personnel médical des Urgences :</p>
+<p>Je parle et comprends mal le Francais, je suis envoyé par l&#x27;association AIDES car dans les dernières 48h, j’ai pris un risque de transmission du VIH / SIDA avec une personne dont je ne connais pas le statut sérologique.</p>
+<p>Pour prévenir le risque de transmission, je souhaite voir un médecin pour bénéficier d’un traitement AES / TPE (Traitement post exposition) - ARV. Merci de bien vouloir me prendre en charge.</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p>Swahili</p></div>
+<div class="card-item"><p>TIBA YA MFIDUO WA BANGUA (TPE) / TIBA YA HARAKA / AJALI YA MFIDUO WA DAMU (BSE)</p>
+<p>Matibabu ya Dharura, pia huitwa Tiba ya Baada ya Kujitokeza (TPE), husaidia kuzuia uchafuzi wakati mtu ameambukizwa VVU / UKIMWI. Imeundwa na dawa kadhaa ambazo zinafanya kazi dhidi ya VVU na inapaswa kuchukuliwa kwa siku 28.</p>
+<p>Ili ufanisi wake uwe bora iwezekanavyo, inapaswa kuanza mara moja, ikiwezekana chini ya masaa 4 baada ya hatari, na hadi masaa 48 baada ya kuchukua hatari hiyo .--</p>
+<p>Ulisahau kondomu au ilikatika? Je! Ulijichomoza na sindano iliyotumiwa au kupata damu machoni pako au kinywani?</p>
+<p>Usipoteze muda. Nenda mara moja kwa idara ya dharura ya hospitali ili kupima hatari na kupokea, kulingana na maoni ya daktari, Tiba ya Baada ya Mfiduo.</p>
+<p>Kwa habari zaidi, unaweza pia kukutana nasi kwenye nambari za simu za AIDeS (au tupigie simu): <a href="page-02.html">Permanence de AIDES en Île-de-France</a></p>
+<p>Ikiwa hauko vizuri kuzungumza Kifaransa, onyesha ujumbe ufuatao kwa mtu hospitalini :</p></div>
+<div class="emergency"><p>ASSOCIATION AIDES - <a href="page-02.html">Permanences de AIDES en Île-de-France</a></p>
+<p>URGENCE MÉDICALE - TRAITEMENT D&#x27;URGENCE CONTRE LE VIH</p>
+<p><img src="img/img-05-1bb7bf6c.png" alt="" class="doc-img" loading="lazy"></p>
+<p>À l’attention du personnel médical des Urgences :</p>
+<p>Je parle et comprends mal le Francais, je suis envoyé par l&#x27;association AIDES car dans les dernières 48h, j’ai pris un risque de transmission du VIH / SIDA avec une personne dont je ne connais pas le statut sérologique.</p>
+<p>Pour prévenir le risque de transmission, je souhaite voir un médecin pour bénéficier d’un traitement AES / TPE (Traitement post exposition) - ARV. Merci de bien vouloir me prendre en charge.</p></div>
+</div>
+</div>
+<nav class="foot">
+  <div class="foot-t">Autres ressources</div>
+  <a href="page-01.html">01. Numéros utiles</a><a href="page-02.html">02. Où me faire dépister gratuitement</a><a href="page-03.html">03. Autotest VIH/sida à la maison</a><a href="page-04.html">04. La PrEP : se protéger du VIH</a><a href="page-06.html">06. Je vis avec le VIH</a><a href="page-07.html">07. Santé sexuelle et mentale</a><a href="page-08.html">08. Je consomme des drogues</a><a href="page-09.html">09. Protection maladie et droits</a><a href="page-10.html">10. Autres besoins spécifiques</a>
+  <br>
+  <a class="foot-h" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Accueil
+  </a>
+</nav>
+</body>
+</html>

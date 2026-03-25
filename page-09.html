@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>📋 Protection maladie et droits – AIDES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ac:#3F51B5;--ac1:#3F51B518;--ac3:#3F51B540;
+    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+    --bd:#E8E8E5;--bd2:#F2F2EF;
+    --sh:0 1px 4px rgba(0,0,0,.04);
+    --r:14px;--rs:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+
+  /* Header */
+  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+  .back:hover{opacity:1}.back::after{display:none!important}
+  .hdr-icon{font-size:34px;margin-bottom:8px}
+  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+
+  /* Content */
+  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+
+  /* Text */
+  p{margin-bottom:8px}p:last-child{margin-bottom:0}
+  strong{font-weight:700;color:var(--tx2)}
+
+  /* Links */
+  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+  a:hover{border-bottom-color:var(--ac)}
+  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
+  a[href^="mailto:"]{border-bottom-style:dashed}
+
+  /* Images */
+  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+
+  /* Lists */
+  ul{list-style:none;margin:8px 0;padding:0}
+  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+  li:last-child{border-bottom:none}
+  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+
+  /* ═══ THE CARD ═══ (one per logical section) */
+  .card{
+    background:var(--card);border-radius:var(--r);
+    box-shadow:var(--sh);border:1px solid var(--bd);
+    padding:0;margin-bottom:14px;overflow:hidden;
+  }
+
+  /* Card title (first row of a table, section name) */
+  .card-title{
+    font-family:'Outfit',sans-serif;
+    font-size:15px;font-weight:700;color:var(--ac);
+    padding:14px 18px 10px;
+    border-bottom:2px solid var(--ac);
+    line-height:1.4;
+  }
+  .card-title p{margin-bottom:3px;color:var(--ac)}
+  .card-title a{color:var(--ac)}
+
+  /* Card item (a row of content) */
+  .card-item{
+    padding:12px 18px;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-item:last-child{border-bottom:none}
+
+  /* Card multi-cell row */
+  .card-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-row:last-child{border-bottom:none}
+  .card-cell{
+    padding:12px 16px;
+    border-right:1px solid var(--bd2);
+    font-size:14px;
+  }
+  .card-cell:last-child{border-right:none}
+  .card-cell p{margin-bottom:4px}
+  @media(max-width:540px){
+    .card-row{grid-template-columns:1fr}
+    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
+    .card-cell:last-child{border-bottom:none}
+  }
+
+  /* ═══ RESOURCE CARD (with category tag) ═══ */
+  .card.resource{
+    border-left:4px solid var(--ac);
+    padding:16px 18px;
+  }
+  .tag{
+    display:inline-block;font-family:'Outfit',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--ac);background:var(--ac1);
+    padding:3px 10px;border-radius:6px;margin-bottom:12px;
+  }
+  .res-entry{
+    padding:10px 0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .res-entry:last-child{border-bottom:none}
+  .res-entry:first-child{padding-top:0}
+  .res-desc{margin-bottom:6px}
+  .res-desc p{margin-bottom:4px}
+  .res-contact{
+    background:#F6F6F3;border-radius:var(--rs);
+    padding:8px 12px;font-size:14px;
+  }
+  .res-contact p{margin-bottom:2px}
+
+  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
+  .emergency{
+    background:#FFF5F5;border:2.5px solid #E2001A;
+    border-radius:var(--rs);
+    padding:16px 18px;margin:12px 18px;
+    box-shadow:0 2px 8px rgba(226,0,26,.06);
+  }
+  .emergency p{margin-bottom:6px}
+  .emergency strong{color:#B80015}
+
+  /* Footer */
+  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+  .foot a::after{display:none!important}
+  .foot a:hover{color:var(--ac)}
+  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+  .foot-h::after{display:none!important}
+
+  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <a class="back" href="index.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Retour
+  </a>
+  <div class="hdr-icon">📋</div>
+  <h1>09. Protection maladie et droits</h1>
+</header>
+<div class="cnt">
+<div class="card">
+<div class="card-title"><p><strong>Je suis en situation régulière : Je suis français ou je possède un titre de séjour. Quels sont mes droits ?</strong>La France bénéficie d’un système de santé qui permet de répondre aux besoins de prévention et de soins de la population.</p>
+<p>Toute personne résidant en France a droit à une protection maladie, qui permet la prise en charge totale ou partielle des frais de soins.</p></div>
+<div class="card-item"><p><strong>La protection - L’assurance maladie</strong></p></div>
+<div class="card-item"><p>Obtenir une protection maladie permet la prise en charge des frais de soins et de prévention. Toute personne résidant en France a droit à une protection maladie pour payer les frais médicaux.</p>
+<p><strong>La sécurité sociale.</strong></p>
+<p>Il faut s’adresser à la Sécurité Sociale pour ouvrir les droits à une protection maladie</p>
+<p><strong>Pour les joindre par téléphone :</strong></p>
+<ul><li>36 46 depuis la France métropolitaine, sans interruption (service 0,06€ par minute + le prix d’un appel local)</li></ul>
+<p>Pour se rendre dans un point d’accueil :</p>
+<p><a href="https://www.ameli.fr/paris/assure/adresses-et-contact/points-accueil?page=0" target="_blank" rel="noopener">sur Paris (75)</a></p>
+<p><a href="https://www.ameli.fr/seine-et-marne/assure/adresses-et-contact/points-accueil" target="_blank" rel="noopener">en Seine-et-Marne (77)</a></p>
+<p><a href="https://www.ameli.fr/yvelines/assure/adresses-et-contact/points-accueil" target="_blank" rel="noopener">dans les Yvelines (78)</a></p>
+<p><a href="https://www.ameli.fr/essonne/assure/adresses-et-contact/points-accueil" target="_blank" rel="noopener">en Essonnes (91</a>)</p>
+<p><a href="https://www.ameli.fr/hauts-de-seine/assure/adresses-et-contact/points-accueil" target="_blank" rel="noopener">dans les Hauts-de-Seine (92)</a></p>
+<p><a href="https://www.ameli.fr/seine-saint-denis/assure/adresses-et-contact/points-accueil" target="_blank" rel="noopener">en Seine-Saint-Denis (93)</a></p>
+<p><a href="https://www.ameli.fr/val-de-marne/assure/adresses-et-contact/points-accueil" target="_blank" rel="noopener">dans le Val-de-Marne (94)</a></p>
+<p><a href="https://www.ameli.fr/val-d-oise/assure/adresses-et-contact/points-accueil" target="_blank" rel="noopener">dans le Val-d’Oise (95)</a></p></div>
+<div class="card-item"><p><strong>La protection universelle maladie (PUMa)</strong></p></div>
+<div class="card-item"><p><strong>La protection maladie des personnes / de nationalité française / de ressortissants-es étrangers-ères en séjour régulier / travaillant en France :</strong></p>
+<p><strong>La protection universelle maladie (PUMa)</strong></p>
+<p>La protection universelle maladie (PUMa) est la couverture de base, qui rembourse une partie des frais de santé, par exemple 70 % d’une consultation chez le médecin. C’est l’Assurance maladie, qu’on appelle parfois « Sécurité sociale de base » qui couvre les personnes qui résident en France de manière régulière, même si elles ne travaillent pas.</p>
+<p>Plus d’infos ici : <a href="https://www.ameli.fr/assure/droits-demarches/principes/protection-universelle-maladie" target="_blank" rel="noopener">protection-universelle-maladie</a></p>
+<p>Comment en bénéficier ?</p>
+<p>Les personnes qui ne travaillent pas mais qui résident en France de manière stable et régulière ont un formulaire à remplir et à transmettre.</p>
+<p>=&gt; Document de demande d&#x27;ouverture des droits à l&#x27;assurance maladie : <a href="https://www.ameli.fr/sites/default/files/formulaires/168/s1106_-_demande_puma_-_assurance_maladie.pdf" target="_blank" rel="noopener">puma _-_ assurance maladie</a></p>
+<p>Les personnes qui travaillent n&#x27;ont rien à faire. C&#x27;est l&#x27;employeur qui fait la déclaration</p></div>
+<div class="card-item"><p><strong>La Carte Vitale</strong></p></div>
+<div class="card-item"><p>La carte Vitale a la taille d’une carte de crédit mais de couleur verte avec votre photo et votre numéro de sécurité sociale. Elle est remise à tous-tes les bénéficiaires de l’Assurance maladie dès l’âge de 16 ans et contient les renseignements administratifs nécessaires au remboursement des soins, traitements et hospitalisation.</p>
+<p>Elle permet souvent de ne pas faire l’avance des frais chez le médecin ou dans les établissements de soins.</p>
+<p>Présentez votre carte Vitale si vous allez chez le médecin ou le pharmacien. Si vous n’en avez pas, présenter l’attestation de droits qui vous a été remise par la sécurité sociale.</p></div>
+<div class="card-item"><p><strong>La complémentaire santé solidaire (C2S)</strong> (anciennement appelée CMU-C)</p></div>
+<div class="card-item"><p>C’est une couverture complémentaire financée par l’État, destinée aux personnes disposant de ressources modestes, afin de réduire au maximum le coût de leurs dépenses de santé.Vous y avez droit si vos revenus sont modestes. La CSS vient en complément de la couverture maladie de base : c’est une aide pour payer les frais de santé, elle rembourse par exemple les 30 % restants des frais de consultation. Elle rembourse ainsi tout ou une partie des dépenses de santé non couvertes par l’Assurance maladie. ➜ Plus d’informations sur le site Ameli :  <a href="https://www.ameli.fr/yvelines/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire-qui-peut-en-beneficier-et-comment" target="_blank" rel="noopener">CCS</a></p>
+<ul><li>Plus d’informations sur le site de la CSS : <a href="https://www.complementaire-sante-solidaire.gouv.fr/" target="_blank" rel="noopener">Complementaire-sante-solidaire</a></li></ul>
+<p>Selon vos ressources, elle ne coûte rien ou coûte moins d’un euro par jour et par personne. Le droit à la Complémentaire Santé Solidaire dépend de votre situation et de vos ressources.</p>
+<p>Le droit à la Complémentaire Santé Solidaire dépend des ressources que vous et le reste de votre foyer avez eues durant les 12 mois avant votre demande. Pour voir les montants : <a href="https://www.ameli.fr/yvelines/assure/droits-demarches/difficultes-acces-droits-soins/complementaire-sante/complementaire-sante-solidaire-qui-peut-en-beneficier-et-comment" target="_blank" rel="noopener">qui-peut-en-bénéficier</a></p>
+<p>Comment faire sa demande ?</p>
+<p>Soit imprimer le document de demande ici : <a href="https://www.ameli.fr/sites/default/files/formulaires/596542/formulaire_s3711_-_demande_complementaire_sante_solidaire_-_assurance_maladie.pdf" target="_blank" rel="noopener">formulaire_s3711</a></p>
+<p>Et le déposer dans un lieu d’accueil de la sécurité sociale. Voir les lieux ici : Point d&#x27;accueil</p>
+<p>Ou faire une demande en ligne depuis le site Ameli : il faudra créer un compte <a href="https://www.ameli.fr" target="_blank" rel="noopener">https://www.ameli.fr</a></p>
+<p>La CSS est valable 12 mois, elle doit être renouvelée entre 4 et 2 mois avant son expiration auprès de votre caisse d’Assurance maladie.</p>
+<p>Réduction de la carte de transport - RATP</p>
+<p>Si vous avez droit à la CSS, vous pouvez bénéficier de réductions sur votre carte de transport.</p>
+<p>Pour faire la demande c’est ici : <a href="https://www.solidaritetransport.fr/" target="_blank" rel="noopener">solidaritetransport.fr</a></p></div>
+<div class="card-item"><p><strong>Les affections de longue durée (ALD)</strong></p></div>
+<div class="card-item"><p>Vous êtes atteint d&#x27;une affection de longue durée (ALD) qui nécessite un traitement prolongé et coûteux ? Certaines ALD ouvrent droit à la prise en charge à 100 % des soins liés à la pathologie. Pour en bénéficier, votre médecin traitant rédige un protocole de soins, qui mentionne notamment les nécessaires.</p>
+<p>Par exemple le VIH/SIDA. Plus d’infos ici : <a href="https://www.ameli.fr/yvelines/assure/droits-demarches/maladie-accident-hospitalisation/affection-longue-duree-ald/affection-longue-duree-ald" target="_blank" rel="noopener">affection-longue-durée-ald</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p>Santé &amp; droits : Guide pratique pour les personnes nées à l’étranger (PASS, AME, Titres de séjour, Demande d’Asile…)</p></div>
+<div class="card-row"><div class="card-cell"><img src="img/img-09-526e41e5.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell">Conçu avec des personnes migrantes militantes au sein de AIDES, le guide « Santé et Droits » a pour objectif d&#x27;informer les populations migrantes et de les accompagner dans leurs démarches d’accès à la santé et aux droits en France. Il offre des informations claires et accessibles sur le VIH/sida, les autres infections sexuellement transmissibles et les ressources existantes.</div></div>
+<div class="card-item"><ul><li>Pour le lire en ligne :</li></ul>
+<p><a href="https://www.calameo.com/aides/read/006225500fe5b50aea304" target="_blank" rel="noopener">« Santé et droits : Guide pratique pour les personnes migrantes en France »</a></p>
+<p><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025_anglais_web.pdf" target="_blank" rel="noopener">«</a><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025_anglais_web.pdf" target="_blank" rel="noopener">Health &amp; rights : A practical guide for migrants in France</a><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025_anglais_web.pdf" target="_blank" rel="noopener">»</a></p>
+<p><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025%20_espagnol_web.pdf" target="_blank" rel="noopener">« Salud y derechos : GuÍa práctica para las personas migrantes en Francia »</a></p>
+<ul><li>Certaines parties du guide ont également été retranscrites en version audio :</li></ul>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw0wzQ11NuKkdKuLO9RGxLIZ" target="_blank" rel="noopener">« Santé et droits »</a> en version audio (langue : français)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw2i9-CqOrIPGC9MdTpyxbb4" target="_blank" rel="noopener">« Health and Rights »</a> in audio version (language: english / langue : anglais)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw14_TDvl-AB96ahcIO9DRLJ" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw14_TDvl-AB96ahcIO9DRLJ" target="_blank" rel="noopener">Salud y derechos</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw14_TDvl-AB96ahcIO9DRLJ" target="_blank" rel="noopener">»</a> en versión audio (idioma: español / langue : espagnol)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1kMRLg87aNVNGOMTtmCrZp" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1kMRLg87aNVNGOMTtmCrZp" target="_blank" rel="noopener">Saúde e Direitos</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1kMRLg87aNVNGOMTtmCrZp" target="_blank" rel="noopener">»</a> en versão áudio (língua: portugês brasileiro / langue : portugais)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1XZm_hzVMp-3tSY-4Mq8cm" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1XZm_hzVMp-3tSY-4Mq8cm" target="_blank" rel="noopener">Santé mpe makoki</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1XZm_hzVMp-3tSY-4Mq8cm" target="_blank" rel="noopener">»</a> Ba clips audio na lifalanse (langue : lingala)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw0-gR9Bf2OajiR-qkCFuqPj" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw0-gR9Bf2OajiR-qkCFuqPj" target="_blank" rel="noopener">Kɛnɛya ni josariyaw</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw0-gR9Bf2OajiR-qkCFuqPj" target="_blank" rel="noopener">»</a> sɔrɔ lamɛntaw kɔnɔ (kan: Bamanankan / langue : bambara)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw2MnhbDJSXb1w9aV03-ENho" target="_blank" rel="noopener">« Afya na Haki »</a> – toleo la sauti (lugha Kiswahili / langue : swahili)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw2fv7sYLsc4KQJ0gfQloTry" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw2fv7sYLsc4KQJ0gfQloTry" target="_blank" rel="noopener">Akk ak Yellef</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw2fv7sYLsc4KQJ0gfQloTry" target="_blank" rel="noopener">»</a> ci làkku wolof (langue : wolof)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">الصحة</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">والحقوق</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">القانونية</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">:</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">دليل</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">عملي</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">للمهاجرين</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">في</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">فرنسا</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">:</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">كبسولات</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">صوتية</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">باللغة</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">العربية</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">»</a> (langue : arabe)</p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p>En cas d’urgence, en attendant d’obtenir une protection maladie…</p></div>
+<div class="card-item"><p>Les ressortissants-es étrangers-es peuvent se présenter et obtenir un bon “PASS”...</p></div>
+<div class="card-item"><p>Soit :</p>
+<p>Aux urgences des hôpitaux. Il est préférable de rencontrer une assistante sociale de l’hôpital pour ne pas recevoir une facture (difficile à annuler ensuite) ;</p>
+<p>Dans une PASS (Permanences d’Accès aux Soins de Santé ).</p>
+<p>Les PASS accueillent dans certains grands hôpitaux, les personnes en situation de précarité qui ont besoin de voir un-e médecin mais qui n’ont pas de protection maladie (ou une couverture maladie incomplète) ni de ressources financières, ou qui ont besoin d’être accompagnées dans leur parcours de soins.</p>
+<p>Grâce aux bons PASS,  vous pourrez, en fonction de votre état de santé, bénéficier :</p>
+<p>d’une consultation avec un médecin ;</p>
+<p>de soins particuliers (pansement…) et d’examens complémentaires (radio, prise de sang…) ;</p>
+<p>de médicaments si nécessaire ;</p>
+<p>de soins dentaires dans une PASS bucco-dentaire ;</p>
+<p>un-e assistant-e social-e fera le point avec vous sur votre situation administrative et sociale et vous accompagnera dans vos démarches.</p>
+<ul><li><a href="https://www.aphp.fr/permanences-dacces-aux-soins-de-sante-lap-hp" target="_blank" rel="noopener">Liste des PASS en Île-de-France</a></li></ul>
+<p>Si tu ne parle pas bien français :</p>
+<p>De nombreux organismes de santé (hôpitaux, centres de santé, centres de vaccination, centres de dépistage, PMI) et associations d’aide aux migrants font appel à des associations d’interprétariat médico-social professionnel. Certaines d’entre elles sont gratuites : renseignez-vous auprès d’un-e assistant-e social-e.</p>
+<p>Un document avec des termes médicaux utiles aux personnes migrantes, en chinois et espagnol <strong>:</strong><strong> </strong><a href="https://www.cabiria.asso.fr/IMG/pdf/pl_Lexique_ARCAT.pdf" target="_blank" rel="noopener">Lexique ARCAT</a></p></div>
+</div>
+</div>
+<nav class="foot">
+  <div class="foot-t">Autres ressources</div>
+  <a href="page-01.html">01. Numéros utiles</a><a href="page-02.html">02. Où me faire dépister gratuitement</a><a href="page-03.html">03. Autotest VIH/sida à la maison</a><a href="page-04.html">04. La PrEP : se protéger du VIH</a><a href="page-05.html">05. TPE : traitement d'urgence</a><a href="page-06.html">06. Je vis avec le VIH</a><a href="page-07.html">07. Santé sexuelle et mentale</a><a href="page-08.html">08. Je consomme des drogues</a><a href="page-10.html">10. Autres besoins spécifiques</a>
+  <br>
+  <a class="foot-h" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Accueil
+  </a>
+</nav>
+</body>
+</html>

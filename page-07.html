@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>🧠 Santé sexuelle et mentale – AIDES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ac:#EC4899;--ac1:#EC489918;--ac3:#EC489940;
+    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+    --bd:#E8E8E5;--bd2:#F2F2EF;
+    --sh:0 1px 4px rgba(0,0,0,.04);
+    --r:14px;--rs:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+
+  /* Header */
+  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+  .back:hover{opacity:1}.back::after{display:none!important}
+  .hdr-icon{font-size:34px;margin-bottom:8px}
+  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+
+  /* Content */
+  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+
+  /* Text */
+  p{margin-bottom:8px}p:last-child{margin-bottom:0}
+  strong{font-weight:700;color:var(--tx2)}
+
+  /* Links */
+  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+  a:hover{border-bottom-color:var(--ac)}
+  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
+  a[href^="mailto:"]{border-bottom-style:dashed}
+
+  /* Images */
+  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+
+  /* Lists */
+  ul{list-style:none;margin:8px 0;padding:0}
+  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+  li:last-child{border-bottom:none}
+  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+
+  /* ═══ THE CARD ═══ (one per logical section) */
+  .card{
+    background:var(--card);border-radius:var(--r);
+    box-shadow:var(--sh);border:1px solid var(--bd);
+    padding:0;margin-bottom:14px;overflow:hidden;
+  }
+
+  /* Card title (first row of a table, section name) */
+  .card-title{
+    font-family:'Outfit',sans-serif;
+    font-size:15px;font-weight:700;color:var(--ac);
+    padding:14px 18px 10px;
+    border-bottom:2px solid var(--ac);
+    line-height:1.4;
+  }
+  .card-title p{margin-bottom:3px;color:var(--ac)}
+  .card-title a{color:var(--ac)}
+
+  /* Card item (a row of content) */
+  .card-item{
+    padding:12px 18px;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-item:last-child{border-bottom:none}
+
+  /* Card multi-cell row */
+  .card-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-row:last-child{border-bottom:none}
+  .card-cell{
+    padding:12px 16px;
+    border-right:1px solid var(--bd2);
+    font-size:14px;
+  }
+  .card-cell:last-child{border-right:none}
+  .card-cell p{margin-bottom:4px}
+  @media(max-width:540px){
+    .card-row{grid-template-columns:1fr}
+    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
+    .card-cell:last-child{border-bottom:none}
+  }
+
+  /* ═══ RESOURCE CARD (with category tag) ═══ */
+  .card.resource{
+    border-left:4px solid var(--ac);
+    padding:16px 18px;
+  }
+  .tag{
+    display:inline-block;font-family:'Outfit',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--ac);background:var(--ac1);
+    padding:3px 10px;border-radius:6px;margin-bottom:12px;
+  }
+  .res-entry{
+    padding:10px 0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .res-entry:last-child{border-bottom:none}
+  .res-entry:first-child{padding-top:0}
+  .res-desc{margin-bottom:6px}
+  .res-desc p{margin-bottom:4px}
+  .res-contact{
+    background:#F6F6F3;border-radius:var(--rs);
+    padding:8px 12px;font-size:14px;
+  }
+  .res-contact p{margin-bottom:2px}
+
+  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
+  .emergency{
+    background:#FFF5F5;border:2.5px solid #E2001A;
+    border-radius:var(--rs);
+    padding:16px 18px;margin:12px 18px;
+    box-shadow:0 2px 8px rgba(226,0,26,.06);
+  }
+  .emergency p{margin-bottom:6px}
+  .emergency strong{color:#B80015}
+
+  /* Footer */
+  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+  .foot a::after{display:none!important}
+  .foot a:hover{color:var(--ac)}
+  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+  .foot-h::after{display:none!important}
+
+  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <a class="back" href="index.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Retour
+  </a>
+  <div class="hdr-icon">🧠</div>
+  <h1>07. Santé sexuelle et mentale</h1>
+</header>
+<div class="cnt">
+<div class="card"><p><img src="img/img-07-7e16d21e.png" alt="" class="doc-img" loading="lazy"><strong>Pour connaître toutes les possibilités de prévention contre le VIH, voir l’éventail de l’association AIDeS : </strong><a href="https://drive.google.com/file/d/1wNTJ-AAHvpeUai_57C6UWL5d9CsDwW0P/view?usp=sharing" target="_blank" rel="noopener">L’éventail des protections par l&#x27;asso AIDeS</a></p>
+<p><strong>IST </strong>(Infections Sexuellement Transmissibles) : Tout savoir et comment se protéger ? :</p>
+<p><strong>Brochure sur les IST </strong>(par l’association Cabiria) :</p>
+<p>En Français-Roumain : <a href="https://www.cabiria.asso.fr/IMG/pdf/cabiria_brochure_IST_roumWEB.pdf" target="_blank" rel="noopener">IST Francais Roumain</a></p>
+<p>En Francais-Bulgare : <a href="https://www.cabiria.asso.fr/IMG/pdf/cabiria_IST_web.pdf" target="_blank" rel="noopener">IST Français Bulgare</a></p>
+<p>En Françias - Espagnol : <a href="https://www.cabiria.asso.fr/IMG/pdf/cabiria_brochure_IST_espagnol.pdf" target="_blank" rel="noopener">IST Fra</a><strong> rappor</strong><a href="https://www.cabiria.asso.fr/IMG/pdf/cabiria_brochure_IST_espagnol.pdf" target="_blank" rel="noopener">nçais Espagnol</a></p>
+<p><strong>Les IST pour les hommes ayant des rapports sexuels avec d’autres hommes,</strong> “Guide Prévenir” : <a href="http://prevenir.anrs.fr/images/documents/GuideIST.pdf" target="_blank" rel="noopener">Guide IST Prévenir</a></p>
+<p><strong>Pour les femmes ayant des rapports sexuels avec d’autres femmes : </strong>“Guide Sur le bout des lèvres” (par SOS Homophobie) : <a href="https://ressource.sos-homophobie.org/surleboutdeslevres.pdf" target="_blank" rel="noopener">Guide Sur le bout des lèvres</a></p>
+<p>et toujours pour <strong>les femmes ayant des rapports sexuels avec d’autres femmes</strong>  “Guide Tomber la Culotte” (par collectif d’associations) : <a href="https://www.sos-homophobie.org/sites/default/files/tomber-la-culotte-2.pdf" target="_blank" rel="noopener">Guide Tomber la culotte</a></p>
+<p><strong>Pour les personnes Trans*</strong> Campagne nationale de prévention pour les personnes Trans* (par l’asso OUTRANS)  : <a href="https://outrans.org/docs/DEPLIANT_TRANS.pdf" target="_blank" rel="noopener">DÉPLIANT TRANS</a></p>
+<p>Pour les hommes Trans (par SEXO SAFE) : <a href="https://www.sexosafe.fr/Mon-corps/Les-pratiques-sexuelles/Hommes-trans-comment-se-proteger" target="_blank" rel="noopener">Homme TRANS comment se protéger</a></p>
+<p>Pour les personnes Trans* et leurs amant·e·s (par l’asso OUTRANS)  : <a href="https://outrans.org/docs/DTC.pdf" target="_blank" rel="noopener">Guide Trans et leurs amants</a></p>
+<p><strong>IST - livret à destination des jeunes </strong>(par Santé Publique France) :<strong> </strong><a href="https://www.santepubliquefrance.fr/maladies-et-traumatismes/infections-sexuellement-transmissibles/vih-sida/documents/brochure/le-livre-des-infections-sexuellement-transmissibles-ist" target="_blank" rel="noopener">Livret IST</a>(chercher autres liens)</p>
+<p><strong>Prévention BDSM Fétichisme </strong>(par l’association Exaeco):  <a href="https://www.exaequo.be/files/Ex%C3%86quo-No-Classics-2015.pdf" target="_blank" rel="noopener">www.exaequo.be</a></p>
+<p><strong>VIH/SIDA HÉPATITES en prison : les bases pour comprendre et Agir : </strong><a href="https://fr.calameo.com/aides/read/00622550041263bc4c5d5" target="_blank" rel="noopener">VIH EN PRISON</a></p>
+<p>Pour mieux comprendre comment s&#x27;organise la santé en détention, connaître ses droits et préparer au mieux la sortie</p>
+<p><strong>Petit manuel du préservatif (par Santé Publique France) : </strong><a href="https://www.ch-aix.fr/wp-content/uploads/2018/09/Pr%C3%A9servatifs-Petit-manuel.pdf" target="_blank" rel="noopener">Préservatifs-Petit-manuel</a> (a vérifier / lien ne fonctionne pas)</p>
+<p><strong>Les guides de santé sexuelle multilingues du CPEF Colliard sont disponibles :</strong></p>
+<p>CPEF Colliard propose des livrets de santé sexuelle traduits et imagés,</p>
+<p>Vous les trouverez ci-dessous en Anglais, Arabe, Coréen, Espagnol Italien, Mandarin et Russe!</p>
+<p>D&#x27;autres traductions sont à venir en Japonais et Wolof.</p>
+<p><a href="http://www.fsef.net/etablissements/centre-colliard/cpef-centre-colliard" target="_blank" rel="noopener">http://www.fsef.net/etablissements/centre-colliard/cpef-centre-colliard</a></p>
+<p><strong>ROMAN PHOTSMessage de prévention et structures d’accueil en plusieurs langues </strong>(Anglais, Dari, Pashto, Arabe, Somali par le Samu Social Paris)<strong> : </strong><a href="https://drive.google.com/file/d/1hzPaQ2bGns8SEaPVYSvqXjdUJwfeEzey/view?usp=sharing" target="_blank" rel="noopener">Orientation dépistage sur Paris plusieurs langues</a> (Samu Social de PAris &amp; Paris sans sida) (MAJ)</p>
+<p><strong>Bande dessinée pour encourager les femmes à la prévention des risques liés à la sexualité et promouvoir l’utilisation du préservatif féminin : </strong><a href="https://plateforme-elsa.org/wp-content/uploads/2014/06/maimouna.pdf" target="_blank" rel="noopener">maimouna.pdf</a></p>
+<p>« Les aventures de Maïmouna » sont nées de la rencontre entre l’association IFAFE (Initiative des femmes africaines de France et d’Europe) et Mayval, auteur de bandes dessinées camerounais.</p>
+<p><strong>Roman Photo par AIDeS “Le choix du bonheur”</strong>, qui parle de prévention autour du VIH :  <a href="https://drive.google.com/file/d/1GEunIDEpFjxGCp9LZSZ9ppwmmslzHzrr/view?usp=sharing" target="_blank" rel="noopener">Le choix du Bonheur</a></p>
+<p><strong>Roman Photo par AIDeS “L’embarras du choix”, </strong>qui parle de prévention autour du VIH : <a href="https://drive.google.com/file/d/14qVdYFTR_nor_QRzwuT2CUd_LgjvtO1L/view?usp=sharing" target="_blank" rel="noopener">L’embarras du choix</a></p></div>
+
+<div class="card">
+<div class="card-title"><p><strong>Guide “</strong><strong>Parler sexe avec mon medecin, 12 questions réponses</strong><strong>” (par Corevih) : </strong><a href="http://corevihouest.org/ckfinder/userfiles/files/Brochure_COREVIH_pap_HD.pdf" target="_blank" rel="noopener">Brochure_COREVIH</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>Santé sexuelle : Je cherche une consultation en… gynécologie, proctologie, sexologie ou en santé mentale ?</strong></p></div>
+<div class="card-item"><p><strong>… Gynécologie</strong></p></div>
+<div class="card-item"><p><strong>Via l’association AIDES :</strong></p>
+<p>L’accès aux consultations (pour les personnes en situation de précarité) est possible par le biais de AIDES. Elles permettent :</p>
+<ul><li>d’accompagner les femmes/personnes ayant un vagin, en situation de précarité et/ou les personnes vivant avec VIH/VHB/VHC dans leur parcours par le biais de la santé</li><li>de permettre aux femmes/personnes ayant un vagin de prendre soin de soi</li><li>d’améliorer le bien-être physique, moral ou social des femmes/personnes ayant un vagin</li><li>d’améliorer l’accès aux soins et à la prévention (accès aux dépistages)</li><li>de renforcer l’estime de soi</li><li>Pour prendre RDV sur Paris, nous contacter par téléphone au 06 76 74 70 87 ou par mail <a href="mailto:parcours@aides.org" target="_blank" rel="noopener">parcours@aides.org</a></li><li>Pour venir à Saint-Denis, nous contacter par téléphone au 07 62 38 69 37 ou par mail <a href="mailto:ymaisonneuve@aides.org" target="_blank" rel="noopener">ymaisonneuve@aides.org</a><strong>_________________________________</strong><strong>Autres adresses utiles : </strong></li><li>CeGIDD de la Croix Rouge : consultations gratuites de suivi gynécologique (dépistage IST, frottis, contraception…),</li></ul>
+<p>43 rue de Valois - 75001 Paris - Tél : 01 42 61 30 04</p>
+<p>Pour prendre rendez-vous : Doctolib, taper «Cegidd Croix Rouge Paris»</p>
+<p>puis spécialité «sage-femme», «information sur la santé sexuelle et la contraception» ou «suivi gynécologique».</p>
+<ul><li>Centre de planification familiale - Hôpital Lariboisière : 2 rue Ambroise Paré - 75010 Paris - Tél : 01 49 95 62 41.</li></ul>
+<p>(Suivi gynécologique, IVG, Prep, etc.)</p>
+<ul><li>La Maison des femmes de Saint-Denis est un <strong>lieu de prise en charge unique des femmes en difficulté ou victimes de violences</strong>. Elle intervient aussi dans les domaines de la prévention, de l’éducation et de la santé publique. Notre structure est rattachée au Centre hospitalier de Saint-Denis : <a href="https://www.lamaisondesfemmes.fr/je-decouvre-lmdf/qui-sommes-nous/" target="_blank" rel="noopener">https://www.lamaisondesfemmes.fr/</a><strong>_________________________________</strong><strong>Ressources en santé gynécologique.</strong></li></ul>
+<p><strong>Guide de la première consultation gynécologique </strong>(Santé Publique France) : <a href="https://www.sparadrap.org/sites/default/files/pdf_feuilletable/L11/index.html" target="_blank" rel="noopener">première consult</a></p>
+<p><strong>Livret Santé Sexu’elles, plus de plaisir et moins de risques pour les femmes </strong>(Association AIDeS) : <a href="https://fr.calameo.com/aides/read/0062255002f57291cc467" target="_blank" rel="noopener">Santé Sexu&#x27;elles</a><strong>-Brochure Santé de la femme, en Francais, Anglais, Chinois </strong>(Association AIDES)<strong> : </strong>La ménopause, les frottis, l&#x27;auto-palpation des seins, mammographie : <a href="https://drive.google.com/file/d/13Kdk3K75dHoXtKvNfB7KprWVm1JohunV/view" target="_blank" rel="noopener">Santé de la femme AIDES</a></p>
+<p><strong>Brochure : Pourquoi faire un suivi gynéco ?</strong> (Association Cabiria) :</p>
+<p>En Espagnol, Portugais, Roumain :<strong> </strong><a href="https://www.cabiria.asso.fr/Pourquoi-faire-un-suivi" target="_blank" rel="noopener">Pourquoi-faire-un-suivi espagnol, portugais, roumain</a></p>
+<p>En Français, Albanais, Anglais, Bulgare : <a href="https://www.cabiria.asso.fr/Nouvel-article" target="_blank" rel="noopener">Pourquoi faire un suivi albanais, anglais, bulgare</a></p>
+<p><strong>Brochure Suivi gynéco des lesbiennes</strong> (par ADHEOS)<strong> : </strong><a href="http://www.adheos.org/fichierUploader/suivi_gynecologique_des_lesbiennes.pdf" target="_blank" rel="noopener">suivi_gyneco_des_lesbiennes</a></p>
+<p><strong>Infos sur la prévention du cancer du col utérus,</strong> en Français et Chinois (ARCAT) : <a href="https://www.arcat-sante.org/wp-content/uploads/2016/11/Col-de-luterus-mandarin.pdf" target="_blank" rel="noopener">Prévention Cancer Col Utérus</a></p>
+<p><strong>Site Gyn&amp;Co :</strong><strong> </strong><strong>liste de soignants-es safes</strong>, qui accueillent tou·te·s sans discriminations quels que soient  ton genre,ta religion, ta situation administrative, ton origine etc.  : <a href="https://gynandco.wordpress.com/" target="_blank" rel="noopener">gynandco</a></p></div>
+<div class="card-item"><p><strong>… Proctologie</strong></p></div>
+<div class="card-item"><p><strong>Via l’association AIDES :</strong></p>
+<p>La  proctologie est une spécialité de la médecine s’occupant de la région anale et du rectum. C’est une branche de la gastro-entérologie. Symptômes pouvant indiquer un problème au niveau de l’anus, de l’intestin ou du rectum : boule ou excroissance anale, démangeaison, douleur, écoulement, saignement…</p>
+<ul><li>Prise de RDV par téléphone au 06 76 74 70 87 ou par mail à <a href="mailto:parcours@aides.org" target="_blank" rel="noopener">parcours@aides.org</a></li></ul></div>
+<div class="card-item"><p><strong>… Sexologie</strong></p></div>
+<div class="card-item"><p><strong>Via l’association AIDES :</strong>Pour faire le point sur tes besoins et tes pratiques dans ce domaine, afin d’être conseillé-e et orienté-e au mieux, tu pourras échanger avec un  professionnel sur les questions et les inquiétudes concernant ta vie sexuelle et affective, la relation de couple etc. en toute confidentialité. Les consultations ont lieu tous les 3e jeudi du mois de 17h à 19h, avant l’Apéro-Prévention (une soirée thématique animée par sexologue : voir l’affiche ci-dessous), en intervalle d’un mois sur Bobigny et St Denis : ou par téléphone, avec un sexologue.</p></div>
+<div class="card-item"><p><strong>Via l’association AIDES :</strong>Pour faire le point sur tes besoins et tes pratiques dans ce domaine, afin d’être conseillé-e et orienté-e au mieux, tu pourras échanger avec un  professionnel sur les questions et les inquiétudes concernant ta vie sexuelle et affective, la relation de couple etc. en toute confidentialité. Les consultations ont lieu tous les 3e jeudi du mois de 17h à 19h, avant l’Apéro-Prévention (une soirée thématique animée par sexologue : voir l’affiche ci-dessous), en intervalle d’un mois sur Bobigny et St Denis : ou par téléphone, avec un sexologue.</p></div>
+<div class="card-item"><p><strong>… Santé mentale</strong></p></div>
+<div class="card-item"><p><strong>Site de PSY* inclusif·ve·s, safe </strong>: <a href="https://psysafeinclusifs.wixsite.com/psysafe/get_involved" target="_blank" rel="noopener">psysafeinclusifs</a></p>
+<p><strong>Centre Médical LE 190 - LGBTQI+</strong> : Permanence Psy et addictologie - sexologie - Chemsex : <a href="https://le190.fr/ce-quon-fait/" target="_blank" rel="noopener">le190.fr</a> -       <strong>90 Rue Jean Pierre Timbaud 75011 Paris - 01 55 25 32 72</strong></p>
+<p><strong>Le réseau ESPAS,</strong> Centre médico psychologique, initialement créé pour l’accompagnement des personnes porteuses du virus VIH et hépatites s’est diversifié sur les questionnements autour de la sexualité ou de l’identité sexuelle :  <a href="https://www.ghu-paris.fr/fr/annuaire-des-structures-medicales/le-reseau-espas" target="_blank" rel="noopener">le-reseau-espas</a></p>
+<p><strong>32 rue de paradis  75010 Paris - Tél :01 42 72 64 86</strong></p>
+<p><strong>Site Psy Gay : </strong><a href="http://www.psygay.com/qui-sommes-nous/" target="_blank" rel="noopener">psygay.com</a> - Contact au : 01 42 74 16 02</p>
+<p>Association loi de 1901, psy·gay·e·s est un réseau de professionnel·le·s de l&#x27;écoute et de la psychothérapie qui accueillent les personnes qui font appel à eux·elles dans un engagement de respect de l&#x27;orientation sexuelle et de l&#x27;identité de genre.</p>
+<p><strong>Site BDDTRANS : </strong>liste de <strong>médecins Trans friendly</strong>, sans discriminations : <a href="https://bddtrans.fr/accueil/" target="_blank" rel="noopener">bddtrans.fr</a></p>
+<p><strong>La maison Chemin Vert à Paris:</strong></p>
+<p>C’est une structure médicale pluri-disciplinaire regroupant des médecins généralistes à orientation infectiologie, un infirmier, une sage-femme et une psychologue travaillant en libéral secteur 1. Vous serez accueillis pour des consultations sur rendez-vous de médecine générale (pathologies aiguës et chroniques, vaccinations, bilan de santé), d’infectiologie (prise en charge du VIH, des hépatites chroniques, infections sexuellement transmissibles, infectiologie générale), de contraception et suivi gynécologique. Les praticiens sont tous attachés à des services hospitaliers parisiens, pour améliorer l’articulation ville-hôpital. Pour prendre rdv : <a href="https://www.doctolib.fr/cabinet-medical/paris/maison-chemin-vert" target="_blank" rel="noopener">maison-chemin-vert</a></p>
+<p><strong>Adresse : 6 Rue du Chemin Vert, 75011 Paris </strong></p>
+<p><strong>L’ÉPOC</strong> - L’espace psychanalytique d’orientation et de consultations : accueil et le suivi personnalisé de toute personne en difficulté, en souffrance psychique et sociale, en rupture de lien social, en désinsertion, au moyen de la psychanalyse appliquée à la thérapeutique.  <a href="https://www.lepoc.org/" target="_blank" rel="noopener">lepoc.org</a></p>
+<p>Adresse :  <strong>18, rue Georges Thill - 75019 Paris </strong>ou <strong>59, rue Riquet – 75019 Paris</strong> (face aux Jardins d’Éole)</p>
+<p>Email : contact@lepoc.org</p>
+<p>Tél : 06 84 23 52 89</p>
+<p><strong>Le centre LGBT de Paris </strong>: propose des permanence psychologique, gratuite et anonyme , plusieurs fois par semaine : <a href="https://centrelgbtparis.org/Psychologue" target="_blank" rel="noopener">centrelgbtparis.org</a> - <strong>01 43 57 21 47</strong></p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>Santé reproductive : Je me pose des questions sur la contraception et l’avortement</strong></p></div>
+<div class="card-item"><p><strong>Contraception</strong></p></div>
+<div class="card-item"><p>De différentes contraceptions</p>
+<p>Contraceptions pour les femmes/personnes qui ont un utérus</p>
+<p>Brochure “Choisir sa contraception” (par Santé Publique France) : Toutes les contraceptions : laquelle choisir ?</p>
+<p>Brochure sur les contraception en Chinois (par ARCAT) : Les différentes contraceptions en Chinois</p>
+<p>Brochure qui fournit des explications au sujet des différentes contraceptions afin de faciliter le choix pour toutes les femmes (par l’association Cabiria - Action de santé communautaire avec les TDS) :</p>
+<p>En Français : Quelles contraceptions?</p>
+<p>En Roumain : Quelles contraceptions?</p>
+<p>En Espagnol : Quelles contraceptions?</p>
+<p>En Bulgare : Quelles contraceptions?</p>
+<p>En Anglais : Quelles contraceptions?</p>
+<p>Site de l’association SENSIPLAN qui enseigne la symptothermie, contraception sans hormones via l’observation du cycle : symptothermie.info</p>
+<p>Contraceptions pour les hommes/personnes qui ont un pénis</p>
+<p>Site GARCON.LINK Le Groupe d´Action et de Recherche pour la Contraception (GARÇON) qui milite pour la recherche et le développement de méthodes contraceptives. Son objectif premier est la diffusion et la popularisation des différentes méthodes de contraception existantes aujourd’hui, notamment dites masculines : garcon.link</p>
+<p>La contraception thermique, l’Androswitch, anneau silicone : thoreme.com</p>
+<p>La contraception thermique avec le Spermapause, le boxer chauffant : jemaya-innovations.com</p></div>
+<div class="card-item"><p><strong>Avortement</strong></p></div>
+<div class="card-item"><p>Dossier informations sur l&#x27;interruption volontaire de grossesse (ministère de la Santé) : la loi - les principales dispositions, avant l’IVG, les démarches à entreprendre, l’interruption de la grossesse, la contraception après une IVG :</p>
+<p>guide interruption volontaire _de_ grossesse</p>
+<p>Interruption volontaire de grossesse, IVG, l’avortement, brochure d’information (par Cabaria):</p>
+<p>Brochure_IVG par Cabiria</p>
+<p>IVG : ZOOM sur les idées reçu (par l’ANCIC) :</p>
+<p>zoom_idees_recues</p>
+<p>Pilule d’urgence : COMMENT L’UTILISER ? : la-pilule-d&#x27;urgence</p>
+<p>CONTEXTE</p>
+<p>Tu as eu un rapport sans contraception ou en cas d’échec de contraception (oubli, mauvaise utilisation ou accident de contraception).</p>
+<p>ÉTAPE 1</p>
+<p>Rends-toi le plus rapidement possible en pharmacie ou dans un centre de planning familial pour te faire accompagner dans le choix d’une contraception d’urgence qui convient à ta situation.</p>
+<p>ÉTAPE 2</p>
+<p>L’efficacité de la pilule dépend de la rapidité de la prise. Prends la pilule d’urgence le plus vite possible après le rapport (max 5 jours).</p>
+<p>ET APRÈS</p>
+<p>Si tu vomis dans les 2h suivant la prise de la pilule, reprends-en une. Il est conseillé de faire un test de grossesse 2 à 3 semaines après la prise de la pilule d’urgence. Si le test s’avère positif, il est possible d’avoir recours à une Interruption Volontaire de Grossesse (IVG).</p>
+<p>Il existe deux pilules d’urgence :</p>
+<ul><li>Une pilule à prendre jusqu’à 72 heures (3 jours) après le rapport.</li><li>Une pilule à prendre jusqu’à 120 heures (5 jours) après le rapport.</li></ul>
+<p>L’efficacité de la contraception d’urgence décroît avec le temps : plus tard elle est prise après le rapport sexuel à risque, plus elle perd en efficacité.</p>
+<p>Attention, la pilule d’urgence retarde l’ovulation mais ne la supprime pas. Cela signifie que les rapports sexuels suivants doivent être protégés (par exemple grâce à un préservatif) pendant 7 jours.</p>
+<p>La pilule d’urgence n’entraîne pas davantage d’effets indésirables que les autres contraceptifs hormonaux.</p>
+<p>COMMENT S’EN PROCURER ?</p>
+<ul><li>En Centre de Planning Familial (disponible gratuitement)</li><li>En pharmacie (sans ordonnance obligatoire)</li></ul>
+<p>COMBIEN ÇA COÛTE ?</p>
+<p>Le coût peut varier entre 1 euro (pilule classique à prendre dans les 3 jours) et 16 euros (pilule à prendre dans les 5 jours).</p></div>
+<div class="card-item"><p><strong>Tu souhaites rencontrer un-e professionnel-le ?</strong></p></div>
+<div class="card-item"><p><strong>Planning familial</strong></p>
+<p>Le Planning vous accueille pour répondre à vos questions en matière de santé sexuelle et de sexualités, vous informer sur vos droits et vous accompagner dans vos propres choix. Il vous accompagne gratuitement (même sans titre de séjour) pour la mise en place d’une contraception, ou/et un avortement : www.planning-familial.org</p>
+<p>0 800 08 11 11 : numéro d’information pour répondre à toutes vos réponses sur les sexualités, la contraception et l’IVG : appels anonymes et gratuits</p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>Santé sexuelle : J’ai des questions sur la prévention (VIH/sida, hépatites virales, IST/MST) ?</strong></p></div>
+<div class="card-item"><p><strong>Vaccinations</strong></p></div>
+<div class="card-item"><p><strong>Vaccination : Êtes-vous à jour ? </strong>(par Santé Publique France) : <a href="https://drive.google.com/file/d/1EFl0ekBdDlZD62BF89qkejY458l7McxE/view?usp=sharing" target="_blank" rel="noopener">Calendrier simplifié des vaccinations</a></p>
+<p><strong>Hépatite A, </strong>vaccin gratuit pour les hommes ayant des relations sexuelles avec des hommes : <a href="https://www.iledefrance.ars.sante.fr/hepatite-lars-met-en-place-un-acces-gratuit-au-vaccin-pour-les-personnes-exposees" target="_blank" rel="noopener">Hépatite A</a></p>
+<p><strong>Pour les </strong><strong>hommes qui ont des relations sexuelles avec d’autres hommes, </strong><strong>les 3 vaccins indispensables</strong> (par SEXOSAFE) : <a href="https://www.sexosafe.fr/Mon-corps/La-prevention/Sexe-entre-hommes-les-3-vaccins-incontournables" target="_blank" rel="noopener">3-vaccins-incontournables</a></p>
+<p><strong>Les 3 vaccins incontournables</strong> :</p>
+<p>Se protéger contre les IST passe aussi par les vaccins. Pour une sexualité plus sûre et remédier parfois à l’absence de traitement (notamment dans le cas de l’hépatite A), se faire vacciner est utile et vivement recommandé.<strong> </strong><a href="https://www.sexosafe.fr/Mon-corps/La-prevention/Sexe-entre-hommes-les-3-vaccins-incontournables" target="_blank" rel="noopener">Sexosafe.fr</a></p></div>
+</div>
+</div>
+<nav class="foot">
+  <div class="foot-t">Autres ressources</div>
+  <a href="page-01.html">01. Numéros utiles</a><a href="page-02.html">02. Où me faire dépister gratuitement</a><a href="page-03.html">03. Autotest VIH/sida à la maison</a><a href="page-04.html">04. La PrEP : se protéger du VIH</a><a href="page-05.html">05. TPE : traitement d'urgence</a><a href="page-06.html">06. Je vis avec le VIH</a><a href="page-08.html">08. Je consomme des drogues</a><a href="page-09.html">09. Protection maladie et droits</a><a href="page-10.html">10. Autres besoins spécifiques</a>
+  <br>
+  <a class="foot-h" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Accueil
+  </a>
+</nav>
+</body>
+</html>

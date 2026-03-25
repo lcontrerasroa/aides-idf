@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>❤️‍🩹 Je vis avec le VIH – AIDES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ac:#0D9488;--ac1:#0D948818;--ac3:#0D948840;
+    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+    --bd:#E8E8E5;--bd2:#F2F2EF;
+    --sh:0 1px 4px rgba(0,0,0,.04);
+    --r:14px;--rs:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+
+  /* Header */
+  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+  .back:hover{opacity:1}.back::after{display:none!important}
+  .hdr-icon{font-size:34px;margin-bottom:8px}
+  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+
+  /* Content */
+  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+
+  /* Text */
+  p{margin-bottom:8px}p:last-child{margin-bottom:0}
+  strong{font-weight:700;color:var(--tx2)}
+
+  /* Links */
+  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+  a:hover{border-bottom-color:var(--ac)}
+  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
+  a[href^="mailto:"]{border-bottom-style:dashed}
+
+  /* Images */
+  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+
+  /* Lists */
+  ul{list-style:none;margin:8px 0;padding:0}
+  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+  li:last-child{border-bottom:none}
+  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+
+  /* ═══ THE CARD ═══ (one per logical section) */
+  .card{
+    background:var(--card);border-radius:var(--r);
+    box-shadow:var(--sh);border:1px solid var(--bd);
+    padding:0;margin-bottom:14px;overflow:hidden;
+  }
+
+  /* Card title (first row of a table, section name) */
+  .card-title{
+    font-family:'Outfit',sans-serif;
+    font-size:15px;font-weight:700;color:var(--ac);
+    padding:14px 18px 10px;
+    border-bottom:2px solid var(--ac);
+    line-height:1.4;
+  }
+  .card-title p{margin-bottom:3px;color:var(--ac)}
+  .card-title a{color:var(--ac)}
+
+  /* Card item (a row of content) */
+  .card-item{
+    padding:12px 18px;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-item:last-child{border-bottom:none}
+
+  /* Card multi-cell row */
+  .card-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-row:last-child{border-bottom:none}
+  .card-cell{
+    padding:12px 16px;
+    border-right:1px solid var(--bd2);
+    font-size:14px;
+  }
+  .card-cell:last-child{border-right:none}
+  .card-cell p{margin-bottom:4px}
+  @media(max-width:540px){
+    .card-row{grid-template-columns:1fr}
+    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
+    .card-cell:last-child{border-bottom:none}
+  }
+
+  /* ═══ RESOURCE CARD (with category tag) ═══ */
+  .card.resource{
+    border-left:4px solid var(--ac);
+    padding:16px 18px;
+  }
+  .tag{
+    display:inline-block;font-family:'Outfit',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--ac);background:var(--ac1);
+    padding:3px 10px;border-radius:6px;margin-bottom:12px;
+  }
+  .res-entry{
+    padding:10px 0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .res-entry:last-child{border-bottom:none}
+  .res-entry:first-child{padding-top:0}
+  .res-desc{margin-bottom:6px}
+  .res-desc p{margin-bottom:4px}
+  .res-contact{
+    background:#F6F6F3;border-radius:var(--rs);
+    padding:8px 12px;font-size:14px;
+  }
+  .res-contact p{margin-bottom:2px}
+
+  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
+  .emergency{
+    background:#FFF5F5;border:2.5px solid #E2001A;
+    border-radius:var(--rs);
+    padding:16px 18px;margin:12px 18px;
+    box-shadow:0 2px 8px rgba(226,0,26,.06);
+  }
+  .emergency p{margin-bottom:6px}
+  .emergency strong{color:#B80015}
+
+  /* Footer */
+  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+  .foot a::after{display:none!important}
+  .foot a:hover{color:var(--ac)}
+  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+  .foot-h::after{display:none!important}
+
+  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <a class="back" href="index.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Retour
+  </a>
+  <div class="hdr-icon">❤️‍🩹</div>
+  <h1>06. Je vis avec le VIH</h1>
+</header>
+<div class="cnt">
+<div class="card"><p><strong>⇒ Des supports d’informations:</strong></p>
+<p><strong>VIES POSITIVES  : un site créé par et pour les personnes vivants avec le VIH.</strong></p>
+<p>Le site a une visibilité nationale avec des missions telles que l&#x27;aide, l&#x27;information, l&#x27;orientation, l&#x27;accompagnement : <a href="https://www.viespositives.org/" target="_blank" rel="noopener">viespositives</a></p>
+<p><strong>Aide psychologique des personnes vivant avec le VIH </strong>(par le CoRESS Île-de-France Ouest) :<strong> </strong><a href="http://www.corevihouest.org/ckfinder/userfiles/files/depliant_psy_web.pdf" target="_blank" rel="noopener">dépliant psy web</a></p>
+<p><strong>Mon premier traitement :  </strong>Quelques repères à l&#x27;usage des nouvelle·aux séropositifs·ves : <a href="https://www.actions-traitements.org/wp-content/uploads/2017/08/%E2%80%A2%E2%80%A2BROCHURE-1ER-TRAITEMENT-11-07-2017.pdf" target="_blank" rel="noopener">Mon premier traitement</a></p>
+<p><strong>Réglette d&#x27;interaction médicamenteuse de Actions Traitement</strong></p>
+<p>La réglette d’interactions médicamenteuses est un outil pratique conçu pour vérifier les interactions entre votre traitement VIH ou VHC et les autres médicaments, les différentes drogues récréatives, ainsi que certaines plantes utilisées en phytothérapie que vous seriez amené à prendre : <a href="https://www.actions-traitements.org/reglette/" target="_blank" rel="noopener">reglette</a></p></div>
+
+<div class="card">
+<div class="card-title"><p><strong>Ce que propose AIDES</strong>Si tu as des questions, besoin d’informations, besoin seulement d’échanger sur ton vécu, ou d’être soutenu-e dans des démarches, tu peux rencontrer un-e militant-e. Des permanences ont lieu dans tous nos locaux, sans RDV. N’hésite pas à venir ou à nous appeler : <a href="page-02.html">Permanences de AIDES en Île-de-France</a></p></div>
+<div class="card-item"><p><strong>Des groupes de paroles et d’échanges entre pairs-es pour les personnes vivant avec le VIH</strong></p></div>
+<div class="card-item"><p><strong>Groupe « Bisso’lidaires »</strong>Il s&#x27;agit d&#x27;un groupe de soutien, d&#x27;entraide, composé de personnes majoritairement originaires d&#x27;Afrique sub-saharienne. Le groupe est mixte et ouvert à toute personne ayant le VIH ou une hépatite virale. C&#x27;est un moment fort, convivial où différents thèmes sont abordés avec une participation active des membres du groupe.La rencontre a lieu le <strong>3e samedi du mois</strong><strong>,</strong> dans le local de Saint-Denis / 22 rue Suger, 93200 Saint-Denis</p>
+<ul><li>Pour plus d’informations : 06 01 01 82 11.<strong>_________________________________</strong></li></ul>
+<p><strong>Groupe « Paroles de Femmes »</strong></p>
+<p>Ce groupe permet de faciliter l’émergence d’une parole collective favorable à l’amélioration de la qualité de vie des femmes séropositives au VIH et/ou aux hépatites. Permettre à chacune de dire en privé et dans la société son statut sérologique, rompre l’isolement, permettre d’échanger autour du vécu de la maladie, mettre en capacité les personnes à délivrer les messages qui « leur tiennent à cœur » autour du VIH, sont les missions que AIDES souhaite poursuivre.La rencontre a lieu le <strong>2e samedi du mois</strong>, sur le local de Paris-Centre / 76 rue de Cléry, 75002 Paris</p>
+<ul><li>Pour plus d’informations : 06 76 74 70 87</li></ul></div>
+<div class="card-item"><p><strong>Permanence d&#x27;Accueil d&#x27;Accès aux Droits et aux Soins</strong></p></div>
+<div class="card-item"><p>Pour qui : les personnes vivant avec le VIH ayant besoin de support pour des démarches d&#x27;accès au droit commun, difficultés administratives, titres de séjours pour soin. ➜ Pour plus d’information et prendre RDV : 07 62 37 66 70 / <a href="mailto:paris19@aides.org" target="_blank" rel="noopener">paris19@aides.org</a></p></div>
+<div class="card-item"><p><strong>Service d’Accompagnement à la Vie Sociale (SAVS)</strong></p></div>
+<div class="card-item"><p>Pour qui : les personnes vivant avec le VIH habitant sur Paris.</p>
+<p>Objectif : Améliorer la santé globale et la qualité de vie des personnes vivant avec le VIH en leur permettant de devenir actrices de leur santé et leur vie en élaborant un projet d’accompagnement personnalisé. Il vise à rompre l’isolement à travers des temps d’échanges et d’activités collectives en s’inscrivant dans une démarche communautaire.</p>
+<p><strong>L’accompagnement dans le SAVS est soumis à une orientation par la MDPH.</strong></p>
+<p>Je suis concerné-e si :</p>
+<p>Je suis séropositif-ve au VIH ;</p>
+<p>Je réside à Paris ;</p>
+<p>Je suis agé-e de 18 à 64 ans ;</p>
+<p>Je suis reconnu-e &quot;personne en situation de handicap&quot; par la Maison Départementale des personnes handicapées (MDPH), ou je pourrais l&#x27;être ;</p>
+<p>Je dois pouvoir bénéficier d&#x27;une Aide Sociale Légale (ASL).</p>
+<p>Accueil sur RDV du lundi au vendredi de 10h à 17h30</p>
+<p>99 rue de Meaux, 75019 Paris,</p>
+<ul><li>Infos et prise de RDV : 01 42 41 85 90 / <a href="mailto:savsaides75@aides.org" target="_blank" rel="noopener">savsaides75@aides.org</a></li></ul></div>
+<div class="card-item"><p>Pour qui : les personnes vivant avec le VIH habitant sur Paris.</p>
+<p>Objectif : Améliorer la santé globale et la qualité de vie des personnes vivant avec le VIH en leur permettant de devenir actrices de leur santé et leur vie en élaborant un projet d’accompagnement personnalisé. Il vise à rompre l’isolement à travers des temps d’échanges et d’activités collectives en s’inscrivant dans une démarche communautaire.</p>
+<p><strong>L’accompagnement dans le SAVS est soumis à une orientation par la MDPH.</strong></p>
+<p>Je suis concerné-e si :</p>
+<p>Je suis séropositif-ve au VIH ;</p>
+<p>Je réside à Paris ;</p>
+<p>Je suis agé-e de 18 à 64 ans ;</p>
+<p>Je suis reconnu-e &quot;personne en situation de handicap&quot; par la Maison Départementale des personnes handicapées (MDPH), ou je pourrais l&#x27;être ;</p>
+<p>Je dois pouvoir bénéficier d&#x27;une Aide Sociale Légale (ASL).</p>
+<p>Accueil sur RDV du lundi au vendredi de 10h à 17h30</p>
+<p>99 rue de Meaux, 75019 Paris,</p>
+<ul><li>Infos et prise de RDV : 01 42 41 85 90 / <a href="mailto:savsaides75@aides.org" target="_blank" rel="noopener">savsaides75@aides.org</a></li></ul></div>
+<div class="card-item"><p><strong>Ressources en ligne</strong></p></div>
+<div class="card-item"><p><strong>« </strong><strong>Remaides, le journal des personnes vivant avec le VIH et les hépatites virales »</strong>Publié par AIDES depuis 1990, il est l’unique journal français disponible en format papier destiné aux personnes vivant avec le VIH et les hépatites virales. C’est un espace d’expression et de visibilité pour toutes les personnes séropositives qui entend contribuer à changer le regard de certains-es sur elles. Il suit et fait connaître l’actualité scientifique et thérapeutique mais aussi militante de la lutte contre le sida</p>
+<ul><li><strong> </strong>Pour le lire ou le télécharger en ligne : <a href="https://www.aides.org/lesremaides" target="_blank" rel="noopener">aides.org/lesremaides</a>➜ Pour le recevoir la version papier à domicile, remplir pour envoyer le formulaire se trouvant en dernière page de chaque numéro).</li></ul>
+<p><strong>_________________________________</strong><strong>« Vie positive : vivre avec le VIH et/ou une hépatite virale »</strong> (2019)</p>
+<p>C’est le guide accessible pour tout savoir sur le VIH et les hépatites virales édité par AIDES. Cette version 2019, réactualisée, fait le point sur les nouveaux traitements contre le VIH et surtout contre l&#x27;hépatite C, sur les nouvelles stratégies d&#x27;allègement thérapeutique et plus encore... Le guide donne toujours une grande place aux trucs et astuces pour mieux vivre avec la maladie et au partage d&#x27;expériences des personnes directement concernées.➜ <strong> </strong>Pour le lire ou le télécharger en ligne : <a href="https://www.aides.org/sites/default/files/Aides/bloc_telechargement/guide-vie-positive-2019-inf%2010%20mo_compressed.pdf" target="_blank" rel="noopener">Vie Positive</a></p>
+<p><strong>_________________________________</strong></p>
+<p><strong> Être acteur-rice de sa prise en charge lorsque l’on vit avec le VIH »</strong> (Juin 2024) L’annonce d’un résultat positif engendre, dans la plupart des cas, une situation anxiogène chez la personne qui découvre sa séropositivité. Ce bouleversement émotionnel conduit l’intéressé-e à se poser de nombreuses questions. Les éléments rassemblés dans cette brochure ont pour but de t’aider à répondre aux questions que tu te poses sur la prise en charge à l’hôpital et en ville, par ton-ta médecin traitant-e ou par des spécialistes. Elle te propose des pistes pour prendre soin de toi, prendre mieux ton traitement, avoir une vie affective et sexuelle épanouissante.</p>
+<ul><li>Pour la lire ou la télécharger en ligne : <a href="https://www.calameo.com/aides/read/00622550002d2748d587f" target="_blank" rel="noopener">Petit guide pour les personnes vivant avec le VIH</a></li></ul>
+<p><strong>_________________________________</strong><strong>« Santé et droits : Guide pratique pour les personnes migrantes en France »</strong> (2025) Conçu avec des personnes migrantes militantes au sein de AIDES, le guide « Santé et Droits » a pour objectif d&#x27;informer les populations migrantes et de les accompagner dans leurs démarches d’accès à la santé et aux droits en France. Il offre des informations claires et accessibles sur le VIH/sida, les autres infections sexuellement transmissibles et les ressources existantes.➜ Pour le lire en ligne :</p>
+<p><a href="https://www.calameo.com/aides/read/006225500fe5b50aea304" target="_blank" rel="noopener">« Santé et droits : Guide pratique pour les personnes migrantes en France »</a></p>
+<p><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025_anglais_web.pdf" target="_blank" rel="noopener">«</a><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025_anglais_web.pdf" target="_blank" rel="noopener">Health &amp; rights : A practical guide for migrants in France</a><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025_anglais_web.pdf" target="_blank" rel="noopener">»</a></p>
+<p><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025%20_espagnol_web.pdf" target="_blank" rel="noopener">«</a><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025%20_espagnol_web.pdf" target="_blank" rel="noopener">Salud y derechos : GuÍa prÁctica para las personas migrantes en Francia</a><a href="https://www.aides.org/sites/default/files/inline-files/Guide_SanteDroits%202025%20_espagnol_web.pdf" target="_blank" rel="noopener">»</a></p>
+<ul><li>Certaines parties du guide ont également été retranscrites en version audio :</li></ul>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw0wzQ11NuKkdKuLO9RGxLIZ" target="_blank" rel="noopener">« Santé et droits »</a> en version audio (langue : français)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw2i9-CqOrIPGC9MdTpyxbb4" target="_blank" rel="noopener">« Health and Rights »</a> in audio version (language: english / langue : anglais)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw14_TDvl-AB96ahcIO9DRLJ" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw14_TDvl-AB96ahcIO9DRLJ" target="_blank" rel="noopener">Salud y derechos</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw14_TDvl-AB96ahcIO9DRLJ" target="_blank" rel="noopener">»</a> en versión audio (idioma: español / langue : espagnol)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1kMRLg87aNVNGOMTtmCrZp" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1kMRLg87aNVNGOMTtmCrZp" target="_blank" rel="noopener">Saúde e Direitos</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1kMRLg87aNVNGOMTtmCrZp" target="_blank" rel="noopener">»</a> en versão áudio (língua: portugês brasileiro / langue : portugais)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1XZm_hzVMp-3tSY-4Mq8cm" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1XZm_hzVMp-3tSY-4Mq8cm" target="_blank" rel="noopener">Santé mpe makoki</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw1XZm_hzVMp-3tSY-4Mq8cm" target="_blank" rel="noopener">»</a> Ba clips audio na lifalanse (langue : lingala)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw0-gR9Bf2OajiR-qkCFuqPj" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw0-gR9Bf2OajiR-qkCFuqPj" target="_blank" rel="noopener">Kɛnɛya ni josariyaw</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw0-gR9Bf2OajiR-qkCFuqPj" target="_blank" rel="noopener">»</a> sɔrɔ lamɛntaw kɔnɔ (kan: Bamanankan / langue : bambara)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw2fv7sYLsc4KQJ0gfQloTry" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw2fv7sYLsc4KQJ0gfQloTry" target="_blank" rel="noopener">Akk ak Yellef</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw2fv7sYLsc4KQJ0gfQloTry" target="_blank" rel="noopener">»</a> ci làkku wolof ( langue : wolof)</p>
+<p>🎧 <a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">«</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">الصحة</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">والحقوق</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">القانونية</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">:</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">دليل</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">عملي</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">للمهاجرين</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">في</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">فرنسا</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">:</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">كبسولات</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">صوتية</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">باللغة</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">العربية</a><a href="https://www.youtube.com/playlist?list=PLjpGhrBRjQw3YDRWeOeDg94136LVgIbOT" target="_blank" rel="noopener">»</a> (langue : arabe)</p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>Autres associations de lutte contre le VIH/sida</strong></p></div>
+<div class="card-row"><div class="card-cell"><strong>Actions Traitements</strong>Association agréée pour représenter les malades et les usagers·es du système de santé, elle a pour but d&#x27;informer, d&#x27;accompagner, de soutenir et de défendre les droits des personnes vivant avec l&#x27;infection à VIH, les virus de l&#x27;hépatite, la tuberculose, les infections sexuellement transmissibles et les pathologies associées.</div><div class="card-cell"><strong>☏ 01 43 67 66 00</strong><a href="http://actions-traitements.org" target="_blank" rel="noopener">actions-traitements.org</a><strong> </strong><br>Des écoutants-es experts-es vous répondent :<br>via la ligne d&#x27;écoute et d&#x27;information par message WhatsApp : <strong>06 66 45 47 03</strong><br>par mail : <a href="mailto:ecoute@actions-traitements.org" target="_blank" rel="noopener">ecoute@actions-traitements.org</a><br>S’inscrire :<br><a href="https://actions-traitements.org/notre-accompagnement/agenda-atelier" target="_blank" rel="noopener">aux ateliers</a><br><a href="https://actions-traitements.org/notre-accompagnement/permanences" target="_blank" rel="noopener">aux permanences</a></div></div>
+<div class="card-row"><div class="card-cell"><strong>Act Up-Paris</strong>Association de lutte contre le VIH-Sida, les hépatites virales et les autres IST, militant également pour les droits des minorités sexuelles et de genre.</div><div class="card-cell"><strong>☏</strong><a href="https://www.actupparis.org" target="_blank" rel="noopener">https://www.actupparis.org</a><strong> ☏</strong><a href="https://www.actupparis.org/vivre-avec/permanence-droits-sociaux/" target="_blank" rel="noopener">La permanence « Droits sociaux »</a><strong> en physique</strong><a href="https://wa.me/33631345423" target="_blank" rel="noopener">La permanence « Droits sociaux »</a><strong> sur WhatsApp</strong></div></div>
+<div class="card-row"><div class="card-cell"><strong>Comité des Familles</strong><br>Il propose un accompagnement médico-social des personnes concernées par le VIH et sensibilise sur la santé sexuelle.</div><div class="card-cell"><strong>☏ 01 40 40 90 25</strong><br><a href="mailto:contact@comitedesfamilles.net" target="_blank" rel="noopener">contact@comitedesfamilles.net</a><strong> </strong><br><a href="http://comitedesfamilles.net" target="_blank" rel="noopener">comitedesfamilles.net</a><strong> </strong></div></div>
+<div class="card-row"><div class="card-cell"><strong>Ikambere, la maison accueillante</strong>Association qui accompagne les femmes vivant avec une maladie chronique et les populations défavorisées vers l’autonomie. Elle propose un accompagnement personnalisé, des actions d’éducation à la santé, et une approche fondée sur la bienveillance, l’entraide et la solidarité.</div><div class="card-cell"><strong>☏ 01 48 20 82 60</strong><a href="mailto:contact@ikambere.com" target="_blank" rel="noopener">contact@ikambere.com</a><a href="https://ikambere.com" target="_blank" rel="noopener">ikambere.com</a><strong> </strong></div></div>
+<div class="card-row"><div class="card-cell"><strong>Marie-Madeleine</strong>Association d’accompagnement et de soutien  des femmes originaires principalement d’Afrique subsaharienne, vivant en Île-de-France, dans la précarité, avec des pathologies lourdes et chroniques telles que les Cancers, le VIH, les hépatites virales et/ou ayant subi des violences.</div><div class="card-cell"><strong>09 51 63 39 37 ou 06 67 77 62 40</strong><a href="https://www.marie-madeleine.asso.fr/" target="_blank" rel="noopener">marie-madeleine.asso.fr</a></div></div>
+<div class="card-row"><div class="card-cell"><strong>Les </strong><strong>Petits Bonheurs</strong></div><div class="card-cell"><strong>☏ 09 53 04 63 65</strong><a href="http://lespetitsbonheurs.org" target="_blank" rel="noopener">lespetitsbonheurs.org</a><strong> </strong></div></div>
+<div class="card-row"><div class="card-cell"><strong>Séropotes</strong>L&#x27;objectif est de contribuer au bien-être des personnes LGBT+ vivant avec le VIH, de leurs familles et proches. Pour le réaliser, l’association poursuit trois missions, à savoir de mener des actions contribuant à la reconstruction de l’estime de soi, d’accompagner les personnes concernés par le VIH dans l&#x27;élaboration des stratégies individuelles pour bien  vivre avec le VIH et de lutter contre la sérophobie et pour une société inclusive.</div><div class="card-cell"><a href="mailto:contact@seropotes.org" target="_blank" rel="noopener">contact@seropotes.org</a><strong> </strong><a href="http://seropotes.org" target="_blank" rel="noopener">seropotes.org</a></div></div>
+<div class="card-row"><div class="card-cell"><strong>Sol En Si - Solidarité Enfants Sida</strong>Elle accompagne des familles concernées par le VIH/Sida, les hépatites et d’autres maladies chroniques, et vise à maintenir le plus longtemps possible l’unité familiale, malgré la maladie et la désinsertion sociale, et trouve des réponses adaptées à chaque famille pour les épauler au quotidien.</div><div class="card-cell"><strong>☏ 09 72 31 69 50</strong><a href="mailto:coordination93@solensi.org" target="_blank" rel="noopener">coordination93@solensi.org</a><strong> </strong><a href="http://solensi.org" target="_blank" rel="noopener">solensi.org</a><strong> </strong></div></div>
+<div class="card-row"><div class="card-cell"><strong>Solidarité Sida</strong>Agit à travers le monde pour la prévention des jeunes, l’aide aux malades et l’accès aux soins #VIH #sida</div><div class="card-cell"><strong>☏ 01 53 10 22 22</strong><br><a href="mailto:info@solidarite-sida.org" target="_blank" rel="noopener">info@solidarite-sida.org</a><strong> </strong></div></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>VIH et autres maladies chroniques, les numéros utiles à connaître</strong></p></div>
+<div class="card-row"><div class="card-cell"><strong>Sida Info Service</strong><br>Information, soutien, orientation, prévention sur le VIH / SIDA et les infections sexuellement transmissibles</div><div class="card-cell"><strong>☏ 0 800 840 800</strong><br><a href="http://www.sida-info-service.org" target="_blank" rel="noopener">sida-info-service.org</a></div></div>
+<div class="card-row"><div class="card-cell"><strong>Sida Info Droit</strong><br>Droits sociaux, droits du travail, discrimination, assurances, refus de soins, secret médical, traitement pénal de la contamination. Des conseillers juridiques vous répondent et l&#x27;anonymat et la confidentialité des échanges sont garantis à chaque entretien.</div><div class="card-cell"><strong>☏ 0 810 636 636</strong><br><a href="https://droitsdesmalades.info/sidainfodroit/" target="_blank" rel="noopener">droitsdesmalades.info/sidainfodroit/</a></div></div>
+<div class="card-row"><div class="card-cell"><strong>Hépatites info Service</strong><br>Information, soutien, orientation, prévention sur les hépatites.</div><div class="card-cell"><strong>☏ 0 800 845 800</strong><br><a href="http://www.hepatites-info-service.org" target="_blank" rel="noopener">hepatites-info-service.org</a></div></div>
+<div class="card-row"><div class="card-cell"><strong>Sida Info Plus</strong><br>Accompagnement et suivi personnalisé des personnes vivant avec le VIH..</div><div class="card-cell"><strong>☏ 0 800 840 800</strong><br><strong>☏ 0 800 845 800 (</strong>Pour prise de rendez-vous)<br><a href="http://www.sidainfoplus.fr" target="_blank" rel="noopener">sidainfoplus.fr</a></div></div>
+<div class="card-row"><div class="card-cell"><strong>VIH Info Soignants</strong><br>Des experts médicaux à l’écoute des personnes atteintes et des professionnels de santé..</div><div class="card-cell"><strong>☏ 0 810 630 515</strong><br><a href="http://www.vih-info-soignants.fr" target="_blank" rel="noopener">vih-info-soignants.fr</a></div></div>
+<div class="card-row"><div class="card-cell"><strong>Asthme &amp; Allergies Infos Service</strong><br><strong> </strong>Information, soutien, orientation, prévention des personnes concernées par l&#x27;asthme et les allergies..</div><div class="card-cell"><strong>☏ 0 800 19 20 21</strong><br><a href="http://www.asthme-allergies.org" target="_blank" rel="noopener">asthme-allergies.org</a></div></div>
+</div>
+</div>
+<nav class="foot">
+  <div class="foot-t">Autres ressources</div>
+  <a href="page-01.html">01. Numéros utiles</a><a href="page-02.html">02. Où me faire dépister gratuitement</a><a href="page-03.html">03. Autotest VIH/sida à la maison</a><a href="page-04.html">04. La PrEP : se protéger du VIH</a><a href="page-05.html">05. TPE : traitement d'urgence</a><a href="page-07.html">07. Santé sexuelle et mentale</a><a href="page-08.html">08. Je consomme des drogues</a><a href="page-09.html">09. Protection maladie et droits</a><a href="page-10.html">10. Autres besoins spécifiques</a>
+  <br>
+  <a class="foot-h" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Accueil
+  </a>
+</nav>
+</body>
+</html>

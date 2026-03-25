@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>🎉 Je consomme des drogues – AIDES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ac:#D97706;--ac1:#D9770618;--ac3:#D9770640;
+    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+    --bd:#E8E8E5;--bd2:#F2F2EF;
+    --sh:0 1px 4px rgba(0,0,0,.04);
+    --r:14px;--rs:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+
+  /* Header */
+  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+  .back:hover{opacity:1}.back::after{display:none!important}
+  .hdr-icon{font-size:34px;margin-bottom:8px}
+  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+
+  /* Content */
+  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+
+  /* Text */
+  p{margin-bottom:8px}p:last-child{margin-bottom:0}
+  strong{font-weight:700;color:var(--tx2)}
+
+  /* Links */
+  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+  a:hover{border-bottom-color:var(--ac)}
+  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
+  a[href^="mailto:"]{border-bottom-style:dashed}
+
+  /* Images */
+  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+
+  /* Lists */
+  ul{list-style:none;margin:8px 0;padding:0}
+  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+  li:last-child{border-bottom:none}
+  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+
+  /* ═══ THE CARD ═══ (one per logical section) */
+  .card{
+    background:var(--card);border-radius:var(--r);
+    box-shadow:var(--sh);border:1px solid var(--bd);
+    padding:0;margin-bottom:14px;overflow:hidden;
+  }
+
+  /* Card title (first row of a table, section name) */
+  .card-title{
+    font-family:'Outfit',sans-serif;
+    font-size:15px;font-weight:700;color:var(--ac);
+    padding:14px 18px 10px;
+    border-bottom:2px solid var(--ac);
+    line-height:1.4;
+  }
+  .card-title p{margin-bottom:3px;color:var(--ac)}
+  .card-title a{color:var(--ac)}
+
+  /* Card item (a row of content) */
+  .card-item{
+    padding:12px 18px;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-item:last-child{border-bottom:none}
+
+  /* Card multi-cell row */
+  .card-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-row:last-child{border-bottom:none}
+  .card-cell{
+    padding:12px 16px;
+    border-right:1px solid var(--bd2);
+    font-size:14px;
+  }
+  .card-cell:last-child{border-right:none}
+  .card-cell p{margin-bottom:4px}
+  @media(max-width:540px){
+    .card-row{grid-template-columns:1fr}
+    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
+    .card-cell:last-child{border-bottom:none}
+  }
+
+  /* ═══ RESOURCE CARD (with category tag) ═══ */
+  .card.resource{
+    border-left:4px solid var(--ac);
+    padding:16px 18px;
+  }
+  .tag{
+    display:inline-block;font-family:'Outfit',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--ac);background:var(--ac1);
+    padding:3px 10px;border-radius:6px;margin-bottom:12px;
+  }
+  .res-entry{
+    padding:10px 0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .res-entry:last-child{border-bottom:none}
+  .res-entry:first-child{padding-top:0}
+  .res-desc{margin-bottom:6px}
+  .res-desc p{margin-bottom:4px}
+  .res-contact{
+    background:#F6F6F3;border-radius:var(--rs);
+    padding:8px 12px;font-size:14px;
+  }
+  .res-contact p{margin-bottom:2px}
+
+  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
+  .emergency{
+    background:#FFF5F5;border:2.5px solid #E2001A;
+    border-radius:var(--rs);
+    padding:16px 18px;margin:12px 18px;
+    box-shadow:0 2px 8px rgba(226,0,26,.06);
+  }
+  .emergency p{margin-bottom:6px}
+  .emergency strong{color:#B80015}
+
+  /* Footer */
+  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+  .foot a::after{display:none!important}
+  .foot a:hover{color:var(--ac)}
+  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+  .foot-h::after{display:none!important}
+
+  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <a class="back" href="index.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Retour
+  </a>
+  <div class="hdr-icon">🎉</div>
+  <h1>08. Je consomme des drogues</h1>
+</header>
+<div class="cnt">
+<div class="card"><p><strong>Annuaire programme d’échanges de seringues en pharmacie (par Respadd) : </strong></p>
+<p><a href="https://www.respadd.org/wp-content/uploads/2018/10/Annuaire_PESP_2018_03_.pdf" target="_blank" rel="noopener">Annuaire_PESP</a></p>
+<p><strong>Site prévention chemsex :</strong> https://chemsex.be</p>
+<p><strong>Dépliant « Es-tu au clair avec tes pratiques? »</strong> avec les risques d’interactions entre rétroviraux et drogues  : <a href="https://www.actions-traitements.org/wp-content/uploads/2016/07/De%CC%81pliant-Plans-Chemsex-2020.pdf" target="_blank" rel="noopener">Plans-Chemsex</a></p>
+<p><strong>Informations détaillées sur les différentes substances : </strong><a href="https://technoplus.org/flyers/" target="_blank" rel="noopener">technoplus</a></p>
+<p><strong>Guide d’auto injection </strong>(Par Savoir plus risquer moins) <strong>: </strong><a href="https://savoirplus-risquermoins.net/media/pages/nos-productions/guides/guide-de-l-auto-injection/6133ff9ec1-1617103780/guide-auto-injection-frpa_mobile.pdf" target="_blank" rel="noopener">guide-de-l&#x27;auto-injection</a></p>
+<p><strong>Les « Bonnes pratiques » pour réduire les risques de l’injection de Skenan LP </strong>(Par Savoir plus risquer moins)<strong> : </strong><a href="https://savoirplus-risquermoins.net/nos-productions/brochures/le-skenan#le-skenan" target="_blank" rel="noopener">brochures/le-skenan</a></p>
+<p><strong>Brochure “Réduction des risques en teuf pour les nuls” : </strong><a href="https://technoplus.org/wp-content/uploads/sites/2/2020/06/La-RdR-en-teuf-pour-les-nuls-web.pdf" target="_blank" rel="noopener">La-RdR-en-teuf-pour-les-nuls</a></p>
+<p><strong>Centre Médical LE 190 - LGBTQI+</strong> : Permanence Psy et addictologie - sexologie - Chemsex : <a href="https://le190.fr/ce-quon-fait/" target="_blank" rel="noopener">le190.fr</a></p>
+<p><strong>AUTRES CONTACTS UTILES</strong></p></div>
+
+<div class="card">
+<div class="card-title"><p><strong>J’ai besoin de matériel de réduction des risques, de conseils, d’aide…</strong></p></div>
+<div class="card-item"><p><strong>Les Caarud </strong>(Centre d&#x27;Accueil et d&#x27;Accompagnement à la Réduction des risques pour Usagers de Drogues)</p></div>
+<div class="card-item"><p>Les Caarud proposent un accueil inconditionnel et gratuit, dans le respect et la tolérance. Ils reçoivent un public de consommateur-trices ou d’ex-consommateurs-trices qu’ils accompagnent dans la RDR autour des pratiques, mais aussi qu’ils soutiennent lors de sérologie au VIH et/ou aux hépatites. Leur but est de prévenir les dommages liés à la consommation de drogues en informant, en accompagnant et en étant le relais vers l’accès aux soins, aux droits sociaux, au logement et à l’emploi.Les principales missions :</p>
+<p>L’accueil collectif et individuel, l’information et le conseil personnalisé pour les usager-e-s de drogues dans des lieux fixes ou mobiles de jour comme de nuit ;</p>
+<p>Le soutien aux usager-e-s dans l’accès aux soins pour prévenir les maladies infectieuses et couvrir les besoins fondamentaux en termes de santé ;</p>
+<p>Le soutien aux usager-e-s dans l’accès aux droits, l’accès au logement et à l’insertion ou la réinsertion professionnelle ;</p>
+<p>La mise à disposition de matériel de prévention des infections en adaptant les outils aux usager-e-s concerné‑e‑s ;</p>
+<p>L’intervention de proximité à l’extérieur du centre, en vue d’établir un contact avec les usager-e-s ;</p>
+<p>Le développement d’actions de médiation sociale en permettant un changement de regard sur ces usagers-es et en les insérant dans la vie local.</p>
+<p><strong>_________________________________</strong></p>
+<p><strong>Les Caarud de l’association AIDES en Île-de-France.</strong></p>
+<p>Caarud mobile de Paris Centre</p>
+<p>Permanences avec bus garé en face du 5 rue Turbigo, Paris 1er : les lundis, mercredis et vendredis de 9h30 à 12h30.Caarud du Val-d’Oise122 avenue Jean Jaurès, 95100 ArgenteuilPermanences : les lundis de 13h30 à 17h30, et les mercredis et jeudis de 9h30 à 12h30.</p>
+<p><strong>_________________________________Les autres Caarud en Île-de-France</strong><strong> (modification en cours)</strong>Caarud - Espace Femme Charonne</p>
+<p>pour Usagers de Drogues au 58, Boulevard Ney, 75018 Paris</p>
+<p>Métro : Porte de la Chapelle (ligne:12) ou  Bus : n°: 20, 56, 65, 75 (arrêt Boulevard de</p>
+<p>Magenta) ou  Tramway: 3bis Porte de la Chapelle</p>
+<p>Espace Femmes accueille :</p>
+<p>les femmes qui ne sont pas engagées dans une démarche de soins et qui consomment les drogues en s’exposant à des risques: notamment hépatite C, VIH, et autres accidents ...</p>
+<p>les femmes en situation de prostitution</p>
+<p>Il s’agit d’un accueil sans préalable, c’est-à-dire sans autre exigence que celle du respect des autres, du cadre de fonctionnement et de l’environnement proche. Plus d’infos ici : <a href="https://charonne-asso.fr/download/261/" target="_blank" rel="noopener">charonne-asso.fr</a>➜ <a href="http://action-social.org" target="_blank" rel="noopener">Liste et cartographie des autres Caarud d’Île-de-France sur action-social.org</a></p></div>
+<div class="card-item"><p><strong>Les CSAPA</strong> (Centres de soins, d&#x27;accompagnement et de prévention en addictologie)</p></div>
+<div class="card-item"><p>Les CSAPA s’adressent aux personnes en difficulté avec leur consommation de substances psychoactives quelles qu’elles soient (licites ou illicites, y compris alcool, tabac et médicaments détournés de leur usage) ou avec des comportements potentiellement addictifs (addictions sans substance ou comportementales : jeux vidéo, jeux de hasard et d’argent, sexe, etc.), ainsi qu’aux entourages et familles de ces personnes. Il existe 2 types de CSAPA : “ambulatoire” et “avec hébergement”. Le contact et la prise de rendez-vous se font directement par le patient, sans obligation d’une indication médicale préalable.</p>
+<p>Les principales missions :</p>
+<p>L’accueil des usagers, pouvant se dérouler par téléphone ou sur place. Au-delà du premier accueil et de la première prise de contact, la fonction d’accueil en CSAPA est primordiale et a notamment pour objectif d’établir « un cadre contenant, chaleureux et rassurant : un sourire, des repères clairement verbalisés quant au règlement de fonctionnement » (Hayez, 1999)</p>
+<p>L’information donnée aux usagers et à leurs familles ;</p>
+<p>L’évaluation médicale, psychologique et sociale réalisée par un ou plusieurs membres de l’équipe du CSAPA, en un ou plusieurs rendez-vous, suite à laquelle un projet personnalisé pourra être proposé ;</p>
+<p>L’orientation de l’usager-e et/ou de son entourage, selon leurs besoins, vers des structures plus proches géographiquement, ou plus adaptées à des situations particulières ;</p>
+<p>La prise en charge et l’accompagnement global de la personne ;</p>
+<p>La réduction des risques fait partie intégrante de l’accompagnement global de l’usager en CSAPA en articulation avec les soins proposés, toujours en adéquation avec les besoins de l’usager et son évolution dans le dispositif.</p>
+<p>Elles sont mises en œuvre par des équipes pluridisciplinaires spécialisées en addictologie comprenant médecins généralistes, psychiatres, infirmiers, travailleurs sociaux, psychologues, thérapeutes familiaux, secrétaires, médiateurs de santé pair etc.</p>
+<ul><li><a href="https://annuaire.action-sociale.org/etablissements/readaptation-sociale/centre-de-soins-accompagnement-prevention-addictologie-197/rgn-ile-de-france.html" target="_blank" rel="noopener">Liste et cartographie des CSAPA en Île-de-France</a></li></ul></div>
+<div class="card-item"><p><strong>Halte Soins Addictions </strong>(HSA)</p></div>
+<div class="card-item"><p>L’espace « Jean-Pierre Lhomme », porté par l’association Gaïa, est la seule Halte Soins Addictions (HSA) d’Île-de-France. La structure fournit un espace sécurisé aux usagers-es de drogues en situation de grande précarité pour consommer leurs substances et accéder à des services de soins et de suivi social.Deux objectifs :</p>
+<p>Améliorer la santé des usager·es et leur accès aux droits sociaux ;</p>
+<p>Améliorer la tranquillité publique et le cadre de vie pour les riverain·es.</p>
+<p>14 rue Ambroise Paré, 75010 Paris</p>
+<p>01 77 72 22 15 / <a href="mailto:association@gaia-paris.fr" target="_blank" rel="noopener">association@gaia-paris.fr</a></p>
+<p>Plus d’informations :</p>
+<ul><li><a href="http://gaia-paris.fr/hsa" target="_blank" rel="noopener">gaia-paris.fr/hsa</a></li><li><a href="https://cdn.paris.fr/paris/2021/04/12/5f586de926df3d7843d059dc24115133.pdf" target="_blank" rel="noopener">Brochure explicative de « l&#x27;Espace Gaïa »</a></li></ul></div>
+<div class="card-item"><p><strong>Accompagnement des personnes pratiquant le chemsex par l’association AIDES</strong></p></div>
+<div class="card-item"><p><strong>LE SPOT Beaumarchais</strong></p>
+<p>Centre de santé sexuelle qui accueille, sans jugement, les hommes (cis ou trans) ayant des relations sexuelles avec d’autres hommes, les femmes trans et les personnes non binaires.C’est un espace de ressources, d’accompagnement, de soin et d’orientations sur la santé sexuelle, le chemsex, les relations transactionnelles, les violences sexuelles et les infections sexuellement transmissibles.</p>
+<ul><li><a href="https://www.dropbox.com/scl/fi/kkvvy7q11ei25esxfzx1j/2025-11-24-Flyer-de-pr-sentation-du-SPOT-Beaumarchais.pdf?rlkey=h1jso6cnfdh0e6wiznb4p43ko&amp;e=1&amp;st=jw4xxbvb&amp;dl=0" target="_blank" rel="noopener">présentation du SPOT Beaumarchais et de ses différentes offres</a>➜ <a href="https://calendar.google.com/calendar/u/0/embed?src=09155367e8375ddca75bea6e5ffb2c2be1d4239606f0288fa2bfe5550aa1fbcc@group.calendar.google.com&amp;ctz=Europe/Paris" target="_blank" rel="noopener">agenda des soirées du SPOT Beaumarchais</a></li></ul>
+<p>LE SPOT Beaumarchais,76 rue de Cléry, 75002 Paris01 53 69 04 06 (tu peux envoyer un message WhatsApp à ce numéro)<a href="mailto:spotbeaumarchais@aides.org" target="_blank" rel="noopener">spotbeaumarchais@aides.org</a><strong>_________________________________Dispositifs nationaux d’écoute et de soutien à distance de AIDES</strong></p>
+<p>Une question ? Besoin d&#x27;écoute ou de soutien ? Les militants-es de AIDES sont là pour vous.<strong>📞 </strong>Par message sur WhatsApp au 07 62 93 22 29 <strong>💬 </strong>Vous pouvez également rejoindre le groupe Facebook privé <a href="https://www.facebook.com/groups/364799467186268" target="_blank" rel="noopener">Info Chemsex (by AIDES)</a> ou le <a href="https://t.me/AIDESChemsex" target="_blank" rel="noopener">groupe Telegram d&#x27;information et d&#x27;auto-support sur le Chemsex</a>.</p>
+<p>Pour les personnes abstinentes, un <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_Zjc5YzhkNzUtYjExYy00NWJlLTg0ZmEtNzYxYmUwYWFlOWNi%40thread.v2%2F0%3Fcontext%3D%257B%2522Tid%2522%3A%2522e97ffd1c-cbe3-48fa-8bdd-6f8cd4b882ae%2522%2C%2522Oid%2522%3A%2522ac3872bf-9032-46ab-8dc2-63c67106279d%2522%257D%26anon%3Dtrue&amp;type=meetup-join&amp;deeplinkId=808cde5d-b5ba-48ca-bac2-989c865c2b07&amp;directDl=true&amp;msLaunch=true&amp;enableMobilePage=true&amp;suppressPrompt=true" target="_blank" rel="noopener">groupe de parole chillout en visio</a> est organisé les jeudis de 18h30 à 19h30.Ne restez pas seuls-es.<strong>_________________________________ChemTest</strong></p>
+<p>Imaginé par LE SPOT Beaumarchais de AIDES et <a href="https://www.checkpointparis.org/" target="_blank" rel="noopener">Le Checkpoint Paris</a>, le ChemTest est un questionnaire en ligne, accessible sur <a href="http://chemtest.fr" target="_blank" rel="noopener">chemtest.fr</a>, proposant aux personnes pratiquant le chemsex une auto-évaluation de leurs pratiques.Dans quelle situation te trouves-tu avec les chems ? Tu n’arrives pas à t’arrêter ? Il te faut toujours plus de chems ? Ton rythme de vie est déréglé ? Tu fais analyser tes produits ? Tu arrives à espacer tes plans ? Réponds aux 40 questions du ChemTest et découvre des conseils de réduction de risques pour maintenir de bonnes pratiques dans la durée, et des informations sur les structures et les dispositifs de prise en charge en cas de besoin.</p>
+<p><strong>_________________________________</strong></p>
+<p><strong>Les brochures de l’association AIDES</strong></p>
+<p><a href="https://fr.calameo.com/aides/read/00622550017769de6a565?page=1" target="_blank" rel="noopener">Chemsex &amp; sexualité</a></p>
+<p><a href="https://fr.calameo.com/aides/read/006225500edcd6d62abc1?page=1" target="_blank" rel="noopener">Chemsex &amp; produits</a></p>
+<p><a href="https://fr.calameo.com/aides/read/006225500a42a19c0f676?page=1" target="_blank" rel="noopener">Les indispensables pour un plan chemsex en toute sécurité</a></p>
+<p><a href="https://fr.calameo.com/aides/read/0062255001084de36fb29?page=1" target="_blank" rel="noopener">GHB-GBL</a></p>
+<p><a href="https://fr.calameo.com/aides/read/00622550093ac55f2bfdd?page=1" target="_blank" rel="noopener">Cathinones, 3MMC, etc.</a></p>
+<p><a href="https://fr.calameo.com/aides/read/006225500665e202c610e?page=1" target="_blank" rel="noopener">La Tina</a></p>
+<p><a href="https://fr.calameo.com/aides/read/00622550070d97c81e49c?page=1" target="_blank" rel="noopener">Soutenir &amp; accompagner</a><strong>_________________________________</strong></p>
+<p>Plus d’informations :</p>
+<ul><li><a href="http://aides.org/chemsex" target="_blank" rel="noopener">aides.org/chemsex</a>➜ <a href="https://www.google.com/maps/d/u/0/viewer?mid=1X6R4WU3uyknwokgyy-XkiM-1PEAEg1L9&amp;ll=47.00777547063585%2C1.986745749999974&amp;z=6" target="_blank" rel="noopener">carte de France des actions Chemsex de AIDES</a></li></ul></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>J’ai besoin de faire analyser mon produit…</strong></p></div>
+<div class="card-item"><p>Savoir ce que l’on consomme permet de réduire les risques.➜ <a href="https://www.analysetonprod.fr/cest-quoi-lanalyse-de-prod/" target="_blank" rel="noopener">L’analyse de produit, c’est quoi ?</a>Il existe en France de nombreuses associations qui peuvent analyser ou faire analyser un échantillon de ton produit</p>
+<p>Chacune d’elle a ses propres modalités pour avoir accès à ce service.➜ <a href="https://www.analysetonprod.fr/carte-interactive/?_structure_type=structures-collecte" target="_blank" rel="noopener">Carte interactive des points d’analyse en France</a><strong>_________________________________L’association AIDES collecte des échantillons en Île-de-France pour les faire analyser :</strong></p>
+<p>Local de AIDES Paris Centre / 76 rue de Cléry, 75002 Paris / 01 44 82 53 14 Sur RDV uniquement.</p>
+<p>LE SPOT Beaumarchais / 51 boulevard Beaumarchais, 75003 Paris / 01 53 69 04 06Lors des permanence d’accueil sans RDV (Lundi, mercredi, jeudi et vendredi de 15h à 19h ; mardi de 16h à 19h).</p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>FACE À UNE SURDOSE DE DROGUES, COMMENT RÉAGIR ?PRÉVENIR LES SECOURS, SANS ATTENDRE !</strong></p></div>
+<div class="card-item"><p><strong>Face à des signes inquiétants de perte de vigilance, de perte de conscience, de convulsion ou de poids sur la poitrine il faut, dans cet ordre :</strong></p>
+<ul><li>réagir vite, ne pas attendre de voir comment la situation va évoluer.</li><li>appeler immédiatement et sans hésiter les secours : <strong>15 ou 112</strong>, en indiquant bien les produits qui ont pu être consommés. <strong>Les secours sont tenus au secret médical, il n’y a pas de conséquences juridiques au fait d’appeler les secours pour sauver une personne</strong>.</li><li>pour les intoxications par opioïde : appliquer sans attendre un antidote à base de naloxone (voir ci-dessous)</li><li>si la personne a perdu conscience et ne respire plus : appliquer les gestes de premier secours (faire un massage cardiaque ou utiliser un défibrillateur, dégager les voies respiratoires et pratiquer sa respiration assistée)</li><li>si la personne a perdu conscience et respire : dégager ses voies respiratoires et la mettre en position latérale de sécurité</li><li>lorsque les secours arrivent : passer le relais en indiquant les produits consommés ou administrés (naloxone) et à quelle heure.(source : <a href="https://www.drogues-info-service.fr/Actualites/Reconnaitre-une-overdose-et-sauver-des-vies" target="_blank" rel="noopener">Drogues Info Service</a>)</li></ul></div>
+</div>
+
+<div class="card resource"><span class="tag">ADDICTION</span><div class="res-entry"><div class="res-desc"><strong>Tabac Info Service</strong><br>Information, conseil et aide à l&#x27;arrêt du tabac. Service de coaching personnalisé par internet</div><div class="res-contact">☏ <strong>39 89</strong><br><a href="http://www.tabac-info-service.fr" target="_blank" rel="noopener">tabac-info-service.fr</a></div></div>
+<div class="res-entry"><div class="res-desc"><strong>Alcool Info Service</strong><br>Information, soutien, conseil et orientation pour les personnes en difficulté avec l’alcool, et pour leurs proches.</div><div class="res-contact"><strong>☏ 0 980 980 930</strong><br><a href="http://www.alcool-infos-service.fr" target="_blank" rel="noopener">alcool-infos-service.fr</a></div></div>
+<div class="res-entry"><div class="res-desc"><strong>Drogues Info Service</strong><br>Information, soutien, conseil et orientation pour les personnes en difficulté avec l’usage de drogue, et pour leurs proches..</div><div class="res-contact"><strong>☏ 0 800 23 13 13</strong><br><a href="http://www.drogues-infos-service.fr" target="_blank" rel="noopener">drogues-infos-service.fr</a></div></div>
+<div class="res-entry"><div class="res-desc"><strong>Écoute Cannabis</strong>Information, soutien, conseil et orientation pour les personnes en difficulté avec l’usage de cannabis, et pour leurs proches</div><div class="res-contact"><strong>☏ 0 980 980 940</strong><br><a href="http://www.drogues-infos-service.fr" target="_blank" rel="noopener">drogues-infos-service.fr</a></div></div></div>
+</div>
+<nav class="foot">
+  <div class="foot-t">Autres ressources</div>
+  <a href="page-01.html">01. Numéros utiles</a><a href="page-02.html">02. Où me faire dépister gratuitement</a><a href="page-03.html">03. Autotest VIH/sida à la maison</a><a href="page-04.html">04. La PrEP : se protéger du VIH</a><a href="page-05.html">05. TPE : traitement d'urgence</a><a href="page-06.html">06. Je vis avec le VIH</a><a href="page-07.html">07. Santé sexuelle et mentale</a><a href="page-09.html">09. Protection maladie et droits</a><a href="page-10.html">10. Autres besoins spécifiques</a>
+  <br>
+  <a class="foot-h" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Accueil
+  </a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>🏠 Autotest VIH/sida à la maison – AIDES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ac:#27AE60;--ac1:#27AE6018;--ac3:#27AE6040;
+    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+    --bd:#E8E8E5;--bd2:#F2F2EF;
+    --sh:0 1px 4px rgba(0,0,0,.04);
+    --r:14px;--rs:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+
+  /* Header */
+  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+  .back:hover{opacity:1}.back::after{display:none!important}
+  .hdr-icon{font-size:34px;margin-bottom:8px}
+  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+
+  /* Content */
+  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+
+  /* Text */
+  p{margin-bottom:8px}p:last-child{margin-bottom:0}
+  strong{font-weight:700;color:var(--tx2)}
+
+  /* Links */
+  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+  a:hover{border-bottom-color:var(--ac)}
+  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
+  a[href^="mailto:"]{border-bottom-style:dashed}
+
+  /* Images */
+  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+
+  /* Lists */
+  ul{list-style:none;margin:8px 0;padding:0}
+  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+  li:last-child{border-bottom:none}
+  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+
+  /* ═══ THE CARD ═══ (one per logical section) */
+  .card{
+    background:var(--card);border-radius:var(--r);
+    box-shadow:var(--sh);border:1px solid var(--bd);
+    padding:0;margin-bottom:14px;overflow:hidden;
+  }
+
+  /* Card title (first row of a table, section name) */
+  .card-title{
+    font-family:'Outfit',sans-serif;
+    font-size:15px;font-weight:700;color:var(--ac);
+    padding:14px 18px 10px;
+    border-bottom:2px solid var(--ac);
+    line-height:1.4;
+  }
+  .card-title p{margin-bottom:3px;color:var(--ac)}
+  .card-title a{color:var(--ac)}
+
+  /* Card item (a row of content) */
+  .card-item{
+    padding:12px 18px;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-item:last-child{border-bottom:none}
+
+  /* Card multi-cell row */
+  .card-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-row:last-child{border-bottom:none}
+  .card-cell{
+    padding:12px 16px;
+    border-right:1px solid var(--bd2);
+    font-size:14px;
+  }
+  .card-cell:last-child{border-right:none}
+  .card-cell p{margin-bottom:4px}
+  @media(max-width:540px){
+    .card-row{grid-template-columns:1fr}
+    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
+    .card-cell:last-child{border-bottom:none}
+  }
+
+  /* ═══ RESOURCE CARD (with category tag) ═══ */
+  .card.resource{
+    border-left:4px solid var(--ac);
+    padding:16px 18px;
+  }
+  .tag{
+    display:inline-block;font-family:'Outfit',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--ac);background:var(--ac1);
+    padding:3px 10px;border-radius:6px;margin-bottom:12px;
+  }
+  .res-entry{
+    padding:10px 0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .res-entry:last-child{border-bottom:none}
+  .res-entry:first-child{padding-top:0}
+  .res-desc{margin-bottom:6px}
+  .res-desc p{margin-bottom:4px}
+  .res-contact{
+    background:#F6F6F3;border-radius:var(--rs);
+    padding:8px 12px;font-size:14px;
+  }
+  .res-contact p{margin-bottom:2px}
+
+  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
+  .emergency{
+    background:#FFF5F5;border:2.5px solid #E2001A;
+    border-radius:var(--rs);
+    padding:16px 18px;margin:12px 18px;
+    box-shadow:0 2px 8px rgba(226,0,26,.06);
+  }
+  .emergency p{margin-bottom:6px}
+  .emergency strong{color:#B80015}
+
+  /* Footer */
+  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+  .foot a::after{display:none!important}
+  .foot a:hover{color:var(--ac)}
+  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+  .foot-h::after{display:none!important}
+
+  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <a class="back" href="index.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Retour
+  </a>
+  <div class="hdr-icon">🏠</div>
+  <h1>03. Autotest VIH/sida à la maison</h1>
+</header>
+<div class="cnt">
+<div class="card">
+<div class="card-row"><div class="card-cell"><img src="img/img-03-a6b6603a.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell"><strong>Autotest VIH®</strong> est un autotest de dépistage du VIH (virus responsable du sida) via un prélèvement de sang obtenu au bout du doigt. Il est à usage unique et est fiable pour détecter une infection au VIH datant de plus de 3 mois.<br>Vous pouvez le réaliser chez vous, en suivant la notice d’utilisation ou en regardant cette <a href="https://www.youtube.com/watch?v=zJjOCZF6Kkg&amp;t=64s" target="_blank" rel="noopener">vidéo de démonstration en français</a>.<br>Le temps nécessaire pour réaliser l’autotest est d’environ 5 minutes et le temps d’attente avant la lecture est de 15 minutes. Assurez-vous de disposer d’un minuteur. Lisez attentivement et complètement la notice d’utilisation avant de commencer le test<strong>Tu peux venir récupérer un autotest VIH dans une permanence de AIDES (ou nous téléphoner) : </strong><a href="page-02.html">Permanences de AIDES en Île-de-France</a></div></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>L’autotest VIH dans d’autres langues</strong><strong> </strong>(clique sur la langue de ton choix)</p></div>
+<div class="card-item"><p>Anglais / EnglishArabe/عربEspagnol / EspañolL<strong>ingala</strong>Portugais / PortuguêsSwahiliIWolof</p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p><strong>Anglais / English</strong></p></div>
+<div class="card-item"><p><strong>HIV self-test by the AIDES association :</strong></p>
+<p>Autotest VIH® is a self-test for HIV (the virus responsible for AIDS) using a blood sample obtained from the fingertip.</p>
+<p>This single-use self-test is reliable for detecting HIV infection older than 3 months.</p>
+<p>You can do it at home, by following the instructions for use.</p>
+<p>The time required to complete the self-test is approximately 5 minutes and it takes 15 minutes to read the result. Make sure you have a timer. Read the instructions for use carefully and completely before starting the test.</p>
+<p>For more information, you can also meet us at the AIDES hotlines (or call us) : AIDES hotlines</p>
+<p><a href="page-02.html">Permanence de AIDES en Île-de-France</a></p>
+<p>The AUTOTEST application: This downloadable application for smartphones will accompany you before, during and after carrying out your self-test  <a href="https://www.autotest-sante.com/fr/App-146.html" target="_blank" rel="noopener">www.autotest-sante.com</a></p>
+<p><strong>Notice d’utilisation</strong> / The instructions for use : <a href="https://drive.google.com/file/d/1KY8AggWqDAw6nrz1LBeQJzSFVBfoSq-t/view?usp=sharing" target="_blank" rel="noopener">Notice autotest ANGLAIS</a></p>
+<p><strong>Une vidéo Youtube </strong>“comment réaliser l’autotest” / A Youtube video &quot;how to perform the self-test&quot;: <a href="https://www.youtube.com/watch?v=geLDPUJ855w" target="_blank" rel="noopener">Vidéo Youtube Autotest VIH Anglais</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p><strong>Arabe</strong><strong> / </strong><strong>عرب</strong></p></div>
+<div class="card-item"><p><strong>الاختبار</strong><strong> </strong><strong>الذاتي</strong><strong> </strong><strong>لفيروس</strong><strong> </strong><strong>نقص</strong><strong> </strong><strong>المناعة</strong><strong> </strong><strong>البشرية</strong><strong> </strong><strong>من</strong><strong> </strong><strong>قبل</strong><strong> </strong><strong>جمعية</strong><strong> </strong><strong>AID</strong><strong>E</strong><strong>S:</strong></p>
+<p>Autotest VIH® هو اختبار ذاتي لفيروس نقص المناعة البشرية (الفيروس المسؤول عن الإيدز) باستخدام عينة دم يتم الحصول عليها من طرف الإصبع.</p>
+<p>يعد هذا الاختبار الذاتي الذي يستخدم مرة واحدة موثوقًا به للكشف عن عدوى فيروس نقص المناعة البشرية التي مضى عليها أكثر من 3 أشهر.</p>
+<p>يمكنك القيام بذلك في المنزل باتباع تعليمات الاستخدام.</p>
+<p>الوقت اللازم لإكمال الاختبار الذاتي حوالي 5 دقائق ووقت الانتظار قبل القراءة 15 دقيقة. تأكد من أن لديك جهاز توقيت. اقرأ تعليمات الاستخدام بعناية وبشكل كامل قبل بدء الاختبار.<strong> </strong></p>
+<p>لمزيد من المعلومات ، يمكنك أيضًا مقابلتنا على الخطوط الساخنة AIDES (أو الاتصال بنا): خطوط AIDES الساخنة : <a href="page-02.html">Permanence de AIDES en Île-de-France</a></p>
+<p>تطبيق  AUTOTEST: سيرافقك هذا التطبيق القابل للتنزيل للهواتف الذكية قبل وأثناء وبعد إجراء الاختبار الذاتي</p>
+<p><a href="https://www.autotest-sante.com/fr/App-146.html" target="_blank" rel="noopener">www.autotest-sante.com</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p><strong>Espagnol / Español</strong></p></div>
+<div class="card-item"><p><strong>Autotest VIH</strong>®<strong>, a través de la asociación AID</strong><strong>E</strong><strong>S :</strong></p>
+<p>Autotest VIH® es una prueba que sirve para detectar la presencia de VIH (el virus responsable del sida) a partir de una muestra de sangre extraída de la yema del dedo.</p>
+<p>El autotest, de un solo uso, detecta con fiabilidad infecciones de VIH de más de 3 meses.</p>
+<p>La prueba puedes hacértela tú mismo/a en casa siguiendo las instrucciones de uso.</p>
+<p>Realizar la prueba te llevará unos 5 minutos, y deberás esperar otros 15 para leer el resultado. Asegúrate de tener a mano un temporizador. Antes de empezar, lee atentamente las instrucciones.</p>
+<p>Para más información, puedes venir a vernos o llamarnos durante nuestras guardias: <a href="page-02.html">Guardias de AIDES</a></p>
+<p><strong>Aplicación AUTOTEST:</strong> una aplicación para smartphones que te acompañará antes, durante y después de la realización del autotest:<strong> </strong><a href="https://www.autotest-sante.com/fr/App-146.html" target="_blank" rel="noopener">www.autotest-sante.com</a></p>
+<p><strong>Instrucciones de uso del Autotest VIH en español: </strong><a href="https://drive.google.com/file/d/180jSU_P31G3NWWz_QE_eJVVcbEwQo_ii/view" target="_blank" rel="noopener">Instrucciones del Autotest en espa</a><a href="https://www.youtube.com/watch?v=-jeI_yZbdJQ" target="_blank" rel="noopener">ñ</a><a href="https://drive.google.com/file/d/180jSU_P31G3NWWz_QE_eJVVcbEwQo_ii/view" target="_blank" rel="noopener">ol</a></p>
+<p><strong>Tutorial de Youtube para realizar el autotest: </strong><a href="https://www.youtube.com/watch?v=-jeI_yZbdJQ" target="_blank" rel="noopener">Tutorial Autotest en español</a></p>
+<p>(Relu par Pablo MORENO)</p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>L</strong><strong>ingala TRADUCTION EN COURS </strong></p></div>
+<div class="card-item"><p><strong>Autotest VIH par l’association AIDES :</strong></p>
+<p>Autotest VIH® est un autotest de dépistage du VIH (virus responsable du SIDA) via un prélèvement de sang obtenu au bout du doigt.</p>
+<p>Cet autotest, à usage unique, est fiable pour détecter une infection au VIH datant de plus de 3 mois.</p>
+<p>Vous pouvez le réaliser chez vous, en suivant la notice d’utilisation.</p>
+<p>Le temps nécessaire pour réaliser l’autotest est d’environ 5 minutes et le temps d’attente avant la lecture est de 15 minutes. Assurez-vous de disposer d’un minuteur. Lisez attentivement et complètement la notice d’utilisation avant de commencer le test.</p>
+<p><strong>Pour recevoir un autotest VIH, gratuitement par courrier, à faire seul à domicile :  </strong><a href="https://jefaisletest.fr/" target="_blank" rel="noopener">jefaisletest.fr</a></p>
+<p>Pour plus d’informations, tu peux aussi nous rencontrer dans les permanences AIDES (ou nous téléphoner) : <a href="page-02.html">Permanence de AIDES en Île-de-France</a></p>
+<p><strong>L’application AUTOTEST : </strong>Cette application téléchargeable sur les smartphones vous accompagnera avant, pendant et après la réalisation de votre autotest : <a href="https://www.autotest-sante.com/fr/App-146.html" target="_blank" rel="noopener">www.autotest-sante.com</a></p>
+<p><strong>Une vidéo Youtube “comment réaliser l’autotest” : </strong><a href="https://www.youtube.com/watch?v=OeHo-Mo9z1o&amp;list=PLn8-dvHpiyFBaRIwhP3KOENg5Dx5_32q5&amp;index=4" target="_blank" rel="noopener">Vidéo Autotest VIH Lingala</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>Portugais / Português</strong></p></div>
+<div class="card-item"><p><strong>Autoteste de HIV pela associação AIDES :</strong></p>
+<p>O Autotest VIH® é um autoteste para HIV (o vírus responsável pela AIDS) usando uma amostra de sangue obtida da ponta do dedo.</p>
+<p>Este autoteste de uso único é confiável para detectar a infecção por HIV com mais de 3 meses.</p>
+<p>Você pode fazer em casa, seguindo as instruções de uso.</p>
+<p>O tempo necessário para concluir o autoteste é de aproximadamente 5 minutos e o tempo de espera antes da leitura é de 15 minutos. Certifique-se de ter um cronômetro. Leia as instruções de uso cuidadosa e completamente antes de iniciar o teste.</p>
+<p>Para mais informações, você também pode nos encontrar nas linhas diretas da AIDES (ou ligue para nós): <a href="page-02.html">Permanence de AIDES en Île-de-France</a></p>
+<p><strong>O aplicativo AUTOTEST : Este aplicativo para download para smartphones irá acompanhá-lo antes, durante e depois de realizar seu autoteste : </strong><a href="https://www.autotest-sante.com/fr/App-146.html" target="_blank" rel="noopener">www.autotest-sante.com</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p><strong>Swahili</strong></p></div>
+<div class="card-item"><p><strong>Jaribio la kujipima VVU na chama cha AIDES :</strong></p>
+<p>Autotest VIH ® ni kipimo cha kujipima VVU (virusi vinavyohusika na UKIMWI) kwa kutumia sampuli ya damu iliyopatikana kutoka kwa kidole.</p>
+<p>Jaribio hili la utumiaji wa moja linaaminika kwa kugundua maambukizo ya VVU zaidi ya miezi 3.</p>
+<p>Unaweza kuifanya nyumbani, kwa kufuata maagizo ya matumizi.</p>
+<p>Wakati unaohitajika kumaliza kujipima ni takriban dakika 5 na wakati wa kusubiri kabla ya kusoma ni dakika 15. Hakikisha una kipima muda. Soma maagizo ya matumizi kwa uangalifu na kabisa kabla ya kuanza mtihani.</p>
+<p>Kwa habari zaidi, unaweza pia kukutana nasi kwenye nambari za simu za AIDeS (au tupigie simu): <a href="page-02.html">Permanence de AIDES en Île-de-France</a></p>
+<p><strong>Maombi ya AUTOTEST : </strong>Maombi haya yanayoweza kupakuliwa kwa simu mahiri yatakusindikiza kabla, wakati na baada ya kufanya mtihani wako wa kibinafsi : <a href="https://www.autotest-sante.com/fr/App-146.html" target="_blank" rel="noopener">www.autotest-sante.com</a></p>
+<p><strong>Vidéo Youtube</strong><strong> “comment réaliser l’autotest” / Video ya Youtube &quot;jinsi ya kujipima&quot; </strong><a href="https://www.youtube.com/watch?v=MgDW3Te_Vzo&amp;list=PLn8-dvHpiyFBaRIwhP3KOENg5Dx5_32q5&amp;index=3" target="_blank" rel="noopener">Vidéo autotest VIH Swahili</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-item"><p><strong>Wolof</strong></p></div>
+<div class="card-item"><p><strong>Vidéo Youtube “comment réaliser l’autotest” </strong><a href="https://www.youtube.com/watch?v=TUHAshryYJk&amp;list=PLn8-dvHpiyFBaRIwhP3KOENg5Dx5_32q5&amp;index=2" target="_blank" rel="noopener">Vidéo Youtube VIH Wolof</a></p></div>
+</div>
+</div>
+<nav class="foot">
+  <div class="foot-t">Autres ressources</div>
+  <a href="page-01.html">01. Numéros utiles</a><a href="page-02.html">02. Où me faire dépister gratuitement</a><a href="page-04.html">04. La PrEP : se protéger du VIH</a><a href="page-05.html">05. TPE : traitement d'urgence</a><a href="page-06.html">06. Je vis avec le VIH</a><a href="page-07.html">07. Santé sexuelle et mentale</a><a href="page-08.html">08. Je consomme des drogues</a><a href="page-09.html">09. Protection maladie et droits</a><a href="page-10.html">10. Autres besoins spécifiques</a>
+  <br>
+  <a class="foot-h" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Accueil
+  </a>
+</nav>
+</body>
+</html>

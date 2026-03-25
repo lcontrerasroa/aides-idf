@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>🌈 Autres besoins spécifiques – AIDES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ac:#059669;--ac1:#05966918;--ac3:#05966940;
+    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+    --bd:#E8E8E5;--bd2:#F2F2EF;
+    --sh:0 1px 4px rgba(0,0,0,.04);
+    --r:14px;--rs:10px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+
+  /* Header */
+  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+  .back:hover{opacity:1}.back::after{display:none!important}
+  .hdr-icon{font-size:34px;margin-bottom:8px}
+  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+
+  /* Content */
+  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+
+  /* Text */
+  p{margin-bottom:8px}p:last-child{margin-bottom:0}
+  strong{font-weight:700;color:var(--tx2)}
+
+  /* Links */
+  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+  a:hover{border-bottom-color:var(--ac)}
+  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
+  a[href^="mailto:"]{border-bottom-style:dashed}
+
+  /* Images */
+  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+
+  /* Lists */
+  ul{list-style:none;margin:8px 0;padding:0}
+  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+  li:last-child{border-bottom:none}
+  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+
+  /* ═══ THE CARD ═══ (one per logical section) */
+  .card{
+    background:var(--card);border-radius:var(--r);
+    box-shadow:var(--sh);border:1px solid var(--bd);
+    padding:0;margin-bottom:14px;overflow:hidden;
+  }
+
+  /* Card title (first row of a table, section name) */
+  .card-title{
+    font-family:'Outfit',sans-serif;
+    font-size:15px;font-weight:700;color:var(--ac);
+    padding:14px 18px 10px;
+    border-bottom:2px solid var(--ac);
+    line-height:1.4;
+  }
+  .card-title p{margin-bottom:3px;color:var(--ac)}
+  .card-title a{color:var(--ac)}
+
+  /* Card item (a row of content) */
+  .card-item{
+    padding:12px 18px;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-item:last-child{border-bottom:none}
+
+  /* Card multi-cell row */
+  .card-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .card-row:last-child{border-bottom:none}
+  .card-cell{
+    padding:12px 16px;
+    border-right:1px solid var(--bd2);
+    font-size:14px;
+  }
+  .card-cell:last-child{border-right:none}
+  .card-cell p{margin-bottom:4px}
+  @media(max-width:540px){
+    .card-row{grid-template-columns:1fr}
+    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
+    .card-cell:last-child{border-bottom:none}
+  }
+
+  /* ═══ RESOURCE CARD (with category tag) ═══ */
+  .card.resource{
+    border-left:4px solid var(--ac);
+    padding:16px 18px;
+  }
+  .tag{
+    display:inline-block;font-family:'Outfit',sans-serif;
+    font-size:10px;font-weight:700;letter-spacing:1.2px;
+    text-transform:uppercase;color:var(--ac);background:var(--ac1);
+    padding:3px 10px;border-radius:6px;margin-bottom:12px;
+  }
+  .res-entry{
+    padding:10px 0;
+    border-bottom:1px solid var(--bd2);
+  }
+  .res-entry:last-child{border-bottom:none}
+  .res-entry:first-child{padding-top:0}
+  .res-desc{margin-bottom:6px}
+  .res-desc p{margin-bottom:4px}
+  .res-contact{
+    background:#F6F6F3;border-radius:var(--rs);
+    padding:8px 12px;font-size:14px;
+  }
+  .res-contact p{margin-bottom:2px}
+
+  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
+  .emergency{
+    background:#FFF5F5;border:2.5px solid #E2001A;
+    border-radius:var(--rs);
+    padding:16px 18px;margin:12px 18px;
+    box-shadow:0 2px 8px rgba(226,0,26,.06);
+  }
+  .emergency p{margin-bottom:6px}
+  .emergency strong{color:#B80015}
+
+  /* Footer */
+  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+  .foot a::after{display:none!important}
+  .foot a:hover{color:var(--ac)}
+  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+  .foot-h::after{display:none!important}
+
+  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <a class="back" href="index.html">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Retour
+  </a>
+  <div class="hdr-icon">🌈</div>
+  <h1>10. Autres besoins spécifiques</h1>
+</header>
+<div class="cnt">
+<div class="card">
+<div class="card-title"><p><strong>Je suis travailleuse, travailleur du sexe et je cherche…</strong></p></div>
+<div class="card-item"><p><strong>… à faire face aux violences.</strong></p></div>
+<div class="card-item"><p><strong>Permanences de AID</strong><strong>E</strong><strong>S.</strong>Dépistage rapide, anonyme, gratuit, avec résultats immédiats du VIH, des hépatites B et C, et de la syphilis. Distribution gratuite d’autotests VIH (possible envoi par la poste si isolement géographique), de préservatifs interne et externe, de gel lubrifiant et autre matériel de réduction des risques.➜ <a href="https://docs.google.com/document/d/1Hr_u1jcbXV9JvCenEEoZPKVPQWeq0Q3FCjhaIMAIDTY/edit#heading=h.hfdvllv1034k" target="_blank" rel="noopener">Permanence de AIDES en Île-de-France</a></p>
+<p><strong>_________________________________</strong></p>
+<p><strong>Espace Femmes (Structure de l’association Oppelia-Charonne).</strong></p>
+<p>Accueil inconditionnel, confidentiel et non payant, réservé aux femmes cisgenres et transgenres : usagères de drogues et/ou d&#x27;alcool, en situation de précarité, de prostitution, ou victimes de violences.➜ 58 Boulevard Ney, 75018 ParisMétro 12 : Porte de la Chapelle // Bus 20, 56, 65, 75 : Boulevard de Magenta // Tramway 3bis : Porte de la Chapelle.➜ <a href="https://www.oppelia.fr/blog/structures/caarud-espace-femmes-charonne-75/" target="_blank" rel="noopener">Plus d’infos</a><strong>_________________________________</strong></p>
+<p><strong>Guide pratique de sécurité pour travailleur·se·s du sexe</strong> (par  l’Association Cabiria)➜ <a href="https://www.cabiria.asso.fr/IMG/pdf/Moncorpsmafiertemaforce.pdf" target="_blank" rel="noopener">Mon corps ma fierté ma force</a><strong>_________________________________</strong></p>
+<p><strong>Projet Jasmine (Programme de l’association Médecins du Monde)</strong></p>
+<p><img src="img/img-10-def43008.png" alt="" class="doc-img" loading="lazy"><img src="img/img-10-518a2086.png" alt="" class="doc-img" loading="lazy"><img src="img/img-10-9b9160c3.png" alt="" class="doc-img" loading="lazy"><img src="img/img-10-4acb223d.png" alt="" class="doc-img" loading="lazy">Programme de lutte contre les violences faites aux travailleur·se·s du sexe dans leur activité : Que faire en cas d’aggression ? :  Trouver une structure, ateliers d’auto-défense, accès aux soins : <a href="https://projet-jasmine.org/" target="_blank" rel="noopener">Projet jasmine</a><strong> </strong><strong> </strong></p>
+<p><img src="img/img-10-1be94e91.png" alt="" class="doc-img" loading="lazy"><img src="img/img-10-ec9572c5.png" alt="" class="doc-img" loading="lazy"><img src="img/img-10-f1fe1c6e.png" alt="" class="doc-img" loading="lazy"><img src="img/img-10-90513955.png" alt="" class="doc-img" loading="lazy"><strong> </strong><strong> </strong></p></div>
+<div class="card-item"><p><strong>… des informations sur la prévention, le VIH, les hépatites virales, les IST.</strong></p></div>
+<div class="card-item"><p><strong>Guide de Prévention pour les personnes TDS Transgenres : </strong><a href="https://www.cabiria.asso.fr/IMG/pdf/plaquette_PASTT_web2.pdf" target="_blank" rel="noopener">plaquette PASTT</a></p>
+<p><strong>Informations pratiques et conseils de prévention à l’usage des femmes chinoises </strong>(par l’association Cabiria) : brochure en chinois : <a href="https://www.cabiria.asso.fr/IMG/pdf/Brochure_lotus_bus_2009.pdf" target="_blank" rel="noopener">Brochure lotus bus</a></p></div>
+<div class="card-item"><p><strong>… des associations communautaires.</strong></p></div>
+<div class="card-item"><p><strong>ACCEPTESS-T</strong> (Actions Concrètes Conciliants : Education, Prévention, Travail, Équité, Santé et Sport pour les personnes Trans) Défense des droits des personnes transgenres les plus précarisées➜ <a href="https://www.acceptess-t.com/" target="_blank" rel="noopener">acceptess-t.com</a><strong>_________________________________</strong></p>
+<p><strong>Fédération Parapluie Rouge</strong>Composée de la plupart des associations/collectifs de santé communautaire et/ou défendant les droits des travailleur·se·s du sexe (TDS) en France, à savoir : Acceptess-T (Paris), Autres Regards (Marseille), Bad Boys (Paris &amp; Marseille), Cabiria (Lyon), le Collectif des femmes de Strasbourg Saint-Denis (Paris), Grisélidis (Toulouse), le PASTT (Paris), PDA (Besançon), les Roses d’Acier (Paris), le STRASS (France), les Pétrolettes (Rennes &amp; Brest), Queer Auvergne (Clermont-Ferrand), Paloma (Nantes) et Chardon Ardent (Caen)</p>
+<ul><li><a href="http://parapluierouge.org/" target="_blank" rel="noopener">parapluierouge.org</a></li></ul>
+<p><strong>_________________________________</strong></p>
+<p><strong>Pasaje Latino (Dispositif porté par l’association Arcat)</strong>Association de promotion à la santé, avec des intervenants parlant francais, espagnol, chinois</p>
+<ul><li><a href="https://www.arcat-sante.org/nos-dispositifs/pasaje-latino/" target="_blank" rel="noopener">Pasaje latino</a></li></ul>
+<p><strong>_________________________________</strong></p>
+<p><strong>PASTT</strong><strong> </strong>(Prévention Action Santé Travail pour les Transgenres)</p>
+<p>Association communautaire dirigée et orientée par et pour les personnes transgenres. Elle réalise des actions de prévention santé et de réduction des risques, d’accueil et d’orientation sur les questions liées à l’identité de genre et de lutte contre les discriminations : ➜ <a href="https://www.associationpastt.com/" target="_blank" rel="noopener">associationpastt.com</a></p>
+<p><strong>_________________________________Les Roses d&#x27;Acier</strong>Aide aux travailleuses du sexe chinoises pour améliorer leurs conditions de travail, lutter pour leurs droits et libertés et contre les discriminations à leur encontre, développer la solidarité entre travailleuses du sexe chinoises :➜ <a href="https://fondation-medecinsdumonde.org/association-roses-d-acier/" target="_blank" rel="noopener">Les Roses d&#x27;Acier</a></p>
+<ul><li><a href="https://www.net1901.org/association/LES-ROSES-DACIER-ALLIANCE-DES-FEMMES,1392663.html" target="_blank" rel="noopener">Les Roses d&#x27;Acier</a></li></ul>
+<p><strong>_________________________________</strong></p>
+<p><strong>STRASS</strong>Syndicat du travail sexuel ➜ <a href="https://strass-syndicat.org/" target="_blank" rel="noopener">strass-syndicat.org</a></p></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>Je suis une personne LGBTQIA+</strong></p></div>
+<div class="card-item"><p><strong>Je cherche une association lesbienne / accueillant des lesbiennes</strong></p></div>
+<div class="card-item"><p><strong>FièrEs</strong>Association féministe radicale non mixte, liée aux identités lesbiennes, bies et/ou trans.➜ <a href="https://fieres.wordpress.com/quisommesnous/" target="_blank" rel="noopener">fieres.wordpress.com</a><strong>_________________________________</strong></p>
+<p><strong>Le MAG Jeunes LGBT+ est une association de jeunes lesbiennes, gais, bi·es, trans, et +, âgé·es de 15 à 30 ans.</strong> (Mouvement d’Affirmation des Jeunes Gais, Lesbiennes, Bi et Trans) est une association nationale par et pour les jeunes LGBTI+ âgé-e-s de 15 et 30 ans :➜ <a href="https://www.mag-jeunes.org/" target="_blank" rel="noopener">mag-jeunes.org</a><strong>_________________________________</strong></p>
+<p><strong>Les soirées Wet For Me de Barbieturix : </strong><a href="http://www.barbieturix.com/2020/09/15/wet-for-me-open-air-edition/" target="_blank" rel="noopener">barbieturix.com</a></p></div>
+<div class="card-item"><p><strong>Hormonothérapie : Je cherche des kits d’auto-injection ou des ateliers d&#x27;auto-injection.</strong></p></div>
+<div class="card-item"><p><strong>L&#x27;Espace Santé Sexuelle Queer de l&#x27;association Acceptess-T </strong> :</p>
+<p>du lundi au jeudi de 13h à 20h. Des kits d’injections hormonales y sont distribués gratuitement.</p>
+<p>Sans rendez-vous (dans la limite des places disponibles) : <a href="https://www.acceptess-t.com/sante-sexuelle-prevention" target="_blank" rel="noopener">sante-sexuelle-prévention</a><strong>_________________________________</strong></p>
+<p><strong>Espace santé Trans :</strong> Association de promotion de la santé des personnes transidentitaires située en Île de France (avec permanence d’accueil, atelier d’auto injection…)</p>
+<p><a href="https://espacesantetrans.fr/ressources/brochures-guides-et-etudes/" target="_blank" rel="noopener">espacesantetrans.fr</a></p></div>
+<div class="card-item"><p><strong>Je cherche des groupes de soutien entre femmes trans… </strong></p></div>
+<div class="card-item"><p><strong>Collectif d’aide mutuelle  entre Femmes Trans : </strong><a href="https://www.instagram.com/front_transfem/" target="_blank" rel="noopener">FLIRT - instagram TransFem</a></p>
+<p>et <a href="https://www.instagram.com/soutien.transfem/?hl=fr" target="_blank" rel="noopener">Collectif d&#x27;auto soutien transféministe - Instagram</a></p></div>
+<div class="card-item"><p><strong>J’ai besoin de conseils juridiques… </strong></p></div>
+<div class="card-item"><p><strong>Le Barreau de Paris Solidarité : pour consulter  gratuitement un·e avocat·e. </strong></p>
+<p>Le bus « Barreau de Paris Solidarité » circule dans plusieurs lieux de Paris, sans rendez-vous. Des avocats-es bénévoles vous y conseillent en toute confidentialité.</p>
+<p>Il y a des permanences :</p>
+<p>tous publics ;</p>
+<p><strong>dédiée aux problématiques juridiques rencontrées par les personnes LGBTQI+</strong> ;</p>
+<p>dédiée aux femmes victimes de violences ;</p>
+<p>spécialisée en droit des étrangers et droit d’asile.</p>
+<ul><li>Tous les horaires à jours ici : <a href="https://www.barreausolidarite.org/nos-actions/bus-solidarite.html" target="_blank" rel="noopener">barreausolidarite.org</a>➜ Plus d’infos : <a href="mailto:barreausolidarite@avocatparis.org" target="_blank" rel="noopener">barreausolidarite@avocatparis.org</a> / 01 44 32 47 37 / 01 80 27 22 63</li></ul>
+<p><strong>_________________________________</strong></p>
+<p><strong>BAAM (Bureau d’Accueil et d’Accompagnement des Migrants-es).</strong>Le Pôle LGBTQI accompagne les personnes faisant une demande d’asile en raison de leur orientation sexuelle et/ou identité de genre, du début jusqu’à la fin de la procédure.➜ <a href="mailto:baam.lgbt@gmail.com" target="_blank" rel="noopener">baam.lgbt@gmail.com</a></p>
+<ul><li><a href="https://baamasso.org/fr/pole-lgbtq" target="_blank" rel="noopener">https://baamasso.org/fr/pole-lgbtq</a></li></ul></div>
+</div>
+
+<div class="card">
+<div class="card-title"><p><strong>Je suis sans-abri, réfugié-e, ou en difficulté</strong></p></div>
+<div class="card-item"><p><strong>Je cherche un lieu pour me nourrir gratuitement…</strong></p></div>
+<div class="card-item"><p><strong>Restaurant social - ESAT  « Le Santeuil » - Association Aurore  (Via l&#x27;association AID</strong><strong>E</strong><strong>S)</strong></p>
+<p>Offre d’une prestation de restauration aux personnes en précarité et réinsertion, marginalisées, précarisées, en détresse morale ou matérielle.</p>
+<p>8 rue de Santeuil, 75005 Paris</p>
+<ul><li>Le restaurant est ouvert tous les jours et toute l’année, jours fériés compris.</li><li>Deux repas par jour sont servis : déjeuner de 11h30 à 14h10 (30 mn par repas) et le dîner de 17h30 à 19h40 (30 mn par repas).</li><li>Les animaux sont interdits.</li><li>Il est possible de venir avec une personne qui devra payer 5 euros.</li><li>Chaque bénéficiaire a une carte mensuelle individuelle, nominative et numérotée. Elle est valable pour l’un des cinq services du déjeuner au dîner.</li><li><strong>Pour voir les infos sur le fonctionnement du lieux : </strong><a href="https://drive.google.com/file/d/1abDnmDTy37Oa7sIOOxEMhgxjfunPyKom/view?usp=sharing" target="_blank" rel="noopener">Plaquette restaurant Santeuil</a>➜ <strong>Pour avoir accès au restaurant, contactez les lieux de mobilisation de l&#x27;association AIDES à Paris : </strong><a href="https://docs.google.com/document/d/1Hr_u1jcbXV9JvCenEEoZPKVPQWeq0Q3FCjhaIMAIDTY/edit?usp=sharing" target="_blank" rel="noopener">Permanence de AIDES à Paris</a></li></ul></div>
+<div class="card-item"><p><strong>Je cherche des adresses pour me doucher, manger, avoir accès à internet, apprendre le français ou réaliser des démarches administratives…</strong></p></div>
+<div class="card-item"><p><strong>Guide « Solidarité à Paris ».</strong>Il a été conçu pour répondre aux difficultés que vous pouvez rencontrer dans votre vie quotidienne. Les dispositifs d&#x27;aides, associations, lieux pour se laver ou se nourrir y sont recensés. Dans chacune des six parties du guide, les adresses sont classées par arrondissement, puis par ordre alphabétique.➜ <a href="https://cdn.paris.fr/paris/2024/12/04/livre-1-guide-solidarite-annuel-2024-2025_web-ggr5.pdf" target="_blank" rel="noopener">Guide « Solidarité à Paris » 2024-2025</a></p>
+<p><strong>_________________________________</strong></p>
+<p><strong>Soliguide, le guide de la solidarité.</strong>Rassemble tous les services, initiatives et ressources pour les personnes en difficulté, distributions alimentaires, douches etc :  ➜ <a href="https://soliguide.fr/" target="_blank" rel="noopener">soliguide.fr</a>➜ Application mobile à télécharger : <a href="https://apps.apple.com/fr/app/soliguide/id1495949521" target="_blank" rel="noopener">pour iPhone</a> / <a href="https://play.google.com/store/apps/details?id=com.soliguide.soliguide&amp;pcampaignid=web_share" target="_blank" rel="noopener">pour Android</a><strong>_________________________________Watizat, les guides d’information pour les personnes exilées</strong>Rassemble toutes les adresses et renseignements utiles à Paris pour les personnes exilées et des informations sur les droits sociaux et les procédures d’asile et de titres de séjour.➜ <a href="https://watizat.org/guides-paris/" target="_blank" rel="noopener">les différents guides</a><strong> </strong>(en français, anglais, arabe, dari, pachto)</p></div>
+<div class="card-item"><p><strong>Je souhaite apprendre le français.</strong></p></div>
+<div class="card-item"><p><strong>Nombreux liens pour apprendre le Français en ligne</strong>, applications et sites en lignes : <a href="https://www.bnf.fr/fr/le-francais-langue-etrangere-fle-la-bnf" target="_blank" rel="noopener">le-francais-langue-etrangere</a></p>
+<p><strong>Formation Français : </strong>Carte avec toutes les adresses pour trouver une formation en Île-de-France : <a href="https://www.reseau-alpha.org/#" target="_blank" rel="noopener">www.reseau-alpha.org</a></p></div>
+</div>
+</div>
+<nav class="foot">
+  <div class="foot-t">Autres ressources</div>
+  <a href="page-01.html">01. Numéros utiles</a><a href="page-02.html">02. Où me faire dépister gratuitement</a><a href="page-03.html">03. Autotest VIH/sida à la maison</a><a href="page-04.html">04. La PrEP : se protéger du VIH</a><a href="page-05.html">05. TPE : traitement d'urgence</a><a href="page-06.html">06. Je vis avec le VIH</a><a href="page-07.html">07. Santé sexuelle et mentale</a><a href="page-08.html">08. Je consomme des drogues</a><a href="page-09.html">09. Protection maladie et droits</a>
+  <br>
+  <a class="foot-h" href="index.html">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Accueil
+  </a>
+</nav>
+</body>
+</html>
