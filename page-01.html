@@ -7,143 +7,99 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ac:#E2001A;--ac1:#E2001A18;--ac3:#E2001A40;
-    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
-    --bd:#E8E8E5;--bd2:#F2F2EF;
-    --sh:0 1px 4px rgba(0,0,0,.04);
-    --r:14px;--rs:10px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+:root{
+  --ac:#E2001A;--ac1:#E2001A18;--ac3:#E2001A40;
+  --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+  --bd:#E8E8E5;--bd2:#F2F2EF;
+  --sh:0 1px 4px rgba(0,0,0,.04);
+  --r:14px;--rs:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
 
-  /* Header */
-  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
-  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
-  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
-  .back:hover{opacity:1}.back::after{display:none!important}
-  .hdr-icon{font-size:34px;margin-bottom:8px}
-  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+/* Header */
+.hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+.hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+.back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+.back:hover{opacity:1}.back::after{display:none!important}
+.hdr-icon{font-size:34px;margin-bottom:8px}
+.hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
 
-  /* Content */
-  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+/* Content */
+.cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
 
-  /* Text */
-  p{margin-bottom:8px}p:last-child{margin-bottom:0}
-  strong{font-weight:700;color:var(--tx2)}
+/* Text */
+p{margin-bottom:8px}p:last-child{margin-bottom:0}
+strong{font-weight:700;color:var(--tx2)}
 
-  /* Links */
-  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
-  a:hover{border-bottom-color:var(--ac)}
-  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
-  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
-  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
-  a[href^="mailto:"]{border-bottom-style:dashed}
+/* Links */
+a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+a:hover{border-bottom-color:var(--ac)}
+a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+a[href^="page-"]:hover{border-bottom-color:var(--ac)}
+a[href^="mailto:"]{border-bottom-style:dashed}
 
-  /* Images */
-  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+/* Images */
+.doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
 
-  /* Lists */
-  ul{list-style:none;margin:8px 0;padding:0}
-  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
-  li:last-child{border-bottom:none}
-  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+/* Lists */
+ul{list-style:none;margin:8px 0;padding:0}
+li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+li:last-child{border-bottom:none}
+li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
 
-  /* ═══ THE CARD ═══ (one per logical section) */
-  .card{
-    background:var(--card);border-radius:var(--r);
-    box-shadow:var(--sh);border:1px solid var(--bd);
-    padding:0;margin-bottom:14px;overflow:hidden;
-  }
+/* ═══ THE CARD ═══ */
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border:1px solid var(--bd);padding:0;margin-bottom:14px;overflow:hidden}
+.card-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--ac);padding:14px 18px 10px;border-bottom:2px solid var(--ac);line-height:1.4}
+.card-title p{margin-bottom:3px;color:var(--ac)}
+.card-title a{color:var(--ac)}
+.card-item{padding:12px 18px;border-bottom:1px solid var(--bd2)}
+.card-item:last-child{border-bottom:none}
+.card-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border-bottom:1px solid var(--bd2)}
+.card-row:last-child{border-bottom:none}
+.card-cell{padding:12px 16px;border-right:1px solid var(--bd2);font-size:14px}
+.card-cell:last-child{border-right:none}
+.card-cell p{margin-bottom:4px}
+@media(max-width:540px){.card-row{grid-template-columns:1fr}.card-cell{border-right:none;border-bottom:1px solid var(--bd2)}.card-cell:last-child{border-bottom:none}}
 
-  /* Card title (first row of a table, section name) */
-  .card-title{
-    font-family:'Outfit',sans-serif;
-    font-size:15px;font-weight:700;color:var(--ac);
-    padding:14px 18px 10px;
-    border-bottom:2px solid var(--ac);
-    line-height:1.4;
-  }
-  .card-title p{margin-bottom:3px;color:var(--ac)}
-  .card-title a{color:var(--ac)}
+/* ═══ RESOURCE CARD ═══ */
+.card.resource{border-left:4px solid var(--ac);padding:16px 18px}
+.tag{display:inline-block;font-family:'Outfit',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--ac);background:var(--ac1);padding:3px 10px;border-radius:6px;margin-bottom:12px}
+.res-entry{padding:10px 0;border-bottom:1px solid var(--bd2)}
+.res-entry:last-child{border-bottom:none}
+.res-entry:first-child{padding-top:0}
+.res-name{font-weight:700;color:var(--tx);font-size:15px;margin-bottom:4px;font-family:'Outfit',sans-serif}
+.res-desc{margin-bottom:10px;font-size:14px;color:var(--tx2);line-height:1.6}
+.res-desc p{margin-bottom:4px}
 
-  /* Card item (a row of content) */
-  .card-item{
-    padding:12px 18px;
-    border-bottom:1px solid var(--bd2);
-  }
-  .card-item:last-child{border-bottom:none}
+/* ═══ CONTACT INFO ROWS ═══ */
+.res-contact{background:#F6F6F3;border-radius:var(--rs);padding:4px 12px;font-size:14px}
+.ci-row{display:flex;align-items:flex-start;gap:8px;padding:7px 0;border-bottom:1px solid var(--bd2);line-height:1.4}
+.ci-row:last-child{border-bottom:none}
+.ci-icon{flex-shrink:0;width:20px;text-align:center;font-size:13px;margin-top:1px}
+.ci-phone .ci-val{font-weight:700;font-family:'Outfit',sans-serif;font-size:15px;color:var(--tx)}
+.ci-note{font-size:12px;color:var(--tx3);margin-top:3px;line-height:1.4;display:block}
 
-  /* Card multi-cell row */
-  .card-row{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:0;
-    border-bottom:1px solid var(--bd2);
-  }
-  .card-row:last-child{border-bottom:none}
-  .card-cell{
-    padding:12px 16px;
-    border-right:1px solid var(--bd2);
-    font-size:14px;
-  }
-  .card-cell:last-child{border-right:none}
-  .card-cell p{margin-bottom:4px}
-  @media(max-width:540px){
-    .card-row{grid-template-columns:1fr}
-    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
-    .card-cell:last-child{border-bottom:none}
-  }
+/* ═══ EMERGENCY ═══ */
+.emergency{background:#FFF5F5;border:2.5px solid #E2001A;border-radius:var(--rs);padding:16px 18px;margin:12px 18px;box-shadow:0 2px 8px rgba(226,0,26,.06)}
+.emergency p{margin-bottom:6px}
+.emergency strong{color:#B80015}
 
-  /* ═══ RESOURCE CARD (with category tag) ═══ */
-  .card.resource{
-    border-left:4px solid var(--ac);
-    padding:16px 18px;
-  }
-  .tag{
-    display:inline-block;font-family:'Outfit',sans-serif;
-    font-size:10px;font-weight:700;letter-spacing:1.2px;
-    text-transform:uppercase;color:var(--ac);background:var(--ac1);
-    padding:3px 10px;border-radius:6px;margin-bottom:12px;
-  }
-  .res-entry{
-    padding:10px 0;
-    border-bottom:1px solid var(--bd2);
-  }
-  .res-entry:last-child{border-bottom:none}
-  .res-entry:first-child{padding-top:0}
-  .res-desc{margin-bottom:6px}
-  .res-desc p{margin-bottom:4px}
-  .res-contact{
-    background:#F6F6F3;border-radius:var(--rs);
-    padding:8px 12px;font-size:14px;
-  }
-  .res-contact p{margin-bottom:2px}
-
-  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
-  .emergency{
-    background:#FFF5F5;border:2.5px solid #E2001A;
-    border-radius:var(--rs);
-    padding:16px 18px;margin:12px 18px;
-    box-shadow:0 2px 8px rgba(226,0,26,.06);
-  }
-  .emergency p{margin-bottom:6px}
-  .emergency strong{color:#B80015}
-
-  /* Footer */
-  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
-  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
-  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
-  .foot a::after{display:none!important}
-  .foot a:hover{color:var(--ac)}
-  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
-  .foot-h::after{display:none!important}
-
-  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+/* Footer */
+.foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+.foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+.foot a::after{display:none!important}
+.foot a:hover{color:var(--ac)}
+.foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+.foot-h::after{display:none!important}
+@media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
 </style>
 </head>
 <body>
+
 <header class="hdr">
   <a class="back" href="index.html">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -152,72 +108,366 @@
   <div class="hdr-icon">🆘</div>
   <h1>01. Numéros utiles</h1>
 </header>
+
 <div class="cnt">
-<div class="card"><p><strong>AUTRES CONTACTS UTILES</strong></p></div>
 
-<div class="card">
-<div class="card-row"><div class="card-cell"><img src="img/img-01-45435200.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell"><img src="img/img-01-a2118ca0.png" alt="" class="doc-img" loading="lazy"></div></div>
-<div class="card-row"><div class="card-cell"><img src="img/img-01-6c5260f7.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell"><img src="img/img-01-9a30efd4.png" alt="" class="doc-img" loading="lazy"></div></div>
-<div class="card-row"><div class="card-cell"><img src="img/img-01-21592a0b.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell"><img src="img/img-01-3904f188.png" alt="" class="doc-img" loading="lazy"></div></div>
-</div>
+  <!-- CONTACTS VISUELS -->
+  <div class="card"><div class="card-item"><p><strong>AUTRES CONTACTS UTILES</strong></p></div></div>
 
-<div class="card">
-<div class="card-title"><p><strong>FACE À UNE SURDOSE DE DROGUES, COMMENT RÉAGIR ?PRÉVENIR LES SECOURS, SANS ATTENDRE !</strong></p></div>
-<div class="card-item"><p><strong>Face à des signes inquiétants de perte de vigilance, de perte de conscience, de convulsion ou de poids sur la poitrine il faut, dans cet ordre :</strong></p>
-<ul><li>réagir vite, ne pas attendre de voir comment la situation va évoluer.</li><li>appeler immédiatement et sans hésiter les secours : <strong>15 ou 112</strong>, en indiquant bien les produits qui ont pu être consommés. <strong>Les secours sont tenus au secret médical, il n’y a pas de conséquences juridiques au fait d’appeler les secours pour sauver une personne</strong>.</li><li>pour les intoxications par opioïde : appliquer sans attendre un antidote à base de naloxone (voir ci-dessous)</li><li>si la personne a perdu conscience et ne respire plus : appliquer les gestes de premier secours (faire un massage cardiaque ou utiliser un défibrillateur, dégager les voies respiratoires et pratiquer sa respiration assistée)</li><li>si la personne a perdu conscience et respire : dégager ses voies respiratoires et la mettre en position latérale de sécurité</li><li>lorsque les secours arrivent : passer le relais en indiquant les produits consommés ou administrés (naloxone) et à quelle heure.(source : <a href="https://www.google.com/url?q=https://www.drogues-info-service.fr/Actualites/Reconnaitre-une-overdose-et-sauver-des-vies&amp;sa=D&amp;source=docs&amp;ust=1741616256476498&amp;usg=AOvVaw3vZEm2-Qn9DYPs2aO93eTm" target="_blank" rel="noopener">Drogues Info Service</a>)</li></ul></div>
-</div>
+  <div class="card">
+    <div class="card-row"><div class="card-cell"><img src="img/img-01-45435200.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell"><img src="img/img-01-a2118ca0.png" alt="" class="doc-img" loading="lazy"></div></div>
+    <div class="card-row"><div class="card-cell"><img src="img/img-01-6c5260f7.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell"><img src="img/img-01-9a30efd4.png" alt="" class="doc-img" loading="lazy"></div></div>
+    <div class="card-row"><div class="card-cell"><img src="img/img-01-21592a0b.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell"><img src="img/img-01-3904f188.png" alt="" class="doc-img" loading="lazy"></div></div>
+  </div>
 
-<div class="card">
-<div class="card-item">Vous avez oublié le préservatif ou bien il a craqué ? Vous vous êtes piqué-e avec une seringue usagée ou avez reçu du sang dans vos yeux ou dans votre bouche ?<br>Rendez-vous immédiatement ou au plus tard dans les 48 heures <strong>au service des urgences d’un hôpital</strong> pour faire évaluer le risque et bénéficier, selon l’avis du médecin, d’un Traitement Post-Exposition (TPE).➜ <a href="https://www.google.com/maps/d/embed?mid=1D0S-XLnk4OZpXbLCKHknPF4JVwE&amp;ll=48.83852389795768%2C2.3758642598328317&amp;z=13" target="_blank" rel="noopener">carte des TPE en France métropolitaine</a> (source : Sida Info Service) Plus d’informations : <a href="page-05.html">05. TPE : traitement d’urgence en cas de risque de transmission du VIH/sida</a></div>
-</div>
+  <!-- SURDOSE -->
+  <div class="card">
+    <div class="card-title"><p><strong>FACE À UNE SURDOSE DE DROGUES — COMMENT RÉAGIR ?</strong></p><p>Prévenir les secours, sans attendre !</p></div>
+    <div class="card-item">
+      <p><strong>Face à des signes inquiétants de perte de vigilance, de perte de conscience, de convulsion ou de poids sur la poitrine, il faut, dans cet ordre :</strong></p>
+      <ul>
+        <li>Réagir vite, ne pas attendre de voir comment la situation va évoluer.</li>
+        <li>Appeler immédiatement et sans hésiter les secours : <strong>15 ou 112</strong>, en indiquant bien les produits qui ont pu être consommés. <strong>Les secours sont tenus au secret médical — il n'y a pas de conséquences juridiques au fait d'appeler les secours pour sauver une personne.</strong></li>
+        <li>Pour les intoxications par opioïde : appliquer sans attendre un antidote à base de naloxone (voir ci-dessous).</li>
+        <li>Si la personne a perdu conscience et ne respire plus : appliquer les gestes de premier secours (massage cardiaque, défibrillateur, dégager les voies respiratoires et pratiquer la respiration assistée).</li>
+        <li>Si la personne a perdu conscience et respire : dégager ses voies respiratoires et la mettre en position latérale de sécurité.</li>
+        <li>Lorsque les secours arrivent : passer le relais en indiquant les produits consommés ou administrés (naloxone) et à quelle heure.
+          <br><small>(source : <a href="https://www.drogues-info-service.fr/Actualites/Reconnaitre-une-overdose-et-sauver-des-vies" target="_blank" rel="noopener">Drogues Info Service</a>)</small></li>
+      </ul>
+    </div>
+  </div>
 
-<div class="card resource"><span class="tag">VIH</span><div class="res-entry"><div class="res-desc"><strong>Sida Info Service</strong><br>Information, soutien, orientation et prévention sur le VIH/sida et les infections sexuellement transmissibles.<br>D’autres liens : <a href="page-06.html">06. Je suis une personne vivant avec le VIH</a></div><div class="res-contact"><strong>☏ 0 800 840 800</strong><br><a href="http://www.sida-info-service.org" target="_blank" rel="noopener">sida-info-service.org</a></div></div></div>
+  <!-- TPE -->
+  <div class="card">
+    <div class="card-item">
+      <p>Vous avez oublié le préservatif ou bien il a craqué ? Vous vous êtes piqué·e avec une seringue usagée ou avez reçu du sang dans vos yeux ou votre bouche ?</p>
+      <p>Rendez-vous immédiatement ou au plus tard dans les <strong>48 heures au service des urgences d'un hôpital</strong> pour faire évaluer le risque et bénéficier, selon l'avis du médecin, d'un Traitement Post-Exposition (TPE).</p>
+      <p>➜ <a href="https://www.google.com/maps/d/embed?mid=1D0S-XLnk4OZpXbLCKHknPF4JVwE&ll=48.83852389795768%2C2.3758642598328317&z=13" target="_blank" rel="noopener">Carte des TPE en France métropolitaine</a> <small>(source : Sida Info Service)</small></p>
+      <p>Plus d'informations : <a href="page-05.html">05. TPE : traitement d'urgence en cas de risque de transmission du VIH/sida</a></p>
+    </div>
+  </div>
 
-<div class="card resource"><span class="tag">ADDICTION</span><div class="res-entry"><div class="res-desc"><strong>Drogues Info Service</strong><br>Information, soutien, conseil et orientation pour les personnes en difficulté avec l’usage de drogue, et pour leurs proches.</div><div class="res-contact"><strong>☏ 0 800 23 13 13</strong><br><a href="http://www.drogues-infos-service.fr" target="_blank" rel="noopener">drogues-infos-service.fr</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Alcool Info Service</strong><br>Information, soutien, conseil et orientation pour les personnes en difficulté avec l’alcool, et pour leurs proches.</div><div class="res-contact"><strong>☏ 0 980 980 930</strong><br><a href="http://www.alcool-infos-service.fr" target="_blank" rel="noopener">alcool-infos-service.fr</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Tabac Info Service</strong><br>Information, conseil et aide à l&#x27;arrêt du tabac. Service de coaching personnalisé par internet.</div><div class="res-contact"><strong>☏ 39 89</strong><br><a href="http://www.tabac-info-service.fr" target="_blank" rel="noopener">tabac-info-service.fr</a></div></div></div>
+  <!-- VIH -->
+  <div class="card resource">
+    <span class="tag">VIH</span>
+    <div class="res-entry">
+      <div class="res-name">Sida Info Service</div>
+      <div class="res-desc">Information, soutien, orientation et prévention sur le VIH/sida et les infections sexuellement transmissibles.<br>Autres ressources : <a href="page-06.html">06. Je suis une personne vivant avec le VIH</a></div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">0 800 840 800</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="http://www.sida-info-service.org" target="_blank" rel="noopener">sida-info-service.org</a></div>
+      </div>
+    </div>
+  </div>
 
-<div class="card resource"><span class="tag">FEMMES</span><div class="res-entry"><div class="res-desc"><strong>Violences Femmes Info </strong><br>Appel anonyme et gratuit. Accessible en métropole et dans les DROM-COM</div><div class="res-contact"><strong>☏ 39 19</strong></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Le GAMS, écoute femmes victimes de mutilations</strong><br>Groupe pour l’Abolition des Mutilations Sexuelles, des Mariages Forcés et autres pratiques traditionnelles néfastes à la santé des femmes et des enfants.</div><div class="res-contact"><strong>☏ 01 43 48 10 87</strong><br><a href="https://federationgams.org" target="_blank" rel="noopener">federationgams.org</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>SOS Viols Femmes Informations </strong><strong> </strong><br>Appel anonyme et gratuit. Accessible en métropole et dans les DOM.</div><div class="res-contact"><strong>☏ 0 800 05 95 95</strong></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Planning familial</strong>Accueil, information, orientation des personnes et notamment des plus jeunes sur les droits sexuels et reproductifs. Lutte contre la désinformation sur l’avortement.</div><div class="res-contact"><strong>☏ </strong><strong>0 800 08 11 11</strong>Numéro d’information<strong> </strong>pour répondre à toutes vos réponses sur les sexualités, la contraception et l’IVG. Appels anonymes et gratuits : <a href="https://www.planning-familial.org/fr#block-near-you" target="_blank" rel="noopener">planning-familial.org</a></div></div></div>
+  <!-- ADDICTION -->
+  <div class="card resource">
+    <span class="tag">ADDICTION</span>
 
-<div class="card resource"><span class="tag">LGBTIQA+</span><div class="res-entry"><div class="res-desc"><strong>SOS Homophobie</strong><br>Association nationale de lutte contre la lesbophobie, la gayphobie, la biphobie et la transphobie.</div><div class="res-contact"><strong>☏ 01 48 06 42 41</strong><br><a href="https://www.sos-homophobie.org/" target="_blank" rel="noopener">sos-homophobie.org</a><a href="https://www.sos-homophobie.org/chat" target="_blank" rel="noopener">sos-homophobie.org/chat</a><br>(pour dialoguer par écrit et en direct)</div></div>
-<div class="res-entry"><div class="res-desc"><strong>Fondation Le Refuge</strong><br>Prévenir l’isolement et le suicide des jeunes LGBT+, de 14 à 25 ans, victimes d’homophobie ou de transphobie et en situation de rupture familiale.</div><div class="res-contact"><strong>☏ 06 31 59 69 50</strong> (par appel ou SMS)<a href="https://le-refuge.org/fondation" target="_blank" rel="noopener">le-refuge.org/fondation</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>RAVAD, Réseau d’Assistance aux Victimes d’Agression et de Discrimination</strong>Association qui assiste les victimes d’agressions et de discriminations, en particulier pour les agressions à raison de l’orientation sexuelle et de l’identité de genre.</div><div class="res-contact"><strong>☏ 06 17 55 17 55</strong><br><a href="mailto:urgence@ravad.org" target="_blank" rel="noopener">urgence@ravad.org</a><br><a href="https://ravad.org/" target="_blank" rel="noopener">ravad.org</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>ARDHIS</strong><br>Association pour la reconnaissance des droits des personnes homosexuelles et trans à l’immigration et au séjour a pour objet de faire reconnaître les droits au séjour et à l’asile des personnes homosexuelles et trans étrangères</div><div class="res-contact"><strong>☏ 09 72 47 19 55</strong><br><a href="https://ardhis.org/" target="_blank" rel="noopener">ardhis.org</a></div></div>
-<div class="res-entry"><div class="res-desc"><a href="https://www.assomousse.org/" target="_blank" rel="noopener">Mousse - Les justiciers LGBTQI+</a>Association de lutte contre les discriminations liées au sexe, au genre et à l&#x27;orientation sexuelle</div><div class="res-contact"><strong>☏ 01 85 08 34 89</strong><a href="mailto:contact@assomousse.org" target="_blank" rel="noopener">contact@assomousse.org</a><br><a href="https://www.assomousse.org/" target="_blank" rel="noopener">assomousse.org</a></div></div></div>
+    <div class="res-entry">
+      <div class="res-name">Drogues Info Service</div>
+      <div class="res-desc">Information, soutien, conseil et orientation pour les personnes en difficulté avec l'usage de drogue, et pour leurs proches.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">0 800 23 13 13</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="http://www.drogues-infos-service.fr" target="_blank" rel="noopener">drogues-infos-service.fr</a></div>
+      </div>
+    </div>
 
-<div class="card resource"><span class="tag">SANTÉ JEUNES</span><div class="res-entry"><div class="res-desc"><strong>Fil Santé Jeunes</strong>Accueil, écoute, information et orientation des jeunes de 12 à 25 ans.</div><div class="res-contact"><strong>☏ 0 800 235 236</strong><a href="http://www.filsantejeunes.com" target="_blank" rel="noopener">filsantejeunes.com</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>LÉIA est là.</strong><br>Ligne d’Écoute, d’Information et d’Aide à destination de toute personne qui se questionne sur son orientation sexuelle et/ou son identité de genre. Elle  vient également en aide aux personnes victimes de LGBTQIA+phobie.</div><div class="res-contact"><strong>☏ 0 800 004 134</strong><a href="https://leiaestla.fr/" target="_blank" rel="noopener">leiaestla.fr</a></div></div></div>
+    <div class="res-entry">
+      <div class="res-name">Alcool Info Service</div>
+      <div class="res-desc">Information, soutien, conseil et orientation pour les personnes en difficulté avec l'alcool, et pour leurs proches.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">0 980 980 930</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="http://www.alcool-infos-service.fr" target="_blank" rel="noopener">alcool-infos-service.fr</a></div>
+      </div>
+    </div>
 
-<div class="card resource"><span class="tag">MAL-ÊTRE</span><div class="res-entry"><div class="res-desc"><strong>S.O.S Amitié</strong><br>Depuis 60 ans, le service est à l&#x27;écoute des personnes en situation de détresse. Anonymat et confidentialité.</div><div class="res-contact"><strong>☏ 09 72 39 40 50</strong><br><a href="http://www.sos-amitie.com" target="_blank" rel="noopener">sos-amitie.com</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Suicide Écoute</strong>Écoute des personnes en grande souffrance psychologique ou confrontées au suicide et de leur entourage.</div><div class="res-contact"><strong>☏ 01 45 39 40 00</strong><br><a href="http://www.suicide-ecoute.fr" target="_blank" rel="noopener">suicide-ecoute.fr</a></div></div></div>
+    <div class="res-entry">
+      <div class="res-name">Tabac Info Service</div>
+      <div class="res-desc">Information, conseil et aide à l'arrêt du tabac. Service de coaching personnalisé par internet.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">39 89</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="http://www.tabac-info-service.fr" target="_blank" rel="noopener">tabac-info-service.fr</a></div>
+      </div>
+    </div>
+  </div>
 
-<div class="card resource"><span class="tag">JURIDIQUE</span><div class="res-entry"><div class="res-desc"><strong>Le Barreau de Paris Solidarité</strong></div><div class="res-contact">Le bus « Barreau de Paris Solidarité » circule dans plusieurs lieux de Paris. Sans rendez-vous, trois avocats-es bénévoles conseillent en toute confidentialité.<br>Tous les horaires à jours ici : <a href="https://www.barreausolidarite.org/nos-actions/bus-solidarite.html" target="_blank" rel="noopener">barreausolidarite.org</a><br>Il y a des permanences :<br>• tous publics,<br>• dédiée aux problématiques juridiques rencontrées par les personnes LGBTQI+,<br>• dédiée  aux femmes victimes de violences,<br>• spécialisée en droit des étrangers et droit d’asile</div></div>
-<div class="res-entry"><div class="res-desc"><strong>Numéro d’accès pour les personnes incarcérées</strong>Service téléphonique national d’informations juridiques et sociales pour permettre à chacun de faire valoir ses droits et d’éviter les renoncements.</div><div class="res-contact"><strong>☏ 08 00 87 07 45</strong>Pour les familles et proches de détenus : <strong>☏ </strong>01 43 72 98 41</div></div></div>
+  <!-- FEMMES -->
+  <div class="card resource">
+    <span class="tag">FEMMES</span>
 
-<div class="card resource"><span class="tag">CONTRE LES VIOLENCES</span><div class="res-entry"><div class="res-desc"><strong>Site « Arrêtons les violences » </strong></div><div class="res-contact">Les violences sexuelles désignent tout acte sexuel commis avec violence, contrainte, menace ou surprise.  Ces violences portent atteinte aux droits fondamentaux de la personne. Personne n’a le droit de vous imposer un acte sexuel que vous ne désirez pas. <strong>Victime ou témoin de violences, quels sont les numéros d’urgence ? :  </strong><a href="https://arretonslesviolences.gouv.fr/besoin-d-aide/violences-sexuelles" target="_blank" rel="noopener">arrêtons les violences</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Association « En avant toute(s) »</strong></div><div class="res-contact">Agit pour l&#x27;égalité des genres et la fin des violences faites aux femmes et aux personnes LGBTQI+ (<a href="https://enavanttoutes.fr/" target="_blank" rel="noopener">enavanttoutes.fr</a>), propose un <strong>chat d’écoute des victimes de violences tenues par des professionnelles :</strong><strong> </strong><a href="https://commentonsaime.fr/" target="_blank" rel="noopener">commentonsaime.fr</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>SOS Mariage Forcé</strong>Géré par l’association « Voix de Femmes »</div><div class="res-contact"><strong>☏ 01 30 31 05 05</strong>Dispositif d&#x27;accompagnement des victimes de mariage forcé. Possibilité de déplacement dans toute la région en cas d&#x27;urgence</div></div>
-<div class="res-entry"><div class="res-desc"><strong>Jasmine</strong>Programme de <strong>lutte contre les violences faites aux travailleurs-ses du sexe</strong> dans leur activité.</div><div class="res-contact">Que faire en cas d&#x27;agression, trouver une structure, ateliers d’auto-défense, accès aux soins : <a href="https://projet-jasmine.org/" target="_blank" rel="noopener">projet-jasmine</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Centres d&#x27;Information sur les Droits des Femmes et des Familles (CIDFF)</strong></div><div class="res-contact">• accueil, Écoute, accompagnement des femmes victimes de violences sexistes, information, accompagnement information juridique<strong> : </strong><a href="https://fncidff.info/trouver-mon-cidff/" target="_blank" rel="noopener">trouver un CIDFF à proximité de chez moi</a><br>• documentations en ligne : vos droits, la lutte contre les violences, au travail, dans le couple ou autre, ce que dit la loi, comment faire, à qui s’adresser : <a href="https://fncidff.info/in-formations/information/plaquettes-d-information/" target="_blank" rel="noopener">CIDFF plaquettes infos</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Carte des dispositifs d&#x27;accueil des femmes victimes de violences</strong>Gérée par le <strong>Centre Hubertine Auclert</strong></div><div class="res-contact"><a href="https://orientationviolences.hubertine.fr/" target="_blank" rel="noopener">Carte orientation violences</a></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Site « Anti discriminations »</strong><strong>Par l</strong><strong>es équipes du Défenseur des droits</strong></div><div class="res-contact">Que vous soyez <strong>victime ou témoin de discriminations</strong>, le site qui permet de vous accompagner ou de vous orienter en cas de violences et de propos haineux : <strong>☏ 39 28</strong><a href="https://www.antidiscriminations.fr/" target="_blank" rel="noopener">antidiscriminations.fr</a><strong> </strong></div></div>
-<div class="res-entry"><div class="res-desc"><strong>Application « </strong><strong>APP-ELLES</strong><strong> » </strong>Première application française solidaire des femmes et des filles victimes de violences.</div><div class="res-contact">Elle a pour but de répondre aux principaux besoins d’assistance et de soutien des victimes et des témoins confrontés-es à une situation de violence présente, passée ou potentielle. App-Elles permet d&#x27;alerter et de contacter rapidement vos proches, les secours, les associations et toutes les autres ressources d&#x27;aide disponibles sur votre territoire. Elle relaie également les informations locales et nationales : <a href="https://www.app-elles.fr/index.html" target="_blank" rel="noopener">app-elles.fr</a></div></div></div>
+    <div class="res-entry">
+      <div class="res-name">Violences Femmes Info</div>
+      <div class="res-desc">Appel anonyme et gratuit. Accessible en métropole et dans les DROM-COM.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">39 19</span></div>
+      </div>
+    </div>
 
-<div class="card">
-<div class="card-row"><div class="card-cell"><strong>Association AIDES</strong>Première association en France et en Europe de lutte contre le VIH/sida, les hépatites virales et les discrimination.</div><div class="card-cell">Pour joindre ou rencontrer AIDES en Île-de-France <strong>:</strong><a href="page-02.html">Permanences de AIDES en Île-de-France</a></div></div>
-</div>
-</div>
+    <div class="res-entry">
+      <div class="res-name">Le GAMS — Écoute femmes victimes de mutilations</div>
+      <div class="res-desc">Groupe pour l'Abolition des Mutilations Sexuelles, des Mariages Forcés et autres pratiques traditionnelles néfastes à la santé des femmes et des enfants.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">01 43 48 10 87</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://federationgams.org" target="_blank" rel="noopener">federationgams.org</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">SOS Viols Femmes Informations</div>
+      <div class="res-desc">Appel anonyme et gratuit. Accessible en métropole et dans les DOM.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">0 800 05 95 95</span></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Planning familial</div>
+      <div class="res-desc">Accueil, information, orientation des personnes et notamment des plus jeunes sur les droits sexuels et reproductifs. Lutte contre la désinformation sur l'avortement.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone">
+          <span class="ci-icon">☏</span>
+          <span><span class="ci-val">0 800 08 11 11</span><span class="ci-note">Numéro d'information sur les sexualités, la contraception et l'IVG — appels anonymes et gratuits</span></span>
+        </div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://www.planning-familial.org/fr#block-near-you" target="_blank" rel="noopener">planning-familial.org</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LGBTIQA+ -->
+  <div class="card resource">
+    <span class="tag">LGBTIQA+</span>
+
+    <div class="res-entry">
+      <div class="res-name">SOS Homophobie</div>
+      <div class="res-desc">Association nationale de lutte contre la lesbophobie, la gayphobie, la biphobie et la transphobie.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">01 48 06 42 41</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://www.sos-homophobie.org/" target="_blank" rel="noopener">sos-homophobie.org</a></div>
+        <div class="ci-row ci-chat"><span class="ci-icon">💬</span><a href="https://www.sos-homophobie.org/chat" target="_blank" rel="noopener">Chat en ligne (écrit, en direct)</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Fondation Le Refuge</div>
+      <div class="res-desc">Prévenir l'isolement et le suicide des jeunes LGBT+, de 14 à 25 ans, victimes d'homophobie ou de transphobie et en situation de rupture familiale.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span><span class="ci-val">06 31 59 69 50</span><span class="ci-note">Appel ou SMS</span></span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://le-refuge.org/fondation" target="_blank" rel="noopener">le-refuge.org/fondation</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">RAVAD — Réseau d'Assistance aux Victimes d'Agression et de Discrimination</div>
+      <div class="res-desc">Association qui assiste les victimes d'agressions et de discriminations, en particulier pour les agressions à raison de l'orientation sexuelle et de l'identité de genre.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">06 17 55 17 55</span></div>
+        <div class="ci-row ci-email"><span class="ci-icon">✉</span><a href="mailto:urgence@ravad.org">urgence@ravad.org</a></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://ravad.org/" target="_blank" rel="noopener">ravad.org</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">ARDHIS</div>
+      <div class="res-desc">Association pour la reconnaissance des droits des personnes homosexuelles et trans à l'immigration et au séjour. Fait reconnaître les droits au séjour et à l'asile des personnes homosexuelles et trans étrangères.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">09 72 47 19 55</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://ardhis.org/" target="_blank" rel="noopener">ardhis.org</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Mousse — Les justiciers LGBTQI+</div>
+      <div class="res-desc">Association de lutte contre les discriminations liées au sexe, au genre et à l'orientation sexuelle.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">01 85 08 34 89</span></div>
+        <div class="ci-row ci-email"><span class="ci-icon">✉</span><a href="mailto:contact@assomousse.org">contact@assomousse.org</a></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://www.assomousse.org/" target="_blank" rel="noopener">assomousse.org</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SANTÉ JEUNES -->
+  <div class="card resource">
+    <span class="tag">SANTÉ JEUNES</span>
+
+    <div class="res-entry">
+      <div class="res-name">Fil Santé Jeunes</div>
+      <div class="res-desc">Accueil, écoute, information et orientation des jeunes de 12 à 25 ans.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">0 800 235 236</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="http://www.filsantejeunes.com" target="_blank" rel="noopener">filsantejeunes.com</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">LÉIA est là.</div>
+      <div class="res-desc">Ligne d'Écoute, d'Information et d'Aide à destination de toute personne qui se questionne sur son orientation sexuelle et/ou son identité de genre. Vient également en aide aux personnes victimes de LGBTQIA+phobie.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">0 800 004 134</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://leiaestla.fr/" target="_blank" rel="noopener">leiaestla.fr</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAL-ÊTRE -->
+  <div class="card resource">
+    <span class="tag">MAL-ÊTRE</span>
+
+    <div class="res-entry">
+      <div class="res-name">S.O.S Amitié</div>
+      <div class="res-desc">Depuis 60 ans, ce service est à l'écoute des personnes en situation de détresse. Anonymat et confidentialité garantis.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">09 72 39 40 50</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="http://www.sos-amitie.com" target="_blank" rel="noopener">sos-amitie.com</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Suicide Écoute</div>
+      <div class="res-desc">Écoute des personnes en grande souffrance psychologique ou confrontées au suicide, et de leur entourage.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">01 45 39 40 00</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="http://www.suicide-ecoute.fr" target="_blank" rel="noopener">suicide-ecoute.fr</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JURIDIQUE -->
+  <div class="card resource">
+    <span class="tag">JURIDIQUE</span>
+
+    <div class="res-entry">
+      <div class="res-name">Le Barreau de Paris Solidarité</div>
+      <div class="res-desc">
+        <p>Le bus « Barreau de Paris Solidarité » circule dans plusieurs lieux de Paris. Sans rendez-vous, trois avocat·e·s bénévoles conseillent en toute confidentialité.</p>
+        <p>Des permanences sont organisées pour :
+          <br>• tous publics
+          <br>• personnes LGBTQI+ (problématiques juridiques spécifiques)
+          <br>• femmes victimes de violences
+          <br>• droit des étrangers et droit d'asile
+        </p>
+      </div>
+      <div class="res-contact">
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://www.barreausolidarite.org/nos-actions/bus-solidarite.html" target="_blank" rel="noopener">Tous les horaires sur barreausolidarite.org</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Numéro d'accès pour les personnes incarcérées</div>
+      <div class="res-desc">Service téléphonique national d'informations juridiques et sociales pour permettre à chacun de faire valoir ses droits et d'éviter les renoncements.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span><span class="ci-val">08 00 87 07 45</span><span class="ci-note">Pour les personnes incarcérées</span></span></div>
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span><span class="ci-val">01 43 72 98 41</span><span class="ci-note">Pour les familles et proches de détenus</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTRE LES VIOLENCES -->
+  <div class="card resource">
+    <span class="tag">CONTRE LES VIOLENCES</span>
+
+    <div class="res-entry">
+      <div class="res-name">Site « Arrêtons les violences »</div>
+      <div class="res-desc">Les violences sexuelles désignent tout acte sexuel commis avec violence, contrainte, menace ou surprise. Personne n'a le droit de vous imposer un acte sexuel que vous ne désirez pas.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://arretonslesviolences.gouv.fr/besoin-d-aide/violences-sexuelles" target="_blank" rel="noopener">arretonslesviolences.gouv.fr</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Association « En avant toute(s) »</div>
+      <div class="res-desc">Agit pour l'égalité des genres et la fin des violences faites aux femmes et aux personnes LGBTQI+. Propose un chat d'écoute des victimes de violences tenu par des professionnel·le·s.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://enavanttoutes.fr/" target="_blank" rel="noopener">enavanttoutes.fr</a></div>
+        <div class="ci-row ci-chat"><span class="ci-icon">💬</span><a href="https://commentonsaime.fr/" target="_blank" rel="noopener">Chat d'écoute — commentonsaime.fr</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">SOS Mariage Forcé</div>
+      <div class="res-desc">Géré par l'association « Voix de Femmes ». Dispositif d'accompagnement des victimes de mariage forcé. Déplacement possible dans toute la région en cas d'urgence.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">01 30 31 05 05</span></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Jasmine</div>
+      <div class="res-desc">Programme de lutte contre les violences faites aux travailleurs·ses du sexe dans leur activité. Infos sur la conduite à tenir en cas d'agression, les structures d'aide, les ateliers d'auto-défense et l'accès aux soins.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://projet-jasmine.org/" target="_blank" rel="noopener">projet-jasmine.org</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Centres d'Information sur les Droits des Femmes et des Familles (CIDFF)</div>
+      <div class="res-desc">Accueil, écoute, accompagnement des femmes victimes de violences sexistes, information et accompagnement juridique.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://fncidff.info/trouver-mon-cidff/" target="_blank" rel="noopener">Trouver un CIDFF près de chez moi</a></div>
+        <div class="ci-row ci-web"><span class="ci-icon">📄</span><a href="https://fncidff.info/in-formations/information/plaquettes-d-information/" target="_blank" rel="noopener">Plaquettes d'information (droits, violences, loi…)</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Carte des dispositifs d'accueil pour femmes victimes de violences</div>
+      <div class="res-desc">Gérée par le Centre Hubertine Auclert.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-web"><span class="ci-icon">🗺</span><a href="https://orientationviolences.hubertine.fr/" target="_blank" rel="noopener">Carte orientation violences</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Site « Anti discriminations »</div>
+      <div class="res-desc">Par les équipes du Défenseur des droits. Accompagnement et orientation en cas de violences et de propos haineux pour les victimes et les témoins de discriminations.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-phone"><span class="ci-icon">☏</span><span class="ci-val">39 28</span></div>
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://www.antidiscriminations.fr/" target="_blank" rel="noopener">antidiscriminations.fr</a></div>
+      </div>
+    </div>
+
+    <div class="res-entry">
+      <div class="res-name">Application « APP-ELLES »</div>
+      <div class="res-desc">Première application française solidaire des femmes et filles victimes de violences. Permet d'alerter rapidement des proches, les secours et les associations, de localiser les ressources d'aide disponibles sur le territoire, et de relayer des informations locales et nationales.</div>
+      <div class="res-contact">
+        <div class="ci-row ci-web"><span class="ci-icon">🌐</span><a href="https://www.app-elles.fr/index.html" target="_blank" rel="noopener">app-elles.fr</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AIDES -->
+  <div class="card">
+    <div class="card-row">
+      <div class="card-cell">
+        <strong>Association AIDES</strong><br>
+        Première association en France et en Europe de lutte contre le VIH/sida, les hépatites virales et les discriminations.
+      </div>
+      <div class="card-cell">
+        Pour joindre ou rencontrer AIDES en Île-de-France :<br>
+        <a href="page-02.html">Permanences de AIDES en Île-de-France</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cnt -->
+
 <nav class="foot">
   <div class="foot-t">Autres ressources</div>
-  <a href="page-02.html">02. Où me faire dépister gratuitement</a><a href="page-03.html">03. Autotest VIH/sida à la maison</a><a href="page-04.html">04. La PrEP : se protéger du VIH</a><a href="page-05.html">05. TPE : traitement d'urgence</a><a href="page-06.html">06. Je vis avec le VIH</a><a href="page-07.html">07. Santé sexuelle et mentale</a><a href="page-08.html">08. Je consomme des drogues</a><a href="page-09.html">09. Protection maladie et droits</a><a href="page-10.html">10. Autres besoins spécifiques</a>
+  <a href="page-02.html">02. Où me faire dépister gratuitement</a>
+  <a href="page-03.html">03. Autotest VIH/sida à la maison</a>
+  <a href="page-04.html">04. La PrEP : se protéger du VIH</a>
+  <a href="page-05.html">05. TPE : traitement d'urgence</a>
+  <a href="page-06.html">06. Je vis avec le VIH</a>
+  <a href="page-07.html">07. Santé sexuelle et mentale</a>
+  <a href="page-08.html">08. Je consomme des drogues</a>
+  <a href="page-09.html">09. Protection maladie et droits</a>
+  <a href="page-10.html">10. Autres besoins spécifiques</a>
   <br>
   <a class="foot-h" href="index.html">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
     Accueil
   </a>
 </nav>
+
 </body>
 </html>
