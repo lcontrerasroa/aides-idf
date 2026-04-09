@@ -7,143 +7,101 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ac:#4A6CF7;--ac1:#4A6CF718;--ac3:#4A6CF740;
-    --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
-    --bd:#E8E8E5;--bd2:#F2F2EF;
-    --sh:0 1px 4px rgba(0,0,0,.04);
-    --r:14px;--rs:10px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
+:root{
+  --ac:#4A6CF7;--ac1:#4A6CF718;--ac3:#4A6CF740;
+  --bg:#FAFAF8;--card:#FFF;--tx:#1A1A1A;--tx2:#444;--tx3:#777;--tx4:#aaa;
+  --bd:#E8E8E5;--bd2:#F2F2EF;
+  --sh:0 1px 4px rgba(0,0,0,.04);
+  --r:14px;--rs:10px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased;line-height:1.7;font-size:15px}
 
-  /* Header */
-  .hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
-  .hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
-  .back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
-  .back:hover{opacity:1}.back::after{display:none!important}
-  .hdr-icon{font-size:34px;margin-bottom:8px}
-  .hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
+/* Header */
+.hdr{background:var(--ac);color:#fff;padding:16px 20px 42px;position:relative}
+.hdr::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:24px;background:var(--bg);border-radius:20px 20px 0 0}
+.back{display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-size:13px;font-weight:500;opacity:.85;padding:6px 0;margin-bottom:14px;border:none}
+.back:hover{opacity:1}.back::after{display:none!important}
+.hdr-icon{font-size:34px;margin-bottom:8px}
+.hdr h1{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;line-height:1.25}
 
-  /* Content */
-  .cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+/* Content */
+.cnt{padding:8px 16px 40px;max-width:620px;margin:0 auto}
+p{margin-bottom:8px}p:last-child{margin-bottom:0}
+strong{font-weight:700;color:var(--tx2)}
 
-  /* Text */
-  p{margin-bottom:8px}p:last-child{margin-bottom:0}
-  strong{font-weight:700;color:var(--tx2)}
+/* Links */
+a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
+a:hover{border-bottom-color:var(--ac)}
+a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
+a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
+a[href^="page-"]:hover{border-bottom-color:var(--ac)}
 
-  /* Links */
-  a{color:var(--ac);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--ac3);transition:border-color .2s;word-break:break-word}
-  a:hover{border-bottom-color:var(--ac)}
-  a[target="_blank"]::after{content:" ↗";font-size:.7em;opacity:.4;font-weight:400}
-  a[href^="page-"]{background:var(--ac1);padding:1px 5px;border-radius:4px;border-bottom-color:transparent}
-  a[href^="page-"]:hover{border-bottom-color:var(--ac)}
-  a[href^="mailto:"]{border-bottom-style:dashed}
+/* Images */
+.doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
 
-  /* Images */
-  .doc-img{display:block;max-width:100%;height:auto;border-radius:var(--rs);margin:10px auto;box-shadow:var(--sh)}
+/* Lists */
+ul{list-style:none;margin:8px 0;padding:0}
+li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
+li:last-child{border-bottom:none}
+li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
 
-  /* Lists */
-  ul{list-style:none;margin:8px 0;padding:0}
-  li{position:relative;padding:7px 0 7px 20px;border-bottom:1px solid var(--bd2);line-height:1.6}
-  li:last-child{border-bottom:none}
-  li::before{content:'';position:absolute;left:1px;top:15px;width:6px;height:6px;background:var(--ac);border-radius:50%;opacity:.4}
+/* Cards */
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);border:1px solid var(--bd);padding:0;margin-bottom:14px;overflow:hidden}
+.card-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--ac);padding:14px 18px 10px;border-bottom:2px solid var(--ac);line-height:1.4}
+.card-title p{margin-bottom:3px;color:var(--ac)}
+.card-item{padding:12px 18px;border-bottom:1px solid var(--bd2)}
+.card-item:last-child{border-bottom:none}
 
-  /* ═══ THE CARD ═══ (one per logical section) */
-  .card{
-    background:var(--card);border-radius:var(--r);
-    box-shadow:var(--sh);border:1px solid var(--bd);
-    padding:0;margin-bottom:14px;overflow:hidden;
-  }
+/* ═══ LOCATION GRID ═══ */
+.loc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1px;background:var(--bd2)}
+.loc-cell{background:var(--card);padding:14px 16px}
+.loc-code{display:inline-block;font-size:11px;font-weight:700;font-family:'Outfit',sans-serif;background:var(--ac1);color:var(--ac);padding:2px 8px;border-radius:5px;margin-bottom:6px;letter-spacing:.5px}
+.loc-name{display:block;font-weight:700;color:var(--tx);font-size:14px;line-height:1.3;margin-bottom:4px}
+.loc-addr{font-size:13px;color:var(--tx3);line-height:1.4;margin-bottom:6px}
+.loc-tel{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;font-family:'Outfit',sans-serif;color:var(--ac);border-bottom:none;text-decoration:none}
+.loc-tel::after{display:none!important}
+.loc-note{font-size:12px;color:var(--tx3);margin-top:5px;font-style:italic;line-height:1.4;border-top:1px solid var(--bd2);padding-top:5px}
 
-  /* Card title (first row of a table, section name) */
-  .card-title{
-    font-family:'Outfit',sans-serif;
-    font-size:15px;font-weight:700;color:var(--ac);
-    padding:14px 18px 10px;
-    border-bottom:2px solid var(--ac);
-    line-height:1.4;
-  }
-  .card-title p{margin-bottom:3px;color:var(--ac)}
-  .card-title a{color:var(--ac)}
+/* ═══ PERMANENCES TABLE ═══ */
+.perm-table{width:100%;border-collapse:collapse;font-size:13.5px}
+.perm-table th{background:var(--ac1);color:var(--ac);font-family:'Outfit',sans-serif;font-weight:700;font-size:11px;letter-spacing:.5px;text-transform:uppercase;padding:10px 12px;text-align:left;border-bottom:2px solid var(--ac3)}
+.perm-table td{padding:11px 12px;border-bottom:1px solid var(--bd2);vertical-align:top;line-height:1.4}
+.perm-table tr:last-child td{border-bottom:none}
+.perm-table .perm-name{font-weight:700;color:var(--tx)}
+.perm-table .perm-code{display:inline-block;font-size:11px;font-weight:700;font-family:'Outfit',sans-serif;background:var(--ac1);color:var(--ac);padding:1px 6px;border-radius:4px;margin-left:4px}
+.perm-table .perm-tel{font-weight:700;font-family:'Outfit',sans-serif;color:var(--ac);white-space:nowrap}
+.perm-table .perm-hours{color:var(--tx3)}
 
-  /* Card item (a row of content) */
-  .card-item{
-    padding:12px 18px;
-    border-bottom:1px solid var(--bd2);
-  }
-  .card-item:last-child{border-bottom:none}
+/* Info box */
+.info-box{background:var(--card);border-left:4px solid var(--ac);border-radius:var(--rs);padding:14px 16px;margin-bottom:14px;box-shadow:var(--sh);font-size:14px}
+.info-box p{margin-bottom:6px}
+.info-box strong{color:var(--ac)}
 
-  /* Card multi-cell row */
-  .card-row{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:0;
-    border-bottom:1px solid var(--bd2);
-  }
-  .card-row:last-child{border-bottom:none}
-  .card-cell{
-    padding:12px 16px;
-    border-right:1px solid var(--bd2);
-    font-size:14px;
-  }
-  .card-cell:last-child{border-right:none}
-  .card-cell p{margin-bottom:4px}
-  @media(max-width:540px){
-    .card-row{grid-template-columns:1fr}
-    .card-cell{border-right:none;border-bottom:1px solid var(--bd2)}
-    .card-cell:last-child{border-bottom:none}
-  }
+/* Two-col info card */
+.card-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;border-bottom:1px solid var(--bd2)}
+.card-row:last-child{border-bottom:none}
+.card-cell{padding:12px 16px;border-right:1px solid var(--bd2);font-size:14px}
+.card-cell:last-child{border-right:none}
+@media(max-width:540px){.card-row{grid-template-columns:1fr}.card-cell{border-right:none;border-bottom:1px solid var(--bd2)}.card-cell:last-child{border-bottom:none}}
 
-  /* ═══ RESOURCE CARD (with category tag) ═══ */
-  .card.resource{
-    border-left:4px solid var(--ac);
-    padding:16px 18px;
-  }
-  .tag{
-    display:inline-block;font-family:'Outfit',sans-serif;
-    font-size:10px;font-weight:700;letter-spacing:1.2px;
-    text-transform:uppercase;color:var(--ac);background:var(--ac1);
-    padding:3px 10px;border-radius:6px;margin-bottom:12px;
-  }
-  .res-entry{
-    padding:10px 0;
-    border-bottom:1px solid var(--bd2);
-  }
-  .res-entry:last-child{border-bottom:none}
-  .res-entry:first-child{padding-top:0}
-  .res-desc{margin-bottom:6px}
-  .res-desc p{margin-bottom:4px}
-  .res-contact{
-    background:#F6F6F3;border-radius:var(--rs);
-    padding:8px 12px;font-size:14px;
-  }
-  .res-contact p{margin-bottom:2px}
+/* Section label */
+.sec-label{font-family:'Outfit',sans-serif;font-weight:800;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--ac);background:var(--ac1);padding:8px 18px;border-bottom:1px solid var(--ac3);margin-top:0}
 
-  /* ═══ EMERGENCY (red frame for TPE messages) ═══ */
-  .emergency{
-    background:#FFF5F5;border:2.5px solid #E2001A;
-    border-radius:var(--rs);
-    padding:16px 18px;margin:12px 18px;
-    box-shadow:0 2px 8px rgba(226,0,26,.06);
-  }
-  .emergency p{margin-bottom:6px}
-  .emergency strong{color:#B80015}
-
-  /* Footer */
-  .foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
-  .foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
-  .foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
-  .foot a::after{display:none!important}
-  .foot a:hover{color:var(--ac)}
-  .foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
-  .foot-h::after{display:none!important}
-
-  @media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
+/* Footer */
+.foot{padding:24px 16px 40px;max-width:620px;margin:0 auto;border-top:1px solid var(--bd)}
+.foot-t{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;color:var(--tx4);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.foot a{display:block;padding:8px 0;font-size:13px;color:var(--tx3);border-bottom:1px solid var(--bd2);background:none!important}
+.foot a::after{display:none!important}
+.foot a:hover{color:var(--ac)}
+.foot-h{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:10px 20px;background:var(--ac)!important;color:#fff!important;border-radius:10px;font-weight:600;font-size:14px;border:none!important}
+.foot-h::after{display:none!important}
+@media(max-width:390px){.hdr h1{font-size:21px}body{font-size:14.5px}}
 </style>
 </head>
 <body>
+
 <header class="hdr">
   <a class="back" href="index.html">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
@@ -152,79 +110,551 @@
   <div class="hdr-icon">🔬</div>
   <h1>02. Où me faire dépister gratuitement</h1>
 </header>
+
 <div class="cnt">
-<div class="card">
-<div class="card-row"><div class="card-cell"><strong>Combien de temps après une prise de risque puis-je me faire dépister dans un CeGIDD, un laboratoire ou une association habilitée ?</strong></div><div class="card-cell"><strong>VIH/sida</strong> : 6 semaines avec prise de sang / 3 mois, si test rapide (TROD) ou autotest.<strong>Hépatite A</strong> : 2 à 4 semaines avec prise de sang<br><strong>Hépatites B et C</strong> : 3 mois avec prise de sang ou ou test rapide (TROD)<br><strong>Chlamydia</strong> : 1 à 2 semaines (PCR)<strong>Gonorrhée</strong> : 7 jours (PCR)<strong>Syphilis</strong> : 3 à 4 semaines avec prise de sang / 3 mois, si test rapide (TROD)➜ <a href="https://www.google.com/maps/d/u/0/viewer?mid=1imfD3mDnEuKsv8a5yoCoaS13Y5o&amp;femb=1&amp;ll=46.27038078115176%2C5.651591307190662&amp;z=15" target="_blank" rel="noopener">cartographie pour savoir où aller se faire dépister</a> (source : Sida Info Service) Une infection sexuellement transmissible (IST), ça ne se voit pas toujours. Même sans symptôme, vous pouvez être porteur d’une IST, et la transmettre. Faites-vous dépister régulièrement.</div></div>
-</div>
 
-<div class="card">
-<div class="card-row"><div class="card-cell"><img src="img/img-02-f24786d2.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell"><strong>previensmoi.fr : le site de AIDES pour rompre les chaînes de transmission.</strong>AIDES propose un outil permettant aux personnes qui ont récemment eu un ou plusieurs dépistages positifs d’une IST (VIH, hépatite A, B et C, chlamydia, gonorrhée, syphilis) de pouvoir prévenir de façon anonyme leurs partenaires sexuels-les et/ou de consommation de produits psychoactif, afin que ces derniers-es aillent se faire dépister à leur tour.Le site envoie un message aux numéros de téléphone que l’utilisateur-rice a renseigné.➜ <a href="http://previensmoi.fr" target="_blank" rel="noopener">previensmoi.fr</a></div></div>
-</div>
+  <!-- DÉLAIS -->
+  <div class="card">
+    <div class="card-row">
+      <div class="card-cell">
+        <strong>Combien de temps après une prise de risque puis-je me faire dépister ?</strong>
+      </div>
+      <div class="card-cell">
+        <ul>
+          <li><strong>VIH/sida :</strong> 6 semaines (prise de sang) / 3 mois (TROD ou autotest)</li>
+          <li><strong>Hépatite A :</strong> 2 à 4 semaines (prise de sang)</li>
+          <li><strong>Hépatites B et C :</strong> 3 mois (prise de sang ou TROD)</li>
+          <li><strong>Chlamydia :</strong> 1 à 2 semaines (PCR)</li>
+          <li><strong>Gonorrhée :</strong> 7 jours (PCR)</li>
+          <li><strong>Syphilis :</strong> 3 à 4 semaines (prise de sang) / 3 mois (TROD)</li>
+        </ul>
+        <p style="margin-top:8px">➜ <a href="https://www.google.com/maps/d/u/0/viewer?mid=1imfD3mDnEuKsv8a5yoCoaS13Y5o&femb=1&ll=46.27038078115176%2C5.651591307190662&z=15" target="_blank" rel="noopener">Cartographie — où aller se faire dépister</a> <small>(source : Sida Info Service)</small></p>
+        <p style="font-size:13px;color:var(--tx3);margin-top:6px">Une IST ne se voit pas toujours. Même sans symptôme, vous pouvez être porteur·se d'une IST et la transmettre. Faites-vous dépister régulièrement.</p>
+      </div>
+    </div>
+  </div>
 
-<div class="card">
-<div class="card-title"><p><strong>PERMANENCES DE SANTÉ SEXUELLE DE AIDES</strong></p>
-<p>Pendant ces permanences d’accueil et d’échange, AIDES propose le dépistage rapide du VIH/sida, de l’hépatite B et C et de la syphilis.</p>
-<p>Test en TROD avec résultat en 30 minutes, confidentiel et gratuit,</p>
-<p>possibilité de récupérer des autotests et du matériel de Réduction Des Risques</p></div>
-<div class="card-row"><div class="card-cell"><strong>Locauxde AIDES</strong></div><div class="card-cell"><strong>Adresses</strong></div><div class="card-cell"><strong>Téléphone</strong></div><div class="card-cell"><strong>Permanences hebdomadaires</strong></div></div>
-<div class="card-row"><div class="card-cell">Paris Centre</div><div class="card-cell">76 rue de Cléry</div><div class="card-cell">75002</div><div class="card-cell">01 44 82 53 14</div><div class="card-cell">Mardi de 15h à 21h</div></div>
-<div class="card-row"><div class="card-cell">LE SPOT<br>Beaumarchais</div><div class="card-cell">76 rue de Cléry</div><div class="card-cell">75002</div><div class="card-cell">01 53 69 04 06</div><div class="card-cell">???<br>(accueille tous les hommes gays, bis et qui ont des rapports avec d&#x27;autres hommes, ainsi que les personnes trans et non binaires)</div></div>
-<div class="card-row"><div class="card-cell">Paris 8e</div><div class="card-cell">20 rue de Moscou</div><div class="card-cell">75008</div><div class="card-cell">09 53 16 50 25</div><div class="card-cell">Mercredi de 15h à 21h</div></div>
-<div class="card-row"><div class="card-cell">Paris 19e</div><div class="card-cell">99 rue de Meaux</div><div class="card-cell">75019</div><div class="card-cell">01 40 18 17 53</div><div class="card-cell">Jeudi de 15h à 21h</div></div>
-<div class="card-row"><div class="card-cell">Noisiel</div><div class="card-cell">2 allée Montesquieu</div><div class="card-cell">77186</div><div class="card-cell">01 60 06 05 05</div><div class="card-cell">Lundi de 14h à 19h</div></div>
-<div class="card-row"><div class="card-cell">Athis-Mons</div><div class="card-cell">16 rue de Juvisy</div><div class="card-cell">91200</div><div class="card-cell">01 60 48 72 82</div><div class="card-cell">Lundi de 10h à 18h</div></div>
-<div class="card-row"><div class="card-cell">Nanterre</div><div class="card-cell">55 rue du Volant</div><div class="card-cell">92000</div><div class="card-cell">01 41 19 09 09</div><div class="card-cell">Mardi de 14h à 18h</div></div>
-<div class="card-row"><div class="card-cell">Saint-Denis</div><div class="card-cell">22 rue Suger</div><div class="card-cell">93200</div><div class="card-cell">01 41 83 81 60</div><div class="card-cell">Mercredi de 15h à 20h</div></div>
-<div class="card-row"><div class="card-cell">Choisy-le-Roi</div><div class="card-cell">11 rue Louise Michel</div><div class="card-cell">94600</div><div class="card-cell">01 42 83 44 40</div><div class="card-cell">Lundi de 14h à 20h</div></div>
-<div class="card-row"><div class="card-cell">Argenteuil</div><div class="card-cell">122 avenue Jean Jaurès</div><div class="card-cell">95100</div><div class="card-cell">01 39 80 34 34</div><div class="card-cell">2e et 4e mardis du mois de 14h à 17h</div></div>
-</div>
+  <!-- PREVIENSMOI -->
+  <div class="card">
+    <div class="card-row">
+      <div class="card-cell"><img src="img/img-02-f24786d2.png" alt="" class="doc-img" loading="lazy"></div>
+      <div class="card-cell">
+        <strong>previensmoi.fr</strong> — le site de AIDES pour rompre les chaînes de transmission.
+        <p style="margin-top:8px;font-size:14px">Outil permettant aux personnes ayant eu un ou plusieurs dépistages positifs d'une IST (VIH, hépatites, chlamydia, gonorrhée, syphilis) de <strong>prévenir anonymement leurs partenaires</strong> pour qu'ils·elles aillent se faire dépister à leur tour.</p>
+        <p style="margin-top:6px">➜ <a href="http://previensmoi.fr" target="_blank" rel="noopener">previensmoi.fr</a></p>
+      </div>
+    </div>
+  </div>
 
-<div class="card">
-<div class="card-title"><p><strong>AUTRES LIEUX DE DÉPISTAGES GRATUITS ET CONFIDENTIELS</strong></p>
-<p>Les CeGIDD pour dépistages par prise de sang du VIH/sida, des hépatites virales et par prise de sang et PCR, des infections sexuellement transmissibles (IST) + Vaccinations contre les hépatites A &amp; B, et le papillomavirus humain (HPV).</p></div>
-<div class="card-item"><p><strong>Paris - 75</strong></p></div>
-<div class="card-row"><div class="card-cell"><strong>75001</strong><br><strong>CeGIDD de la Croix-Rouge</strong><br>43 rue de Valois<br>01 42 61 30 04</div><div class="card-cell"><strong>75004</strong><br><strong>Centre de santé sexuelle« Frédéric Edelmann »</strong><br>Hôtel-Dieu - Galerie A1 - 6e étage<br>1 place du parvis de Notre-Dame<br>01 42 34 83 00</div><div class="card-cell"><strong>75004</strong><br><strong>Le Checkpoint</strong><br>36 rue Geoffroy l’Asnier<br>01 44 78 00 00 Centre pour LGBTQI+(accueille les personnes LGBTQIA+)</div></div>
-<div class="card-row"><div class="card-cell"><strong>75010</strong><br><strong>Hôpital Fernand-Widal</strong><br>Secteur Bleu - Porte 3<br>200 rue du Faubourg Saint-Denis<br>01 40 05 43 75</div><div class="card-cell"><strong>75010</strong><br><strong>Hôpital Saint-Louis</strong><br>Centre Clinique et Biologique des IST<br>Bâtiment Lailler - 42 rue Bichat<br>(Entrée extérieure à l&#x27;hôpital)<br>01 42 49 42 05</div><div class="card-cell"><strong>75013</strong><br><strong>Hôpital Pitié-Salpêtrière</strong><br>Service de médecine interne<br>Bât CARHEMIIC, 47-83 boulevard de l&#x27;Hôpital<br>01 42 17 76 22</div></div>
-<div class="card-row"><div class="card-cell"><strong>75011</strong><br><strong>Centre de santé sexuelle « Le190 »</strong><br>2 impasse de la baleine, 75011 Paris<br>01 55 25 32 72<br>(accueille les hommes ayant des rapports avec des hommes et aux partenaires de personnes séropositives)</div><div class="card-cell"><strong>75012</strong><br><strong>Hôpital Saint-Antoine</strong><br>Bât. Maurice Mayer - RDC - Porte 2<br>Service des maladies infectieuses<br>34 rue Crozatier<br>01 49 28 24 45</div><div class="card-cell"><strong>75014</strong><br><strong>Centre médico-social Ridder</strong><br>3-5 rue de Ridder<br>01 58 14 30 30</div></div>
-<div class="card-row"><div class="card-cell"><strong>75014</strong><br><strong>Institut Alfred Fournier </strong><br>Niveau -1<br>25  boulevard Saint-Jacques<br>01 40 78 26 71</div><div class="card-cell"><strong>75018</strong><br><strong>Hôpital Bichat-Claude-Bernard</strong><br>Secteur Claude-Bernard<br>46  rue Henri Huchard<br>01 40 25 84 34</div><div class="card-cell"><strong>75019Centre médico-social de Belleville</strong>218 rue de Belleville<br>01 40 33 55 00</div></div>
-<div class="card-title"><p><strong>DANS LE 77</strong></p></div>
-<div class="card-row"><div class="card-cell"><strong>77000 MelunCeGIDD Sud 77</strong><br>7 place Praslin<br>01 81 74 28 50</div><div class="card-cell"><strong>77100 Meaux</strong><br><strong>Hôpital de Meaux</strong><br>6-8 rue Saint-Fiacre<br>01 64 35 14 06 ou 38 89</div><div class="card-cell"><strong>77130 Montereau-Fault-Yonne</strong><br><strong>CH Sud 77 - Maison médicale </strong><br>5 rue Victor Hugo<br>01 64 71 64 60</div></div>
-<div class="card-row"><div class="card-cell"><strong>77176 Savigny-le-Temple</strong><br><strong>Centre social Françoise Dolto </strong><br>Chemin du Plessis<br>01 64 10 51 90</div><div class="card-cell"><strong>77600 Jossigny</strong><br><strong>Centre Hospitalier Marne-la-Vallée</strong><br>2/4 cours de la Gondoire<br>01 61 10 65 82</div><div class="card-cell"><strong>77796 Nemours</strong><br><strong>CH Sud 77</strong><br>15 rue des Chaudins<br>01 64 45 19 00</div></div>
-<div class="card-title"><p><strong>DANS LE 78</strong></p></div>
-<div class="card-row"><div class="card-cell"><strong>78100 Saint-Germain-en-Laye</strong><br><strong>Centre hospitalier Poissy - Saint-Germain-en-Laye</strong><br>Pavillon Gérard - 1er étage<br>20 rue Armagis<br>01 39 27 41 20</div><div class="card-cell"><strong>78120 Rambouillet</strong><br><strong>Centre Hospitalier de Rambouillet </strong><br>5/7 rue Pierre et Marie Curie<br>01 34 83 79 07</div><div class="card-cell"><strong>78150 Le Chesnay</strong><br><strong>Hôpital André-Mignot</strong><br>1er étage - salle 6D<br>177 rue de Versailles<br>01 39 63 87 65</div></div>
-<div class="card-row"><div class="card-cell"><strong>78190 Trappes</strong><br><strong>Institut de promotion de la santé</strong><br>3 place de la Mairie<br>01 39 63 87 65</div><div class="card-cell"><strong>78200 Mantes-la-Jolie</strong><br><strong>Centre Hospitalier François-Quesnay</strong><br>5eme étage<br>2 boulevard Sully<br>01 34 97 43 28</div><div class="card-cell"><strong>78250 Meulan Centre Brigitte Gros</strong><br><strong>CeGIDD Yvelines-Nord </strong><br>1 quai Albert 1er<br>01 30 22 42 36</div></div>
-<div class="card-title"><p><strong>DANS LE 91</strong></p></div>
-<div class="card-row"><div class="card-cell"><strong>91000 Evry - CDPS</strong><br>5 boulevard de l&#x27;Ecoute s&#x27;il pleut<br>01 60 77 73 52</div><div class="card-cell"><strong>91100 Corbeil-Essonnes</strong><br><strong>Antenne du CDPS d’Evry - Corbeil-Essonnes</strong><br>1 rue Pierre Sémard<br>01 64 96 02 49</div><div class="card-cell"><strong>91410 Dourdan</strong><br><strong>Centre Hospitalier Sud-Essonne</strong><br>2 rue du Potelet<br>01 64 94 53 99</div></div>
-<div class="card-row"><div class="card-cell"><strong>91150 Etampes -CDPS </strong><br>90  rue de la République<br>01 64 94 53 99</div><div class="card-cell"><strong>91220 Brétigny sur Orge</strong><br><strong>Maison de l’Essonne, </strong><br>2 avenue Claude Lévi-Strauss<br>01 69 20 88 87</div><div class="card-cell"><strong>92410 Dourdan</strong><br><strong>Centre Hospitalier Sud-Essonne</strong><br>2  rue du Potelet<br>01 64 94 53 99</div></div>
-<div class="card-row"><div class="card-cell"><strong>91260 Savigny sur Orge - CDSS</strong><br>6 bis rue de Morsang<br>01 69 21 49 22</div><div class="card-cell"><strong>91300 Massy - CDPS</strong><br>8 Place Victor Schoelcher<br>01 69 20 88 87</div></div>
-<div class="card-title"><p><strong>DANS LE 92</strong></p></div>
-<div class="card-row"><div class="card-cell"><strong>92000 Nanterre</strong><br><strong>Centre municipal de santé </strong><br><strong>Maurice Thorez </strong><br>18 rue Maurice Thorez<br>01 41 37 58 85</div><div class="card-cell"><strong>92000 Nanterre</strong><br><strong>Hôpital Max-Fourestier </strong><br>Galerie Hôpital<br>Bat 8 - Porte 6 - Policlinique - RDC<br>403 avenue de la République<br>01 47 69 68 89</div><div class="card-cell"><strong>92100 Boulogne-Billancourt </strong><br><strong>Hôpital Ambroise Paré </strong><br>4eme- Aile C<br>9 avenue Charles de Gaulle<br>Tél : 01 49 09 59 59</div></div>
-<div class="card-row"><div class="card-cell"><strong>92110 Clichy </strong><br><strong>Centre Municipal de santé Marc Chagall-Goüin, </strong><br>2 rue Gaston Paymal<br>01 47 15 97 98</div><div class="card-cell"><strong>92140 Clamart</strong><br><strong>Hôpital Antoine Béclère </strong><br>Bât Hamburger - RDC - Policlinique<br>157  rue de la Porte de Trivaux<br>01 45 37 46 37</div><div class="card-cell"><strong>92200 Bagneux </strong><br><strong>Centre Municipal de Santé </strong><br><strong>Louis Pasteur </strong><br>2  rue Léo Ferré<br>01 45 36 13 50</div></div>
-<div class="card-row"><div class="card-cell"><strong>92230 Gennevilliers </strong><br><strong>CMS Etienne Gatineau-Sailliant </strong><br>3 rue de la paix<br>01 40 85 66 50</div><div class="card-cell"><strong>92700 Colombes</strong><br><strong>Hôpital Louis Mourier </strong><br>178 rue des Renouillers<br>01 47 60 63 63</div></div>
-<div class="card-title"><p><strong>DANS LE 93</strong></p></div>
-<div class="card-row"><div class="card-cell"><strong>93000 Bobigny</strong><br><strong>CeGIDD - Immeuble Européen 2</strong><br>203/213 avenue Paul Vaillant Couturier<br>01 71 29 58 38</div><div class="card-cell"><strong>93100 Montreuil</strong><br><strong>Centre Départemental de Prévention et de Santé</strong><br>77 rue Victor Hugo<br>01 71 29 22 10</div><div class="card-cell"><strong>93100 Montreuil</strong><br><strong>Centre Hospitalier André-Grégoire </strong><br>A gauche dans le Hall d’accueil<br>56 Boulevard de la Boissière<br>01 49 20 34 38</div></div>
-<div class="card-row"><div class="card-cell"><strong>93200 Saint-Denis</strong><br><strong>Centre Départemental </strong><br><strong>de prévention santé</strong><br>28 bis boulevard Ornano<br>01 71 29 24 20</div><div class="card-cell"><strong>93200 Saint-Denis</strong><br><strong>Centre Hospitalier de Saint Denis</strong><br><strong> Hôpital Delafontaine </strong>- Bâtiment B<br>Niveau 2 - Aile droite<br>2 rue du Docteur Delafontaine 01 42 35 61 99</div><div class="card-cell"><strong>93370 Montfermeil</strong><br><strong>Centre hospitalier </strong><br><strong>Le Raincy-Montfermeil </strong><br>Consultation externes - Niveau 0<br>10 rue du Général Leclerc<br>01 71 29 58 38</div></div>
-<div class="card-item"><strong>93600 Aulnay-sous-Bois</strong><br><strong>CDPS du Centre hospitalier intercommunal Robert-Ballanger</strong> Bâtiment 8<br>4 boulevard Robert Ballanger<br>01 71 29 58 38</div>
-<div class="card-title"><p><strong>DANS LE 94</strong></p></div>
-<div class="card-row"><div class="card-cell"><strong>94000 Créteil</strong><br><strong>Centre Hospitalier Intercommunal </strong><br><strong>de Créteil (CHIC) </strong><br>Bâtiment D - Niveau -1<br>40 avenue de Verdun<br>01 57 02 26 47</div><div class="card-cell"><strong>94190 Villeneuve-Saint-Georges </strong><br><strong>Hôpital Intercommunal de Villeneuve-St-Georges</strong><br>Entrée : 28 av. de La République, 91560 Crosne<br>RDC / au niveau du Service Social<br>01 43 86 24 44</div><div class="card-cell"><strong>94200 Ivry-sur-Seine</strong><br><strong>CMS Fanny Dewerpe</strong><br>64 avenue Georges Gosnat<br>01 80 51 86 00</div></div>
-<div class="card-row"><div class="card-cell"><strong>94400 Vitry-sur-Seine </strong><br><strong>CMS Pierre-Rouquès</strong><br>12-14 avenue du Général de Gaulle<br>01 55 53 50 83</div><div class="card-cell"><strong>94500 Champigny-sur-Marne </strong><br><strong>CMS Maurice-Ténine</strong><br>15 rue Marcel et Georgette Sembat<br>01 48 82 55 13</div><div class="card-cell"><strong>94500 Champigny-sur-Marne</strong><br><strong>CMS Pierre Rouquès</strong><br>5 rue de l’abreuvoir<br>01 48 82 55 13</div></div>
-<div class="card-title"><p><strong>DANS LE 95</strong></p></div>
-<div class="card-row"><div class="card-cell"><strong>95000 Cergy-Pontoise</strong><br><strong>Centre départemental de dépistage et soin </strong><br>Parvis de la Préfecture<br>3 place de la Pergola<br>01 34 33 51 83</div><div class="card-cell"><strong>95100 Argenteuil </strong><br><strong>CDDPS Les Terrasses </strong><br>11-13 rue Jean Lurçat<br>(GPS : 1 Place de Commune)<br>01 34 33 55 30</div><div class="card-cell"><strong>95140 Garges-Lès-Gonesse</strong><br><strong>Centre départemental de dépistage et de soins </strong><br>4 avenue Anatole France<br>01 34 33 82 30</div></div>
-<div class="card-item"><strong>95500 Gonesse </strong><br><strong>Hôpital de Gonesse </strong><br>RDC haut / Consult° 4 / Guichet 1<br>2 boulevard du 19 mars 1962<br>01 82 32 04 90</div>
-</div>
+  <!-- PERMANENCES AIDES -->
+  <div class="card">
+    <div class="card-title">
+      <p>Permanences de santé sexuelle de AIDES</p>
+    </div>
+    <div class="card-item" style="font-size:14px;color:var(--tx2)">
+      <p>Dépistage rapide du <strong>VIH/sida, hépatite B & C et syphilis</strong> en TROD — résultat en 30 minutes, confidentiel et gratuit.</p>
+      <p>Possibilité de récupérer des autotests et du matériel de Réduction Des Risques.</p>
+    </div>
+    <div style="overflow-x:auto">
+      <table class="perm-table">
+        <thead>
+          <tr>
+            <th>Lieu</th>
+            <th>Adresse</th>
+            <th>Téléphone</th>
+            <th>Permanences</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="perm-name">Paris Centre</span> <span class="perm-code">75002</span></td>
+            <td>76 rue de Cléry</td>
+            <td><span class="perm-tel">01 44 82 53 14</span></td>
+            <td class="perm-hours">Mardi 15h–21h</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">LE SPOT Beaumarchais</span> <span class="perm-code">75002</span></td>
+            <td>76 rue de Cléry</td>
+            <td><span class="perm-tel">01 53 69 04 06</span></td>
+            <td class="perm-hours">Accueille les hommes gays, bis et HSH, ainsi que les personnes trans et non binaires</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">Paris 8e</span> <span class="perm-code">75008</span></td>
+            <td>20 rue de Moscou</td>
+            <td><span class="perm-tel">09 53 16 50 25</span></td>
+            <td class="perm-hours">Mercredi 15h–21h</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">Paris 19e</span> <span class="perm-code">75019</span></td>
+            <td>99 rue de Meaux</td>
+            <td><span class="perm-tel">01 40 18 17 53</span></td>
+            <td class="perm-hours">Jeudi 15h–21h</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">Noisiel</span> <span class="perm-code">77186</span></td>
+            <td>2 allée Montesquieu</td>
+            <td><span class="perm-tel">01 60 06 05 05</span></td>
+            <td class="perm-hours">Lundi 14h–19h</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">Athis-Mons</span> <span class="perm-code">91200</span></td>
+            <td>16 rue de Juvisy</td>
+            <td><span class="perm-tel">01 60 48 72 82</span></td>
+            <td class="perm-hours">Lundi 10h–18h</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">Nanterre</span> <span class="perm-code">92000</span></td>
+            <td>55 rue du Volant</td>
+            <td><span class="perm-tel">01 41 19 09 09</span></td>
+            <td class="perm-hours">Mardi 14h–18h</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">Saint-Denis</span> <span class="perm-code">93200</span></td>
+            <td>22 rue Suger</td>
+            <td><span class="perm-tel">01 41 83 81 60</span></td>
+            <td class="perm-hours">Mercredi 15h–20h</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">Choisy-le-Roi</span> <span class="perm-code">94600</span></td>
+            <td>11 rue Louise Michel</td>
+            <td><span class="perm-tel">01 42 83 44 40</span></td>
+            <td class="perm-hours">Lundi 14h–20h</td>
+          </tr>
+          <tr>
+            <td><span class="perm-name">Argenteuil</span> <span class="perm-code">95100</span></td>
+            <td>122 avenue Jean Jaurès</td>
+            <td><span class="perm-tel">01 39 80 34 34</span></td>
+            <td class="perm-hours">2e et 4e mardis du mois, 14h–17h</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-<div class="card">
-<div class="card-row"><div class="card-cell"><img src="img/img-02-6db2b36b.png" alt="" class="doc-img" loading="lazy"></div><div class="card-cell"><strong>« Mon test IST » : Un dispositif de l’Assurance Maladie pour te faire dépister.</strong>Il est possible de <strong>demander sans ordonnance et sans rendez-vous le dépistage de 5 infections sexuellement transmissibles (IST) en laboratoire de biologie médicale</strong> : VIH, hépatite B, chlamydia, gonorrhée, et syphilis.<br>Le dépistage de ces 5 IST est <strong>pris en charge à 100 % par l&#x27;Assurance Maladie pour les moins de 26 ans. Pour les plus de 26 ans : le dépistage du VIH est pris en charge à 100 % par l’Assurance Maladie ; celui des 4 autres IST l’est à 60 % par l’Assurance Maladie et à 40 % par la complémentaire santé du patient (sa mutuelle).</strong>Pour les moins de 26 ans, il est également possible de <a href="http://mon-test-ist.ameli.fr/informations-sanitaires" target="_blank" rel="noopener">commander gratuitement un kit de dépistage par auto-prélèvement de deux IST</a> : chlamydia, gonorrhéeIl est possible d’effectuer uniquement un dépistage du VIH pour les patients qui le souhaitent.➜ <a href="https://mon-test-ist.ameli.fr" target="_blank" rel="noopener">https://mon-test-ist.ameli.fr</a></div></div>
-</div>
-</div>
+  <!-- AUTRES DÉPISTAGES -->
+  <div class="card">
+    <div class="card-title">
+      <p>Autres lieux de dépistage gratuits et confidentiels</p>
+    </div>
+    <div class="card-item" style="font-size:14px;color:var(--tx2)">
+      <p>Les <strong>CeGIDD</strong> proposent des dépistages par prise de sang du VIH/sida, des hépatites virales, et par PCR des IST, ainsi que des vaccinations contre les hépatites A &amp; B et le papillomavirus (HPV).</p>
+    </div>
+
+    <!-- 75 -->
+    <div class="sec-label">Paris — 75</div>
+    <div class="loc-grid">
+      <div class="loc-cell">
+        <span class="loc-code">75001</span>
+        <span class="loc-name">CeGIDD de la Croix-Rouge</span>
+        <div class="loc-addr">43 rue de Valois</div>
+        <a class="loc-tel" href="tel:0142613004">☏ 01 42 61 30 04</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75004</span>
+        <span class="loc-name">Centre de santé sexuelle « Frédéric Edelmann »</span>
+        <div class="loc-addr">Hôtel-Dieu — Galerie A1, 6e étage<br>1 place du Parvis de Notre-Dame</div>
+        <a class="loc-tel" href="tel:0142348300">☏ 01 42 34 83 00</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75004</span>
+        <span class="loc-name">Le Checkpoint</span>
+        <div class="loc-addr">36 rue Geoffroy l'Asnier</div>
+        <a class="loc-tel" href="tel:0144780000">☏ 01 44 78 00 00</a>
+        <div class="loc-note">Accueille les personnes LGBTQIA+</div>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75010</span>
+        <span class="loc-name">Hôpital Fernand-Widal</span>
+        <div class="loc-addr">Secteur Bleu — Porte 3<br>200 rue du Faubourg Saint-Denis</div>
+        <a class="loc-tel" href="tel:0140054375">☏ 01 40 05 43 75</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75010</span>
+        <span class="loc-name">Hôpital Saint-Louis</span>
+        <div class="loc-addr">Centre Clinique et Biologique des IST<br>Bâtiment Lailler — 42 rue Bichat<br><small>(entrée extérieure à l'hôpital)</small></div>
+        <a class="loc-tel" href="tel:0142494205">☏ 01 42 49 42 05</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75011</span>
+        <span class="loc-name">Centre de santé sexuelle « Le190 »</span>
+        <div class="loc-addr">2 impasse de la Baleine</div>
+        <a class="loc-tel" href="tel:0155253272">☏ 01 55 25 32 72</a>
+        <div class="loc-note">Accueille les HSH et les partenaires de personnes séropositives</div>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75012</span>
+        <span class="loc-name">Hôpital Saint-Antoine</span>
+        <div class="loc-addr">Bât. Maurice Mayer — RDC — Porte 2<br>Service maladies infectieuses<br>34 rue Crozatier</div>
+        <a class="loc-tel" href="tel:0149282445">☏ 01 49 28 24 45</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75013</span>
+        <span class="loc-name">Hôpital Pitié-Salpêtrière</span>
+        <div class="loc-addr">Service de médecine interne<br>Bât. CARHEMIIC<br>47–83 boulevard de l'Hôpital</div>
+        <a class="loc-tel" href="tel:0142177622">☏ 01 42 17 76 22</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75014</span>
+        <span class="loc-name">Centre médico-social Ridder</span>
+        <div class="loc-addr">3–5 rue de Ridder</div>
+        <a class="loc-tel" href="tel:0158143030">☏ 01 58 14 30 30</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75014</span>
+        <span class="loc-name">Institut Alfred Fournier</span>
+        <div class="loc-addr">Niveau -1<br>25 boulevard Saint-Jacques</div>
+        <a class="loc-tel" href="tel:0140782671">☏ 01 40 78 26 71</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75018</span>
+        <span class="loc-name">Hôpital Bichat-Claude-Bernard</span>
+        <div class="loc-addr">Secteur Claude-Bernard<br>46 rue Henri Huchard</div>
+        <a class="loc-tel" href="tel:0140258434">☏ 01 40 25 84 34</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">75019</span>
+        <span class="loc-name">Centre médico-social de Belleville</span>
+        <div class="loc-addr">218 rue de Belleville</div>
+        <a class="loc-tel" href="tel:0140335500">☏ 01 40 33 55 00</a>
+      </div>
+    </div>
+
+    <!-- 77 -->
+    <div class="sec-label">Seine-et-Marne — 77</div>
+    <div class="loc-grid">
+      <div class="loc-cell">
+        <span class="loc-code">77000 Melun</span>
+        <span class="loc-name">CeGIDD Sud 77</span>
+        <div class="loc-addr">7 place Praslin</div>
+        <a class="loc-tel" href="tel:0181742850">☏ 01 81 74 28 50</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">77100 Meaux</span>
+        <span class="loc-name">Hôpital de Meaux</span>
+        <div class="loc-addr">6–8 rue Saint-Fiacre</div>
+        <a class="loc-tel" href="tel:0164351406">☏ 01 64 35 14 06</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">77130 Montereau</span>
+        <span class="loc-name">CH Sud 77 — Maison médicale</span>
+        <div class="loc-addr">5 rue Victor Hugo</div>
+        <a class="loc-tel" href="tel:0164716460">☏ 01 64 71 64 60</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">77176 Savigny-le-Temple</span>
+        <span class="loc-name">Centre social Françoise Dolto</span>
+        <div class="loc-addr">Chemin du Plessis</div>
+        <a class="loc-tel" href="tel:0164105190">☏ 01 64 10 51 90</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">77600 Jossigny</span>
+        <span class="loc-name">CH Marne-la-Vallée</span>
+        <div class="loc-addr">2/4 cours de la Gondoire</div>
+        <a class="loc-tel" href="tel:0161106582">☏ 01 61 10 65 82</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">77796 Nemours</span>
+        <span class="loc-name">CH Sud 77</span>
+        <div class="loc-addr">15 rue des Chaudins</div>
+        <a class="loc-tel" href="tel:0164451900">☏ 01 64 45 19 00</a>
+      </div>
+    </div>
+
+    <!-- 78 -->
+    <div class="sec-label">Yvelines — 78</div>
+    <div class="loc-grid">
+      <div class="loc-cell">
+        <span class="loc-code">78100 Saint-Germain-en-Laye</span>
+        <span class="loc-name">CH Poissy – Saint-Germain</span>
+        <div class="loc-addr">Pavillon Gérard — 1er étage<br>20 rue Armagis</div>
+        <a class="loc-tel" href="tel:0139274120">☏ 01 39 27 41 20</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">78120 Rambouillet</span>
+        <span class="loc-name">Centre Hospitalier de Rambouillet</span>
+        <div class="loc-addr">5/7 rue Pierre et Marie Curie</div>
+        <a class="loc-tel" href="tel:0134837907">☏ 01 34 83 79 07</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">78150 Le Chesnay</span>
+        <span class="loc-name">Hôpital André-Mignot</span>
+        <div class="loc-addr">1er étage — salle 6D<br>177 rue de Versailles</div>
+        <a class="loc-tel" href="tel:0139638765">☏ 01 39 63 87 65</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">78190 Trappes</span>
+        <span class="loc-name">Institut de promotion de la santé</span>
+        <div class="loc-addr">3 place de la Mairie</div>
+        <a class="loc-tel" href="tel:0139638765">☏ 01 39 63 87 65</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">78200 Mantes-la-Jolie</span>
+        <span class="loc-name">CH François-Quesnay</span>
+        <div class="loc-addr">5e étage — 2 boulevard Sully</div>
+        <a class="loc-tel" href="tel:0134974328">☏ 01 34 97 43 28</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">78250 Meulan</span>
+        <span class="loc-name">CeGIDD Yvelines-Nord — Centre Brigitte Gros</span>
+        <div class="loc-addr">1 quai Albert 1er</div>
+        <a class="loc-tel" href="tel:0130224236">☏ 01 30 22 42 36</a>
+      </div>
+    </div>
+
+    <!-- 91 -->
+    <div class="sec-label">Essonne — 91</div>
+    <div class="loc-grid">
+      <div class="loc-cell">
+        <span class="loc-code">91000 Évry</span>
+        <span class="loc-name">CDPS</span>
+        <div class="loc-addr">5 boulevard de l'Écoute s'il pleut</div>
+        <a class="loc-tel" href="tel:0160777352">☏ 01 60 77 73 52</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">91100 Corbeil-Essonnes</span>
+        <span class="loc-name">Antenne du CDPS d'Évry</span>
+        <div class="loc-addr">1 rue Pierre Sémard</div>
+        <a class="loc-tel" href="tel:0164960249">☏ 01 64 96 02 49</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">91150 Étampes</span>
+        <span class="loc-name">CDPS</span>
+        <div class="loc-addr">90 rue de la République</div>
+        <a class="loc-tel" href="tel:0164945399">☏ 01 64 94 53 99</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">91220 Brétigny-sur-Orge</span>
+        <span class="loc-name">Maison de l'Essonne</span>
+        <div class="loc-addr">2 avenue Claude Lévi-Strauss</div>
+        <a class="loc-tel" href="tel:0169208887">☏ 01 69 20 88 87</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">91260 Savigny-sur-Orge</span>
+        <span class="loc-name">CDSS</span>
+        <div class="loc-addr">6 bis rue de Morsang</div>
+        <a class="loc-tel" href="tel:0169214922">☏ 01 69 21 49 22</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">91300 Massy</span>
+        <span class="loc-name">CDPS</span>
+        <div class="loc-addr">8 place Victor Schoelcher</div>
+        <a class="loc-tel" href="tel:0169208887">☏ 01 69 20 88 87</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">91410 Dourdan</span>
+        <span class="loc-name">CH Sud-Essonne</span>
+        <div class="loc-addr">2 rue du Potelet</div>
+        <a class="loc-tel" href="tel:0164945399">☏ 01 64 94 53 99</a>
+      </div>
+    </div>
+
+    <!-- 92 -->
+    <div class="sec-label">Hauts-de-Seine — 92</div>
+    <div class="loc-grid">
+      <div class="loc-cell">
+        <span class="loc-code">92000 Nanterre</span>
+        <span class="loc-name">CMS Maurice Thorez</span>
+        <div class="loc-addr">18 rue Maurice Thorez</div>
+        <a class="loc-tel" href="tel:0141375885">☏ 01 41 37 58 85</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">92000 Nanterre</span>
+        <span class="loc-name">Hôpital Max-Fourestier</span>
+        <div class="loc-addr">Bât. 8 — Porte 6 — Policlinique — RDC<br>403 avenue de la République</div>
+        <a class="loc-tel" href="tel:0147696889">☏ 01 47 69 68 89</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">92100 Boulogne-Billancourt</span>
+        <span class="loc-name">Hôpital Ambroise Paré</span>
+        <div class="loc-addr">4e étage — Aile C<br>9 avenue Charles de Gaulle</div>
+        <a class="loc-tel" href="tel:0149095959">☏ 01 49 09 59 59</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">92110 Clichy</span>
+        <span class="loc-name">CMS Marc Chagall-Goüin</span>
+        <div class="loc-addr">2 rue Gaston Paymal</div>
+        <a class="loc-tel" href="tel:0147159798">☏ 01 47 15 97 98</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">92140 Clamart</span>
+        <span class="loc-name">Hôpital Antoine Béclère</span>
+        <div class="loc-addr">Bât. Hamburger — RDC — Policlinique<br>157 rue de la Porte de Trivaux</div>
+        <a class="loc-tel" href="tel:0145374637">☏ 01 45 37 46 37</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">92200 Bagneux</span>
+        <span class="loc-name">CMS Louis Pasteur</span>
+        <div class="loc-addr">2 rue Léo Ferré</div>
+        <a class="loc-tel" href="tel:0145361350">☏ 01 45 36 13 50</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">92230 Gennevilliers</span>
+        <span class="loc-name">CMS Étienne Gatineau-Sailliant</span>
+        <div class="loc-addr">3 rue de la Paix</div>
+        <a class="loc-tel" href="tel:0140856650">☏ 01 40 85 66 50</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">92700 Colombes</span>
+        <span class="loc-name">Hôpital Louis Mourier</span>
+        <div class="loc-addr">178 rue des Renouillers</div>
+        <a class="loc-tel" href="tel:0147606363">☏ 01 47 60 63 63</a>
+      </div>
+    </div>
+
+    <!-- 93 -->
+    <div class="sec-label">Seine-Saint-Denis — 93</div>
+    <div class="loc-grid">
+      <div class="loc-cell">
+        <span class="loc-code">93000 Bobigny</span>
+        <span class="loc-name">CeGIDD — Immeuble Européen 2</span>
+        <div class="loc-addr">203/213 avenue Paul Vaillant Couturier</div>
+        <a class="loc-tel" href="tel:0171295838">☏ 01 71 29 58 38</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">93100 Montreuil</span>
+        <span class="loc-name">CDPS</span>
+        <div class="loc-addr">77 rue Victor Hugo</div>
+        <a class="loc-tel" href="tel:0171292210">☏ 01 71 29 22 10</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">93100 Montreuil</span>
+        <span class="loc-name">CH André-Grégoire</span>
+        <div class="loc-addr">À gauche dans le Hall d'accueil<br>56 boulevard de la Boissière</div>
+        <a class="loc-tel" href="tel:0149203438">☏ 01 49 20 34 38</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">93200 Saint-Denis</span>
+        <span class="loc-name">Centre Départemental de Prévention Santé</span>
+        <div class="loc-addr">28 bis boulevard Ornano</div>
+        <a class="loc-tel" href="tel:0171292420">☏ 01 71 29 24 20</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">93200 Saint-Denis</span>
+        <span class="loc-name">Hôpital Delafontaine</span>
+        <div class="loc-addr">Bâtiment B — Niveau 2 — Aile droite<br>2 rue du Dr Delafontaine</div>
+        <a class="loc-tel" href="tel:0142356199">☏ 01 42 35 61 99</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">93370 Montfermeil</span>
+        <span class="loc-name">CH Le Raincy-Montfermeil</span>
+        <div class="loc-addr">Consultations externes — Niveau 0<br>10 rue du Général Leclerc</div>
+        <a class="loc-tel" href="tel:0171295838">☏ 01 71 29 58 38</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">93600 Aulnay-sous-Bois</span>
+        <span class="loc-name">CDPS — CH Robert-Ballanger</span>
+        <div class="loc-addr">Bâtiment 8<br>4 boulevard Robert Ballanger</div>
+        <a class="loc-tel" href="tel:0171295838">☏ 01 71 29 58 38</a>
+      </div>
+    </div>
+
+    <!-- 94 -->
+    <div class="sec-label">Val-de-Marne — 94</div>
+    <div class="loc-grid">
+      <div class="loc-cell">
+        <span class="loc-code">94000 Créteil</span>
+        <span class="loc-name">CHIC</span>
+        <div class="loc-addr">Bâtiment D — Niveau -1<br>40 avenue de Verdun</div>
+        <a class="loc-tel" href="tel:0157022647">☏ 01 57 02 26 47</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">94190 Villeneuve-Saint-Georges</span>
+        <span class="loc-name">Hôpital Intercommunal</span>
+        <div class="loc-addr">RDC / Service Social<br>Entrée : 28 av. de la République, 91560 Crosne</div>
+        <a class="loc-tel" href="tel:0143862444">☏ 01 43 86 24 44</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">94200 Ivry-sur-Seine</span>
+        <span class="loc-name">CMS Fanny Dewerpe</span>
+        <div class="loc-addr">64 avenue Georges Gosnat</div>
+        <a class="loc-tel" href="tel:0180518600">☏ 01 80 51 86 00</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">94400 Vitry-sur-Seine</span>
+        <span class="loc-name">CMS Pierre-Rouquès</span>
+        <div class="loc-addr">12–14 avenue du Général de Gaulle</div>
+        <a class="loc-tel" href="tel:0155535083">☏ 01 55 53 50 83</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">94500 Champigny-sur-Marne</span>
+        <span class="loc-name">CMS Maurice-Ténine</span>
+        <div class="loc-addr">15 rue Marcel et Georgette Sembat</div>
+        <a class="loc-tel" href="tel:0148825513">☏ 01 48 82 55 13</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">94500 Champigny-sur-Marne</span>
+        <span class="loc-name">CMS Pierre Rouquès (2e site)</span>
+        <div class="loc-addr">5 rue de l'Abreuvoir</div>
+        <a class="loc-tel" href="tel:0148825513">☏ 01 48 82 55 13</a>
+      </div>
+    </div>
+
+    <!-- 95 -->
+    <div class="sec-label">Val-d'Oise — 95</div>
+    <div class="loc-grid">
+      <div class="loc-cell">
+        <span class="loc-code">95000 Cergy-Pontoise</span>
+        <span class="loc-name">Centre de dépistage et de soin</span>
+        <div class="loc-addr">3 place de la Pergola<br>Parvis de la Préfecture</div>
+        <a class="loc-tel" href="tel:0134335183">☏ 01 34 33 51 83</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">95100 Argenteuil</span>
+        <span class="loc-name">CDDPS Les Terrasses</span>
+        <div class="loc-addr">11–13 rue Jean Lurçat<br><small>(GPS : 1 place de la Commune)</small></div>
+        <a class="loc-tel" href="tel:0134335530">☏ 01 34 33 55 30</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">95140 Garges-lès-Gonesse</span>
+        <span class="loc-name">Centre de dépistage et de soins</span>
+        <div class="loc-addr">4 avenue Anatole France</div>
+        <a class="loc-tel" href="tel:0134338230">☏ 01 34 33 82 30</a>
+      </div>
+      <div class="loc-cell">
+        <span class="loc-code">95500 Gonesse</span>
+        <span class="loc-name">Hôpital de Gonesse</span>
+        <div class="loc-addr">RDC haut / Consult° 4 / Guichet 1<br>2 boulevard du 19 mars 1962</div>
+        <a class="loc-tel" href="tel:0182320490">☏ 01 82 32 04 90</a>
+      </div>
+    </div>
+  </div><!-- /card -->
+
+  <!-- MON TEST IST -->
+  <div class="card">
+    <div class="card-row">
+      <div class="card-cell"><img src="img/img-02-6db2b36b.png" alt="" class="doc-img" loading="lazy"></div>
+      <div class="card-cell">
+        <strong>« Mon test IST » — Assurance Maladie</strong>
+        <p style="margin-top:8px;font-size:14px">Dépistage <strong>sans ordonnance et sans rendez-vous</strong> de 5 IST en laboratoire : VIH, hépatite B, chlamydia, gonorrhée, syphilis.</p>
+        <ul style="margin-top:8px;font-size:13.5px">
+          <li><strong>Moins de 26 ans :</strong> pris en charge à 100 % par l'Assurance Maladie</li>
+          <li><strong>Plus de 26 ans :</strong> VIH pris en charge à 100 % ; les 4 autres IST à 60 % (complément par la mutuelle)</li>
+          <li><strong>Moins de 26 ans :</strong> possible de <a href="http://mon-test-ist.ameli.fr/informations-sanitaires" target="_blank" rel="noopener">commander un kit de dépistage gratuit par auto-prélèvement</a> (chlamydia et gonorrhée)</li>
+        </ul>
+        <p style="margin-top:8px">➜ <a href="https://mon-test-ist.ameli.fr" target="_blank" rel="noopener">mon-test-ist.ameli.fr</a></p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /cnt -->
+
 <nav class="foot">
   <div class="foot-t">Autres ressources</div>
-  <a href="page-01.html">01. Numéros utiles</a><a href="page-03.html">03. Autotest VIH/sida à la maison</a><a href="page-04.html">04. La PrEP : se protéger du VIH</a><a href="page-05.html">05. TPE : traitement d'urgence</a><a href="page-06.html">06. Je vis avec le VIH</a><a href="page-07.html">07. Santé sexuelle et mentale</a><a href="page-08.html">08. Je consomme des drogues</a><a href="page-09.html">09. Protection maladie et droits</a><a href="page-10.html">10. Autres besoins spécifiques</a>
+  <a href="page-01.html">01. Numéros utiles</a>
+  <a href="page-03.html">03. Autotest VIH/sida à la maison</a>
+  <a href="page-04.html">04. La PrEP : se protéger du VIH</a>
+  <a href="page-05.html">05. TPE : traitement d'urgence</a>
+  <a href="page-06.html">06. Je vis avec le VIH</a>
+  <a href="page-07.html">07. Santé sexuelle et mentale</a>
+  <a href="page-08.html">08. Je consomme des drogues</a>
+  <a href="page-09.html">09. Protection maladie et droits</a>
+  <a href="page-10.html">10. Autres besoins spécifiques</a>
   <br>
   <a class="foot-h" href="index.html">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
     Accueil
   </a>
 </nav>
+
 </body>
 </html>
